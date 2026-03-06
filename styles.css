@@ -608,77 +608,56 @@ a:focus-visible {
   line-height: 1.8;
 }
 
-/* ===== ご支援の流れ ===== */
-.flow-steps {
-  display: flex;
-  gap: 0;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.flow-step {
-  flex: 1 1 200px;
-  max-width: 240px;
+/* ===== サービス全体像 ===== */
+.overview-lead {
   text-align: center;
-  padding: 20px;
+  font-size: 14px;
+  color: var(--text-sub);
+  margin-bottom: 32px;
 }
 
-.flow-step-label {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: bold;
-  color: #fff;
-  background-color: var(--accent);
-  padding: 2px 12px;
-  border-radius: 3px;
-  margin-bottom: 10px;
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 860px;
+  margin: 0 auto;
 }
 
-.flow-step h3 {
+.overview-card {
+  display: block;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 28px 24px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.overview-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.overview-icon {
+  width: 36px;
+  height: 36px;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.overview-card h3 {
   font-size: 16px;
   color: var(--text);
   margin-bottom: 8px;
 }
 
-.flow-step p {
+.overview-card p {
   font-size: 14px;
   color: var(--text-sub);
-  text-align: left;
-}
-
-.flow-arrow {
-  display: flex;
-  align-items: center;
-  padding-top: 36px;
-  font-size: 20px;
-  color: var(--accent);
-}
-
-.flow-arrow::before {
-  content: "\25B6";
-}
-
-.flow-step-meta {
-  font-size: 13px;
-  font-weight: bold;
-  color: var(--accent);
-  margin-top: 8px;
-}
-
-.flow-lead {
-  text-align: center;
-  font-size: 14px;
-  color: var(--text-sub);
-  margin-bottom: 20px;
-}
-
-.flow-note {
-  text-align: center;
-  font-size: 13px;
-  color: var(--muted);
-  margin-top: 24px;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 /* ===== 会社概要テーブル ===== */
@@ -936,18 +915,9 @@ a:focus-visible {
     flex-direction: column;
   }
 
-  .flow-steps {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .flow-step {
-    max-width: 100%;
-  }
-
-  .flow-arrow {
-    padding-top: 0;
-    transform: rotate(90deg);
+  .overview-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
   }
 
   .company-table th {
@@ -978,4 +948,26 @@ a:focus-visible {
   .site-nav a {
     font-size: 13px;
   }
+}
+
+/* ===== Thanksページ ===== */
+.thanks-section {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.thanks-heading {
+  font-size: 22px;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.thanks-message {
+  font-size: 15px;
+  color: var(--text-sub);
+  margin-bottom: 32px;
+}
+
+.thanks-btn {
+  display: inline-block;
 }

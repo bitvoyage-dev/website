@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="株式会社BitVoyage - 情報システム部のない企業に、外部から業務設計責任者を。業務整理・IT設計・AI実装を一体で担います。広島県東広島市拠点。">
-  <title>株式会社BitVoyage | 外部業務設計責任者</title>
+  <meta name="description" content="株式会社BitVoyageは、IT専任者がいない企業に対し、業務整理・改善設計・自動化支援を行う外部ITパートナーです。東広島・呉を中心に、広島県内で対応しています。">
+  <title>株式会社BitVoyage | 外部ITパートナー</title>
+  <meta property="og:title" content="株式会社BitVoyage | 外部ITパートナー">
+  <meta property="og:description" content="株式会社BitVoyageは、IT専任者がいない企業に対し、業務整理・改善設計・自動化支援を行う外部ITパートナーです。東広島・呉を中心に、広島県内で対応しています。">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="株式会社BitVoyage | 外部ITパートナー">
+  <meta name="twitter:description" content="株式会社BitVoyageは、IT専任者がいない企業に対し、業務整理・改善設計・自動化支援を行う外部ITパートナーです。東広島・呉を中心に、広島県内で対応しています。">
   <link rel="icon" href="assets/Logo/BitVoyage_ロゴ.png">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -63,11 +69,50 @@
     </div>
   </section>
 
-  <!-- 4) 業務構造診断パック -->
-  <section class="section section-gray" id="diagnosis">
+  <!-- 4) サービス全体像 -->
+  <section class="section section-gray" id="overview">
+    <div class="container">
+      <h2>サービス全体像</h2>
+      <p class="overview-lead">課題整理から改善実行まで、必要な範囲でご利用いただけます。</p>
+      <div class="overview-grid">
+        <a href="#diagnosis" class="overview-card">
+          <svg class="overview-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="4" width="24" height="32" rx="2" stroke="currentColor" stroke-width="2"/>
+            <path d="M14 14h12M14 19h12M14 24h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M14 9h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="30" cy="32" r="7" fill="#f7f7f5" stroke="currentColor" stroke-width="2"/>
+            <path d="M27.5 32l2 2 3-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>業務構造診断</h3>
+          <p>現場を見て、課題と優先順位を整理する入口サービス</p>
+        </a>
+        <a href="#advisory" class="overview-card">
+          <svg class="overview-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="16" cy="14" r="5" stroke="currentColor" stroke-width="2"/>
+            <path d="M8 30c0-5 3.6-8 8-8s8 3 8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M28 16v10M23 21h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <h3>月額顧問</h3>
+          <p>改善を継続的に進める伴走支援</p>
+        </a>
+        <a href="#projects" class="overview-card">
+          <svg class="overview-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="20" cy="20" r="8" stroke="currentColor" stroke-width="2"/>
+            <circle cx="20" cy="20" r="3" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M20 4v4M20 32v4M4 20h4M32 20h4M8.8 8.8l2.8 2.8M28.4 28.4l2.8 2.8M31.2 8.8l-2.8 2.8M11.6 28.4l-2.8 2.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <h3>改善プロジェクト</h3>
+          <p>必要な部分だけ、自動化やシステム実装を行う支援</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5) 業務構造診断パック -->
+  <section class="section" id="diagnosis">
     <div class="container">
       <h2>業務構造診断パック（15万円・税別）</h2>
-      <p class="diagnosis-lead">現場を直接拝見し、業務の流れを可視化。<br>どこにボトルネックがあるか、何から手をつけるべきかを整理してお伝えします。</p>
+      <p class="diagnosis-lead">現場を直接拝見し、業務の流れを可視化。<br>ボトルネックの特定から改善優先順位の設計、実行ロードマップの提示まで行います。</p>
       <div class="diagnosis-content">
         <div class="diagnosis-block">
           <h3>診断で行うこと</h3>
@@ -98,10 +143,10 @@
   </section>
 
   <!-- 5) 月額顧問 -->
-  <section class="section" id="advisory">
+  <section class="section section-gray" id="advisory">
     <div class="container">
       <h2>月額顧問（伴走支援）</h2>
-      <p class="advisory-lead">診断結果を、毎月着実に前進させる。</p>
+      <p class="advisory-lead">診断で整理した課題をもとに、改善の優先順位を見直しながら、業務改善を継続的に前へ進めます。<br>外部IT担当として、現場で止まりやすい改善を実行まで伴走します。</p>
       <p class="advisory-price">月額 5万円〜（税別）</p>
       <p class="advisory-term">最低契約期間：3ヶ月</p>
       <div class="advisory-content">
@@ -109,19 +154,19 @@
           <h3>含まれる内容</h3>
           <ul class="advisory-list">
             <li>月1回ミーティング（原則オンライン）</li>
-            <li>軽微な改善の実行支援（自動化・Excel整備など）</li>
-            <li>改善ログ管理</li>
+            <li>改善優先順位の見直し・次月施策の整理</li>
+            <li>業務を回しやすくするための小規模な整備支援（Excel整備・運用整理など）</li>
+            <li>改善項目の整理・進捗管理</li>
             <li>隔月の現地確認（必要に応じて）</li>
           </ul>
-          <p class="advisory-block-note">※月内で対応可能な軽微な改善は顧問内で実施します。<br>※一定規模を超える開発は事前合意の上で別途お見積りとなります。</p>
+          <p class="advisory-block-note">※改善は「設計 → 合意 → 実行」の流れで進めます。<br>※一定規模を超える開発は、事前にご相談のうえ別途お見積りします。</p>
         </div>
       </div>
-      <p class="advisory-transparency">改善は「設計 → 合意 → 実行」のプロセスで進めます。<br>無断での実装や追加費用は発生しません。</p>
     </div>
   </section>
 
   <!-- 6) 実装プロジェクト -->
-  <section class="section section-gray" id="projects">
+  <section class="section" id="projects">
     <div class="container">
       <h2>実装・改善プロジェクト（個別見積）</h2>
       <p class="projects-lead">改善の影響範囲と設計難易度に応じてお見積りいたします。</p>
@@ -140,38 +185,8 @@
     </div>
   </section>
 
-  <!-- 7) ご支援の流れ -->
-  <section class="section section-gray" id="flow">
-    <div class="container">
-      <h2>ご支援の流れ</h2>
-      <p class="flow-lead">基本的なご支援の流れです。各ステップは独立しており、必要な範囲のみご利用いただけます。</p>
-      <div class="flow-steps">
-        <div class="flow-step">
-          <div class="flow-step-label">Step 1</div>
-          <h3>無料ヒアリング</h3>
-          <p>現状の課題を30分で整理し、診断が必要かどうかを一緒に確認します。</p>
-          <p class="flow-step-meta">無料／30分</p>
-        </div>
-        <div class="flow-arrow" aria-hidden="true"></div>
-        <div class="flow-step">
-          <div class="flow-step-label">Step 2</div>
-          <h3>業務構造診断</h3>
-          <p>現場を訪問し、業務の全体像を可視化。改善の優先順位を明確にします。</p>
-          <p class="flow-step-meta">15万円（税別）／ 現地訪問含む</p>
-        </div>
-        <div class="flow-arrow" aria-hidden="true"></div>
-        <div class="flow-step">
-          <div class="flow-step-label">必要に応じて</div>
-          <h3>顧問契約</h3>
-          <p>月次で改善を実行。実装プロジェクトは必要に応じて個別対応します。</p>
-          <p class="flow-step-meta">月額5万円〜（税別）</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- 8) 改善・自動化事例 -->
-  <section class="section" id="cases">
+  <section class="section section-gray" id="cases">
     <div class="container">
       <h2>これまでの取り組み事例</h2>
       <div class="case-group">
@@ -203,7 +218,7 @@
   </section>
 
   <!-- 9) 会社概要 -->
-  <section class="section section-gray" id="company">
+  <section class="section" id="company">
     <div class="container">
       <h2>会社概要</h2>
       <table class="company-table">
@@ -213,29 +228,15 @@
         </tr>
         <tr>
           <th>所在地</th>
-          <td>広島県東広島市を中心に、現場訪問を重視した支援（オンライン対応可）</td>
+          <td>広島県東広島市（東広島・呉を中心に広島県内対応）</td>
         </tr>
         <tr>
           <th>事業内容</th>
           <td>
-            <div class="biz-list">
-              <div class="biz-item">
-                <div class="biz-title">外部ITパートナー業務</div>
-                <div class="biz-desc">IT専任者のいない企業に対し、外部のIT担当として継続的に関わります。</div>
-              </div>
-              <div class="biz-item">
-                <div class="biz-title">業務設計・仕組み化支援</div>
-                <div class="biz-desc">業務の流れを整理し、属人化や手戻りを減らす仕組みをつくります。</div>
-              </div>
-              <div class="biz-item">
-                <div class="biz-title">業務自動化・データ整理</div>
-                <div class="biz-desc">Excel・手入力・定型作業の自動化やデータの構造化を行います。</div>
-              </div>
-              <div class="biz-item">
-                <div class="biz-title">AI活用支援</div>
-                <div class="biz-desc">業務に適したAIツールの選定・導入・活用を支援します。</div>
-              </div>
-            </div>
+            外部ITパートナー業務<br>
+            業務設計・仕組み化支援<br>
+            業務自動化・データ整理<br>
+            AI活用支援
           </td>
         </tr>
         <tr>
@@ -247,7 +248,7 @@
   </section>
 
   <!-- 10) 代表プロフィール -->
-  <section class="section" id="profile">
+  <section class="section section-gray" id="profile">
     <div class="container">
       <h2>代表プロフィール</h2>
       <div class="profile">
@@ -263,7 +264,7 @@
   </section>
 
   <!-- 11) お問い合わせ -->
-  <section class="section section-gray" id="contact">
+  <section class="section" id="contact">
     <div class="container">
       <h2>お問い合わせ</h2>
       <div class="contact-box">
@@ -272,21 +273,22 @@
         <button type="button" class="btn btn-contact" id="contact-toggle" aria-expanded="false" aria-controls="contact-form">無料30分ヒアリングを申し込む</button>
 
         <div id="contact-form" class="contact-form-wrap" hidden>
-          <form id="inquiry-form" novalidate>
+          <form id="inquiry-form" action="https://api.web3forms.com/submit" method="POST">
             <!-- Web3Forms -->
-            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-            <input type="hidden" name="subject" value="【ヒアリング申込】無料30分ヒアリング">
-            <input type="hidden" name="from_name" value="BitVoyage お問い合わせフォーム">
-            <input type="checkbox" name="botcheck" class="hp-field" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="access_key" value="b0bb2ab9-0584-49de-b67a-73e763da458b">
+            <input type="hidden" name="subject" value="BitVoyageサイトからのお問い合わせ">
+            <input type="hidden" name="from_name" value="BitVoyage">
+            <input type="hidden" name="redirect" value="https://bitvoyage.co.jp/thanks.html">
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
 
             <div class="form-group">
-              <label for="field-company">会社名</label>
-              <input type="text" id="field-company" name="会社名" placeholder="例：株式会社○○" autocomplete="organization">
+              <label for="field-company">会社名 <span class="required">必須</span></label>
+              <input type="text" id="field-company" name="company" required placeholder="例：株式会社○○" autocomplete="organization">
             </div>
 
             <div class="form-group">
-              <label for="field-name">ご担当者名</label>
-              <input type="text" id="field-name" name="ご担当者名" placeholder="例：山田 太郎" autocomplete="name">
+              <label for="field-name">ご担当者名 <span class="required">必須</span></label>
+              <input type="text" id="field-name" name="name" required placeholder="例：山田 太郎" autocomplete="name">
             </div>
 
             <div class="form-group">
@@ -296,33 +298,31 @@
 
             <div class="form-group">
               <label for="field-phone">電話番号（任意）</label>
-              <input type="tel" id="field-phone" name="電話番号" placeholder="例：090-1234-5678" autocomplete="tel">
+              <input type="tel" id="field-phone" name="phone" placeholder="例：090-1234-5678" autocomplete="tel">
             </div>
 
             <div class="form-group">
-              <label for="field-message">ご相談内容（簡単でOK）</label>
-              <textarea id="field-message" name="ご相談内容" rows="3" placeholder="例：Excelの手入力が増えて困っている"></textarea>
+              <label for="field-message">ご相談内容 <span class="required">必須</span></label>
+              <textarea id="field-message" name="message" rows="3" required placeholder="例：Excelの手入力が増えて困っている"></textarea>
             </div>
 
             <div class="form-group">
               <label for="field-date1">ご希望日時（第1希望）</label>
-              <input type="text" id="field-date1" name="ご希望日時（第1希望）" placeholder="例：4/10（木）10:00〜">
+              <input type="text" id="field-date1" name="date1" placeholder="例：4/10（木）10:00〜">
             </div>
 
             <div class="form-group">
               <label for="field-date2">ご希望日時（第2希望）</label>
-              <input type="text" id="field-date2" name="ご希望日時（第2希望）" placeholder="例：4/11（金）14:00〜">
+              <input type="text" id="field-date2" name="date2" placeholder="例：4/11（金）14:00〜">
             </div>
 
             <div class="form-group">
               <label for="field-date3">ご希望日時（第3希望）</label>
-              <input type="text" id="field-date3" name="ご希望日時（第3希望）" placeholder="例：4/14（月）終日可">
+              <input type="text" id="field-date3" name="date3" placeholder="例：4/14（月）終日可">
             </div>
 
             <button type="submit" class="btn btn-submit" id="submit-btn">この内容で申し込む</button>
           </form>
-
-          <div id="form-status" class="form-status" aria-live="polite"></div>
         </div>
 
         <p class="contact-note">通常2営業日以内に日程をご案内いたします。</p>
@@ -341,9 +341,8 @@
     (function () {
       var toggle = document.getElementById('contact-toggle');
       var wrap = document.getElementById('contact-form');
-      var form = document.getElementById('inquiry-form');
-      var status = document.getElementById('form-status');
       var submitBtn = document.getElementById('submit-btn');
+      var form = document.getElementById('inquiry-form');
 
       toggle.addEventListener('click', function () {
         var open = wrap.hidden;
@@ -352,56 +351,10 @@
         toggle.textContent = open ? 'フォームを閉じる' : '無料30分ヒアリングを申し込む';
       });
 
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        status.textContent = '';
-        status.className = 'form-status';
-
-        var email = form.elements['email'];
-        if (!email.value.trim()) {
-          showStatus('メールアドレスを入力してください。', 'error');
-          email.focus();
-          return;
-        }
-
+      form.addEventListener('submit', function () {
         submitBtn.disabled = true;
         submitBtn.textContent = '送信中…';
-
-        var formData = new FormData(form);
-        var object = {};
-        formData.forEach(function (value, key) {
-          object[key] = value;
-        });
-
-        fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify(object)
-        }).then(function (res) {
-          return res.json();
-        }).then(function (result) {
-          if (result.success) {
-            showStatus('お申し込みを受け付けました。ご入力のメールアドレスに確認メールをお送りしました。', 'success');
-            form.reset();
-            form.style.display = 'none';
-          } else {
-            showStatus('送信に失敗しました。時間をおいて再度お試しください。', 'error');
-          }
-        }).catch(function () {
-          showStatus('通信エラーが発生しました。ネットワークをご確認ください。', 'error');
-        }).finally(function () {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'この内容で申し込む';
-        });
       });
-
-      function showStatus(msg, type) {
-        status.textContent = msg;
-        status.className = 'form-status form-status-' + type;
-      }
     })();
   </script>
 </body>
