@@ -136,10 +136,36 @@ a:focus-visible {
   margin-bottom: 12px;
 }
 
+.hero-label {
+  font-size: 14px;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
 .hero-note {
   font-size: 13px;
   color: var(--muted);
-  margin-bottom: 0;
+  margin-bottom: 24px;
+}
+
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-secondary {
+  display: inline-block;
+  font-size: 14px;
+  color: var(--text-sub);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.btn-secondary:hover {
+  color: var(--accent-dark);
 }
 
 .btn {
@@ -247,7 +273,7 @@ a:focus-visible {
   object-fit: cover;
 }
 
-/* ===== 業務構造診断パック（新セクション） ===== */
+/* ===== 業務構造診断パック ===== */
 .diag-pack {
   background-color: var(--bg-sub);
 }
@@ -271,15 +297,6 @@ a:focus-visible {
   border-bottom: 2px solid var(--accent);
 }
 
-.diag-pack-question {
-  text-align: center;
-  font-size: 17px;
-  font-weight: bold;
-  color: var(--text);
-  margin-bottom: 12px;
-  line-height: 1.7;
-}
-
 .diag-pack-lead {
   text-align: center;
   font-size: 15px;
@@ -288,124 +305,82 @@ a:focus-visible {
   line-height: 1.9;
 }
 
-.diag-pack-subhead {
-  font-size: 16px;
+.diag-body {
+  display: flex;
+  gap: 24px;
+  max-width: 700px;
+  margin: 0 auto 36px;
+}
+
+.diag-block {
+  flex: 1 1 300px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 24px;
+}
+
+.diag-block h3 {
+  font-size: 15px;
   font-weight: bold;
   color: var(--text);
-  text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent);
+}
+
+.diag-list {
+  list-style: none;
+  margin: 0;
+}
+
+.diag-list li {
+  padding: 5px 0 5px 22px;
   position: relative;
-}
-
-.diag-pack-subhead::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 2px;
-  background: var(--accent);
-  margin: 8px auto 0;
-}
-
-/* 診断カード 2列 */
-.diag-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  max-width: 700px;
-  margin: 0 auto 40px;
-}
-
-.diag-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 16px;
-}
-
-.diag-card-marker {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--bg-sub);
-  border: 1px solid var(--line);
-  color: var(--accent);
-  font-size: 13px;
-  font-weight: bold;
-  margin-top: 1px;
-}
-
-.diag-card-body {
-  flex: 1;
-  min-width: 0;
-}
-
-.diag-card-title {
   font-size: 14px;
-  font-weight: bold;
-  color: var(--text);
-  line-height: 1.5;
-  margin-bottom: 4px;
-}
-
-.diag-card-desc {
-  font-size: 13px;
   color: var(--text-sub);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-/* 進め方ステップ 2×2 グリッド */
-.diag-steps-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-  max-width: 700px;
-  margin: 0 auto 40px;
+.diag-list li::before {
+  content: "\2714";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 12px;
 }
 
-.diag-step {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 16px;
+.diag-flow {
+  list-style: none;
+  margin: 0;
+  counter-reset: step;
 }
 
-.diag-step-num {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
+.diag-flow li {
+  padding: 5px 0 5px 28px;
+  position: relative;
+  font-size: 14px;
+  color: var(--text-sub);
+  line-height: 1.7;
+  counter-increment: step;
+}
+
+.diag-flow li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: var(--accent);
   color: #fff;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: bold;
-  margin-top: 1px;
-}
-
-.diag-step-title {
-  font-size: 14px;
-  font-weight: bold;
-  color: var(--text);
-  margin-bottom: 4px;
-  line-height: 1.5;
-}
-
-.diag-step-desc {
-  font-size: 13px;
-  color: var(--text-sub);
-  line-height: 1.7;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  top: 7px;
 }
 
 /* 価格 */
@@ -420,6 +395,13 @@ a:focus-visible {
   color: var(--text);
 }
 
+.diag-price-unit {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text);
+  margin-left: 2px;
+}
+
 .diag-price-tax {
   font-size: 15px;
   color: var(--muted);
@@ -431,19 +413,16 @@ a:focus-visible {
   text-align: center;
 }
 
-.diag-cta-lead {
-  font-size: 15px;
-  color: var(--text-sub);
-  margin-bottom: 16px;
+.btn-diag {
+  font-size: 16px;
+  padding: 14px 40px;
 }
 
 .diag-cta-note {
   font-size: 13px;
   color: var(--muted);
-  margin-top: 10px;
+  margin-top: 12px;
 }
-
-/* (旧 diagnosis スタイルは削除済み) */
 
 /* ===== 月額顧問 ===== */
 .advisory-lead {
@@ -458,7 +437,7 @@ a:focus-visible {
   font-size: 20px;
   font-weight: bold;
   color: var(--text);
-  margin-bottom: 24px;
+  margin-bottom: 4px;
 }
 
 .advisory-term {
@@ -468,47 +447,20 @@ a:focus-visible {
   margin-bottom: 24px;
 }
 
-.advisory-content {
-  display: flex;
-  gap: 20px;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.advisory-block {
-  flex: 1 1 300px;
-  background-color: var(--bg-sub);
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 20px;
-}
-
-.advisory-block h3 {
-  font-size: 15px;
-  font-weight: bold;
-  color: var(--text);
-  margin-bottom: 10px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid var(--accent);
-}
-
-.advisory-block h3:only-of-type {
-  border-bottom-color: var(--accent);
-}
-
-.advisory-list {
+.advisory-summary {
   list-style: none;
-  margin: 0;
+  max-width: 480px;
+  margin: 0 auto 16px;
 }
 
-.advisory-list li {
+.advisory-summary li {
   padding: 5px 0 5px 24px;
   position: relative;
   font-size: 14px;
   color: var(--text-sub);
 }
 
-.advisory-list li::before {
+.advisory-summary li::before {
   content: "\2714";
   position: absolute;
   left: 2px;
@@ -517,16 +469,10 @@ a:focus-visible {
   font-size: 12px;
 }
 
-.advisory-list-excluded li::before {
-  content: "\2716";
-  color: var(--muted);
-}
-
-.advisory-block-note {
+.advisory-note {
+  text-align: center;
   font-size: 13px;
   color: var(--muted);
-  margin-top: 10px;
-  line-height: 1.7;
 }
 
 /* ===== 個別実装プロジェクト ===== */
@@ -603,6 +549,38 @@ a:focus-visible {
 
 .projects-dl dd:last-child {
   margin-bottom: 0;
+}
+
+.projects-dl-simple {
+  max-width: 480px;
+  margin: 0 auto 20px;
+}
+
+.projects-dl-simple dt {
+  font-size: 14px;
+  color: var(--text-sub);
+  padding-left: 20px;
+  position: relative;
+  margin-top: 12px;
+}
+
+.projects-dl-simple dt:first-child {
+  margin-top: 0;
+}
+
+.projects-dl-simple dt::before {
+  content: "\25CB";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 12px;
+}
+
+.projects-dl-simple dd {
+  font-size: 17px;
+  font-weight: bold;
+  color: var(--text);
+  margin: 4px 0 0 20px;
 }
 
 .projects-note {
@@ -687,8 +665,74 @@ a:focus-visible {
   text-align: center;
   font-size: 13px;
   color: var(--muted);
-  margin-top: 16px;
+  margin-top: 24px;
   line-height: 1.8;
+}
+
+/* ===== Before / After 事例 ===== */
+.ba-case {
+  max-width: 640px;
+  margin: 0 auto 28px;
+}
+
+.ba-case:last-of-type {
+  margin-bottom: 0;
+}
+
+.ba-case-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text);
+  padding: 8px 12px;
+  background-color: var(--bg-sub);
+  border-left: 4px solid var(--accent);
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+
+.ba-row {
+  display: flex;
+  gap: 16px;
+}
+
+.ba-before,
+.ba-after {
+  flex: 1;
+  padding: 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.ba-before {
+  background-color: #faf7f2;
+  border: 1px solid #e8e0d4;
+}
+
+.ba-after {
+  background-color: #f4f7f4;
+  border: 1px solid #d4e0d4;
+}
+
+.ba-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.ba-before .ba-label {
+  color: #9a8060;
+}
+
+.ba-after .ba-label {
+  color: #5a8a5a;
+}
+
+.ba-before p,
+.ba-after p {
+  color: var(--text-sub);
 }
 
 /* ===== サービス全体像 ===== */
@@ -1012,32 +1056,21 @@ a:focus-visible {
     font-size: 14px;
   }
 
-  .advisory-content {
+  .diag-body {
     flex-direction: column;
-  }
-
-
-
-  .diag-cards {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .diag-card {
-    padding: 14px;
-  }
-
-  .diag-steps-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .diag-step {
-    padding: 14px;
   }
 
   .diag-price-amount {
     font-size: 26px;
+  }
+
+  .ba-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-label {
+    font-size: 13px;
   }
 
   .site-logo-img {
