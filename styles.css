@@ -237,6 +237,57 @@ a:focus-visible {
   margin-top: 10px;
 }
 
+/* ===== BitVoyageの役割 ===== */
+.role-lead {
+  text-align: center;
+  font-size: 15px;
+  color: var(--text-sub);
+  margin-bottom: 36px;
+  line-height: 1.9;
+}
+
+.role-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.role-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.role-num {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.role-item h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.role-item p {
+  font-size: 14px;
+  color: var(--text-sub);
+  line-height: 1.8;
+}
+
 /* ===== サービスカード ===== */
 .card-row {
   display: flex;
@@ -475,12 +526,43 @@ a:focus-visible {
   color: var(--muted);
 }
 
-/* ===== 個別実装プロジェクト ===== */
+/* ===== 改善プロジェクト ===== */
 .projects-lead {
   text-align: center;
   font-size: 15px;
   color: var(--text-sub);
   margin-bottom: 20px;
+  line-height: 1.9;
+}
+
+.projects-scope {
+  list-style: none;
+  max-width: 480px;
+  margin: 0 auto 24px;
+}
+
+.projects-scope li {
+  padding: 5px 0 5px 24px;
+  position: relative;
+  font-size: 14px;
+  color: var(--text-sub);
+}
+
+.projects-scope li::before {
+  content: "\2714";
+  position: absolute;
+  left: 2px;
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.projects-price-heading {
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 16px;
 }
 
 .projects-list {
@@ -1083,6 +1165,10 @@ a:focus-visible {
 
   .site-nav a {
     font-size: 13px;
+  }
+
+  .role-lead br {
+    display: none;
   }
 }
 
