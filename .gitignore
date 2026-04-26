@@ -1,0 +1,7 @@
+.aidesigner/*
+!.aidesigner/.gitkeep
+.agents/
+.claude/
+.DS_Store
+**/.DS_Store
+design_handoff_bitvoyage_hp/
