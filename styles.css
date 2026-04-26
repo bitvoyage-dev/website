@@ -1091,12 +1091,12 @@ html, body {
     overflow-wrap: anywhere;
   }
 
-  .container-narrow ul li {
+  .container-narrow ul li:has(> span + span) {
     display: grid !important;
     grid-template-columns: 12px minmax(0, 1fr);
   }
 
-  .container-narrow ul li > span:last-child {
+  .container-narrow ul li:has(> span + span) > span:last-child {
     display: block;
     width: 100%;
     max-width: 100%;
