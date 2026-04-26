@@ -15,7 +15,7 @@ function BlogPage() {
         <div className="container fade-up" style={{ textAlign: "center" }}>
           <div className="section-eyebrow">blog</div>
           <h1 className="blog-hero-title">
-            業務の<br className="mobile-only" /><span className="marker">「詰まり」</span>を<br className="mobile-only" />ほどくヒント
+            業務の<span className="marker">「詰まり」</span>を<br className="mobile-only" />ほどくヒント
           </h1>
           <p className="blog-hero-lead">
             手作業・転記・属人化など、<br className="mobile-only" />忙しいのに進まない原因を整理し、<br/>
