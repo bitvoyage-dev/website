@@ -78,9 +78,9 @@ function SiteFooter() {
           <div>
             <h4>サービス</h4>
             <ul>
-              <li><a href="service.html#diagnose">業務診断</a></li>
-              <li><a href="service.html#advisor">顧問サポート</a></li>
-              <li><a href="service.html#implement">実装プロジェクト</a></li>
+              <li><a href="service.html#diagnose">小さな業務改善</a></li>
+              <li><a href="service.html#advisor">継続改善サポート</a></li>
+              <li><a href="service.html#implement">業務の整理・再構築</a></li>
             </ul>
           </div>
           <div>
