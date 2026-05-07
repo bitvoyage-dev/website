@@ -523,9 +523,12 @@ function ServiceThreeSteps({ compact = false }) {
   );
 }
 
-/* ===== CTA リボン（TimeRex 予約埋め込み） ===== */
+/* ===== CTA リボン（TimeRex 予約埋め込み・開閉式） ===== */
 function CTARibbon({ minimal = false }) {
+  const [open, setOpen] = React.useState(false);
+
   React.useEffect(() => {
+    if (!open) return;
     if (document.getElementById('timerex_embed')) {
       if (window.TimerexCalendar) window.TimerexCalendar();
       return;
@@ -538,7 +541,7 @@ function CTARibbon({ minimal = false }) {
       if (window.TimerexCalendar) window.TimerexCalendar();
     };
     document.body.appendChild(script);
-  }, []);
+  }, [open]);
 
   return (
     <section id="contact" className="section" style={{ padding: minimal ? "60px 0" : "40px 0 60px" }}>
@@ -563,15 +566,29 @@ function CTARibbon({ minimal = false }) {
             <div className="cta-feature">出張も可（交通費別）</div>
           </div>
 
+          <div className="contact-box" style={{ marginTop: 28 }}>
+            <button
+              type="button"
+              className="btn btn-contact"
+              aria-expanded={open}
+              aria-controls="timerex-embed-wrap"
+              onClick={() => setOpen(v => !v)}
+              style={{ background: "var(--navy-900)", color: "#fff" }}
+            >
+              {open ? "カレンダーを閉じる" : "無料60分相談を予約する"}
+            </button>
+          </div>
         </div>
 
-        {/* TimeRex 予約カレンダー埋め込み */}
-        <div className="timerex-embed-wrapper">
-          <div
-            id="timerex_calendar"
-            data-url="https://timerex.net/s/contact_7751_a6d8/d844c8aa"
-          ></div>
-        </div>
+        {/* TimeRex 予約カレンダー埋め込み（開いたときだけ） */}
+        {open && (
+          <div id="timerex-embed-wrap" className="timerex-embed-wrapper">
+            <div
+              id="timerex_calendar"
+              data-url="https://timerex.net/s/contact_7751_a6d8/d844c8aa"
+            ></div>
+          </div>
+        )}
 
         <p className="contact-note">
           予約以外のお問い合わせは <a href="mailto:contact@bitvoyage.co.jp">contact@bitvoyage.co.jp</a> までお気軽にどうぞ。
