@@ -24,6 +24,7 @@
 
   --paper: #faf7f1;
   --paper-2: #f3efe5;
+  --paper-image-frame: #fdf6e2; /* アイキャッチ画像の背景色（画像のクリーム色と揃える） */
   --line: rgba(58, 52, 44, 0.14);
   --grid-line: rgba(58, 52, 44, 0.055);
 
@@ -735,7 +736,7 @@ html, body {
   border-radius: 0;
   border-right: 1px solid var(--line);
   width: 100%;
-  background: var(--paper);
+  background: var(--paper-image-frame);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -752,7 +753,7 @@ html, body {
 }
 
 .post-card-image-frame {
-  background: var(--paper);
+  background: var(--paper-image-frame);
   border-bottom: 1px solid var(--line);
   display: flex;
   align-items: center;
@@ -763,7 +764,7 @@ html, body {
 .article-eyecatch-frame {
   width: 100%;
   aspect-ratio: 1200 / 630;
-  background: var(--paper);
+  background: var(--paper-image-frame);
   border: 1px solid var(--line);
   border-radius: 12px;
   overflow: hidden;
@@ -1105,12 +1106,12 @@ html, body {
     overflow-wrap: anywhere;
   }
 
-  .container-narrow ul li {
+  .container-narrow ul.problem-list li {
     display: grid !important;
     grid-template-columns: 12px minmax(0, 1fr);
   }
 
-  .container-narrow ul li > span:last-child {
+  .container-narrow ul.problem-list li > span:last-child {
     display: block;
     width: 100%;
     max-width: 100%;
