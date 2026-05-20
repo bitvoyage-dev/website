@@ -2,6 +2,16 @@
 
 window.SAMPLE_POSTS = [
   {
+    slug: "manual-work-reduction",
+    title: "手作業が減らない理由",
+    category: "業務改善",
+    date: "2026.04.17",
+    readMin: 4,
+    image: "assets/images/manual-work-reduction-eyecatch.png",
+    excerpt: "毎月続く手作業を、いつか減らしたいと思いつつ、半年・1年がそのままになっていないでしょうか。減らない手作業の多くは、そもそも「減らす対象」として見られていないところから始まっています。手作業が残り続ける会社で同時に起きている4つのことを整理しました。",
+    tags: ["業務改善", "手作業削減"],
+  },
+  {
     slug: "business-clog-identify",
     title: "忙しいのに進まない会社の共通点",
     category: "業務改善",
