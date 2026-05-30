@@ -1,5 +1,4 @@
-.aidesigner/*
-!.aidesigner/.gitkeep
+.aidesigner/
 .agents/
 .claude/
 .DS_Store
@@ -8,6 +7,12 @@
 # 内部作業ディレクトリ
 design_handoff_bitvoyage_hp/
 output/
+
+# 内部資料・印刷用素材（HP表示には使わない / 公開リポには載せない）
+marketing/
+assets/Logo/ロゴ (7 x 5 cm).png
+assets/Logo/ロゴ (9.1 x 3.5 cm).png
+assets/images/busy-but-not-progressing-thumbnail.png
 
 # AI 画像生成・編集の元データ（公開用は最終ファイルのみ）
 *-source.png
