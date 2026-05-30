@@ -1,129 +1,260 @@
-// service-page.jsx — サービス詳細ページ（5階層構成）
+// service-page.jsx — サービス詳細ページ（4ステップ構成）
+
+/* ===== サービス詳細内の各コンテンツブロック ===== */
+function ServiceListBox({ label, items, variant = "dot" }) {
+  const muted = variant === "muted";
+  const boxStyle = muted
+    ? { background: "var(--paper-2)", padding: 20, borderRadius: 10, border: "1px dashed var(--line)" }
+    : { background: "#fff", padding: 20, borderRadius: 10, border: "1px solid var(--line)" };
+  return (
+    <div style={{ marginBottom: 28 }}>
+      {label && (
+        <h3 style={{ fontSize: 15, color: muted ? "var(--ink-500)" : "var(--navy-900)", margin: "0 0 12px", display: "flex", alignItems: "center", gap: 8 }}>
+          {variant === "check" && <Icon.Doc size={18} />}{label}
+        </h3>
+      )}
+      <div style={boxStyle}>
+        {items.map(x =>
+          variant === "check" ? (
+            <div key={x} className="check-item"><span className="check-box"></span><span style={{ fontSize: 14 }}>{x}</span></div>
+          ) : (
+            <div key={x} style={{ display: "flex", gap: 8, padding: "3px 0", fontSize: 14, color: muted ? "var(--ink-700)" : "var(--ink-900)" }}>
+              <span style={{ color: muted ? "var(--ink-500)" : "var(--yellow-500)", fontWeight: 700 }}>{muted ? "—" : "・"}</span>{x}
+            </div>
+          )
+        )}
+      </div>
+    </div>
+  );
+}
+
+function ServiceTimeline({ label, steps }) {
+  return (
+    <div style={{ marginBottom: 28 }}>
+      {label && <h3 style={{ fontSize: 15, color: "var(--navy-900)", margin: "0 0 16px" }}>{label}</h3>}
+      <div style={{ borderLeft: "2px solid var(--yellow-200)", paddingLeft: 22, display: "grid", gap: 18 }}>
+        {steps.map(s => (
+          <div key={s.time} style={{ position: "relative" }}>
+            <span style={{ position: "absolute", left: -29, top: 3, width: 12, height: 12, borderRadius: "50%", background: "var(--yellow-500)", border: "2px solid #fff" }}></span>
+            <div style={{ display: "flex", gap: 10, alignItems: "baseline", flexWrap: "wrap" }}>
+              <span style={{ fontFamily: "var(--font-hand)", fontWeight: 700, color: "var(--navy-800)", fontSize: 15 }}>{s.time}</span>
+              <span style={{ fontWeight: 700, color: "var(--navy-900)", fontSize: 15 }}>{s.title}</span>
+            </div>
+            {s.desc && <div style={{ fontSize: 13.5, color: "var(--ink-700)", lineHeight: 1.8, marginTop: 4 }}>{s.desc}</div>}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ServiceCallout({ label, lines }) {
+  return (
+    <div style={{ borderLeft: "4px solid var(--yellow-500)", background: "var(--yellow-100)", padding: "18px 22px", borderRadius: "0 10px 10px 0", margin: "0 0 28px" }}>
+      {label && <div style={{ fontWeight: 800, color: "var(--navy-900)", marginBottom: 8, fontSize: 15 }}>{label}</div>}
+      {lines.map(l => <p key={l} style={{ margin: "2px 0", fontSize: 14.5, color: "var(--navy-900)", lineHeight: 1.85 }}>{l}</p>)}
+    </div>
+  );
+}
+
+function ServiceSection({ section }) {
+  if (section.kind === "list") return <ServiceListBox label={section.label} items={section.items} variant={section.variant} />;
+  if (section.kind === "timeline") return <ServiceTimeline label={section.label} steps={section.steps} />;
+  if (section.kind === "callout") return <ServiceCallout label={section.label} lines={section.lines} />;
+  if (section.kind === "note") return <p style={{ fontSize: 13.5, color: "var(--ink-700)", lineHeight: 1.9, margin: "0 0 24px" }}>{section.text}</p>;
+  if (section.kind === "flow") {
+    return (
+      <div style={{ marginBottom: 8 }}>
+        {section.label && <h3 style={{ fontSize: 15, color: "var(--navy-900)", margin: "0 0 12px" }}>{section.label}</h3>}
+        <div className="service-flow">
+          {section.steps.map((f, idx) => (
+            <React.Fragment key={f}>
+              <span style={{ padding: "8px 14px", background: "#fff", border: "1px solid var(--line)", borderRadius: 999, fontSize: 13, color: "var(--ink-900)" }}>
+                <span style={{ color: "var(--navy-700)", marginRight: 6, fontWeight: 700 }}>{idx + 1}</span>{f}
+              </span>
+              {idx < section.steps.length - 1 && <span className="service-flow-arrow">→</span>}
+            </React.Fragment>
+          ))}
+        </div>
+      </div>
+    );
+  }
+  return null;
+}
 
 function ServicePage() {
   useRevealOnScroll();
   const details = [
     {
-      id: "small",
+      id: "consult",
       num: "1",
-      title: "小さな業務改善",
-      tagline: "毎日くり返している手作業を減らす",
-      scope: "1つの業務の詰まりを解消",
-      price: "5〜20万円",
-      duration: "※対象業務のみ簡単に整理し、改善まで実施",
-      illustration: "assets/illustrations/service-01-small-improvement.png",
-      description: "転記・通知・集計・帳票作成・確認作業など、毎日・毎月くり返している手作業を減らします。対象となる業務の流れを簡単に整理したうえで、1つの業務の詰まりを解消します。",
-      deliverables: [
-        "対象業務の流れの簡易整理",
-        "改善内容の実装（または設定）",
-        "簡単な運用方法の共有",
+      title: "作業見直し相談",
+      tagline: "売上につながらない作業を、まず一緒に見直す",
+      price: "無料",
+      priceNote: "オンライン／対面どちらも可。何を頼めばいいか決まっていなくて大丈夫です。",
+      illustration: "assets/illustrations/01-person-thinking.png",
+      description: [
+        "毎月くり返している手作業や、売上につながらないのに時間を取っている作業を、一緒に確認します。",
+        "いきなりシステムを作るのではなく、まずは「どこに時間を取られているか」「何から減らせそうか」を整理するところから始めます。",
       ],
-      flow: ["業務内容を確認", "改善ポイントを提案", "実装・設定", "運用への引き渡し"],
+      sections: [
+        { kind: "list", label: "相談で確認すること", variant: "dot", items: [
+          "毎月くり返している作業",
+          "手入力や転記が発生している作業",
+          "確認連絡が多い作業",
+          "探す・聞く・待つが多い作業",
+          "特定の人に寄っている作業",
+          "今すぐ減らせそうな作業",
+          "後回しでよい作業",
+        ] },
+        { kind: "list", label: "相談のあとは（必要に応じて）", variant: "check", items: [
+          "小さな作業をひとつ減らす",
+          "現場を見て、減らせる仕事を整理する",
+          "継続して減らすサポート",
+        ] },
+        { kind: "note", text: "売り込みはしません。その場で減らせそうなことがあれば、その場でお伝えします。" },
+      ],
     },
     {
-      id: "domain",
+      id: "small",
       num: "2",
-      title: "業務領域の整理・自動化",
-      tagline: "1つの業務領域を、迷わず回る形に",
-      scope: "シフト・受発注・在庫・顧客管理・日報など",
-      price: "20〜80万円",
-      duration: "※1つの業務領域全体が対象",
-      illustration: "assets/illustrations/11-icon-tool-flow.png",
-      description: "シフト管理・受発注・在庫・顧客管理（名刺・商談履歴を含む）・日報など、1つの業務領域をまるごと見直します。ツールを入れる前に、いまの流れを書き出すところから始めます。仕組みは、流れに合わせて作ります。",
-      deliverablesLabel: "対応内容",
-      deliverables: [
-        "業務領域の流れの整理",
-        "ミスや属人化が起きやすい工程の特定",
-        "仕組み・ツールの導入／開発",
-        "現場で回る形までの定着支援",
+      title: "小さな作業をひとつ減らす",
+      tagline: "大きな改善ではなく、まず1つだけ具体的に減らす",
+      price: "3万円〜",
+      priceNote: "まず1つの作業に絞って小さく始める場合の目安。固定料金ではなく、内容を確認のうえ事前にお見積りします。",
+      illustration: "assets/illustrations/service-01-small-improvement.png",
+      description: [
+        "名刺整理・領収書整理・転記・集計・確認連絡など、毎月くり返している作業を、まず1つに絞って小さく減らします。",
+        "いきなり大きく変えるのではなく、実際に「楽になった」と感じられる小さな改善から始めます。",
       ],
-      flow: ["業務領域のヒアリング", "流れの整理", "仕組みの設計", "ツール導入・実装", "運用への定着"],
+      sections: [
+        { kind: "list", label: "減らせる作業の例", variant: "dot", items: [
+          "名刺整理", "領収書整理", "手入力", "転記", "集計",
+          "確認連絡", "日程調整", "簡単な一覧化", "Excel・スプレッドシートの整理",
+        ] },
+        { kind: "list", label: "含まれる内容", variant: "check", items: [
+          "対象作業の簡単な確認",
+          "減らせる部分の整理",
+          "既存環境に合わせた実装・設定",
+          "使い方の共有",
+          "必要最低限の運用ルール整理",
+        ] },
+        { kind: "note", text: "3万円〜は、まず1つの作業に絞って小さく始める場合の目安です。固定の料金ではありません。作業範囲・利用環境・データの扱い方によって金額は変わるため、内容を確認したうえで、事前にお見積りをお渡しします。" },
+        { kind: "list", label: "とくに金額が変わりやすい要素", variant: "muted", items: [
+          "対象が1つの作業か、業務全体の整理まで必要か",
+          "1人で使うか、複数人で使うか",
+          "権限・共有設定が必要か",
+          "AI や API 連携が必要か",
+          "既存データの移行が必要か",
+          "新しい仕組みをつくる必要があるか",
+        ] },
+        { kind: "flow", label: "進め方", steps: ["対象作業の確認", "減らせる部分の整理", "実装・設定", "使い方の共有"] },
+      ],
     },
     {
-      id: "diagnose",
+      id: "onsite",
       num: "3",
-      title: "業務構造診断パック",
-      tagline: "最初から業務全体を整理したい会社向け",
-      scope: "現場の流れを広く確認",
-      price: "15万円〜",
-      duration: "※現場での確認を含みます（広島県内は現場訪問／県外は要相談）",
+      title: "現場を見て、減らせる仕事を整理する",
+      tagline: "一度現場を見て、減らせる作業を整理する",
+      price: "5万円〜",
+      priceNote: "まずは2〜3時間の現場確認から。広島県内は訪問／県外は要相談（出張可・交通費別）。",
       illustration: "assets/illustrations/08-icon-search-doc.png",
-      description: "「どこから手をつけたらいいか分からない」── そんな会社向けのパックです。現場をひと通り見せていただき、業務全体の見取り図と、改善の優先順位を渡します。効きそうなところから、順に着手できる形でお返しします。",
-      deliverablesLabel: "お渡しするもの",
-      deliverables: [
-        "業務全体の流れの可視化",
-        "詰まり・属人化ポイントの一覧",
-        "改善の優先順位レポート",
-        "次の一手のご提案",
+      description: [
+        "「どこから手をつければいいか分からない」会社向けの現場確認です。2〜3時間ほど、実際の作業や情報の流れを見せていただきます。",
+        "手入力・転記・確認連絡・探し物・待ち時間など、売上につながらないのに時間を取っている作業を確認し、減らせそうな作業を整理します。",
+        "多くの場合、2〜3時間 見せていただければ、どこから減らせそうかの見当はつきます。後日、減らせる作業の候補と、次に何から始めるとよいかをお伝えします。",
       ],
-      flow: ["対象範囲のすり合わせ", "現場ヒアリング・観察", "業務マップの作成", "優先順位の提示"],
+      sections: [
+        { kind: "note", text: "※ 差し支えない範囲で、日々の作業や情報の流れ（帳票・Excel・紙・システム・連絡方法など）を見せていただきます。すべてを開示いただく必要はありません。" },
+        { kind: "list", label: "現場で確認すること（2〜3時間）", variant: "check", items: [
+          "日々の作業・帳票・Excel・紙・システム・連絡方法の確認",
+          "手入力・転記・確認連絡・探し物・待ち時間の確認",
+          "減らせそうな作業を3〜5個ほど抽出",
+          "次に何から始めるべきかの簡易提案",
+        ] },
+        { kind: "list", label: "現場を見たあとに、分かること・ご提案すること", variant: "check", items: [
+          "どの作業に時間を取られているか",
+          "まず減らせそうな作業はどれか",
+          "小さく始めるなら、どこからがよいか",
+          "次に進める場合の進め方",
+        ] },
+        { kind: "note", text: "重い診断レポートを作って終わり、ではありません。目的は「次に減らす作業を決める」ことです。まずは一度、現場を見せてもらう くらいの気軽さで大丈夫です。" },
+      ],
     },
     {
-      id: "advisor",
+      id: "support",
       num: "4",
-      title: "継続改善サポート",
-      tagline: "外部の立場で、改善の優先順位を判断し続ける",
-      scope: "毎月、業務の詰まりを確認しながら改善を進行",
+      title: "継続して減らすサポート",
+      tagline: "改善を後回しにしないための、外部パートナー",
       price: "月額 5万円〜",
-      duration: "※顧問契約として継続的にご一緒する形",
+      priceNote: "毎月の改善ミーティング＋軽微作業（月2時間）込み。大きな実装は別途お見積り。",
       illustration: "assets/illustrations/09-icon-support.png",
-      description: "毎月、業務の詰まりを一緒に確認しながら、改善の優先順位を外部の立場で見直していく顧問契約です。続けることで、社内で迷う時間や試行錯誤の手戻りが減り、改善が止まらず進みます。",
-      deliverablesLabel: "対応内容",
-      deliverables: [
-        "改善テーマの整理と優先順位決定",
-        "小さな業務改善の進行管理",
-        "定期的な状況確認と次の打ち手の整理",
-        "経営判断に近い視点での助言",
+      description: [
+        "忙しい現場では、改善はどうしても後回しになります。BitVoyage が外部の立場で毎月入り、売上につながらない作業を一緒に確認し、次に減らすことを決めて進めます。優先順位を整理して進捗を確認することで、改善が止まらない状態をつくります。",
+        "月内の範囲で、軽微な修正・設定作業にも対応します。たとえば、Excel・スプレッドシートの整理、項目追加、簡単な関数修正、管理表の調整、簡単な VBA・GAS の修正などです。",
+        "本格的に作りたいものが出てきても、対応できます。新しいツールの作成や業務システム化、AI／API・外部サービス連携、運用検証や E2E テストが必要なものは、要件を確認し、設計・検証まで含めて別途お見積りします。顧問契約は、そうした実装をきちんと形にしていくための入口にもなります。",
       ],
-      flow: ["現状把握と優先順位整理", "毎月の改善進行", "定期的な振り返り", "次の改善テーマ決定"],
-    },
-    {
-      id: "rebuild",
-      num: "5",
-      title: "業務全体の整理・再構築",
-      tagline: "複数部門・複数業務にまたがる大きな見直し",
-      scope: "属人化・二重入力・情報分断の整理",
-      price: "50万円〜",
-      duration: "※プロジェクト形式、規模により個別お見積り",
-      illustration: "assets/illustrations/10-icon-growth.png",
-      description: "複数の部門・業務にまたがる大きな見直しです。「〇〇さんしか分からない」「同じ情報を別部署でもう一度入れている」「情報があちこちに散らばっている」── このあたりを丸ごとほどき、流れを引き直します。",
-      deliverablesLabel: "対応内容",
-      deliverables: [
-        "業務全体の流れの整理・再設計",
-        "情報の分断・二重入力の解消",
-        "運用ルール・仕組みの設計",
-        "ツール・システムの導入／構築",
-        "運用への定着支援",
+      sections: [
+        { kind: "list", label: "毎月の内容", variant: "check", items: [
+          "月1回 60〜90分の改善ミーティング",
+          "改善テーマの整理",
+          "KPI・進捗の確認",
+          "次に減らす作業の提案",
+          "優先順位の整理",
+          "チャット相談",
+          "軽微な修正・設定作業（月2時間まで）",
+        ] },
+        { kind: "list", label: "顧問内で対応する軽微作業（月2時間まで）", variant: "dot", items: [
+          "Excel・スプレッドシートの軽い修正",
+          "項目追加",
+          "簡単な関数修正",
+          "管理表の整理",
+          "運用ルールの文章化",
+          "使い方の説明",
+          "KPI 確認用の簡単な表作成",
+          "既存ツールの軽い調整",
+          "月2時間で収まる簡単な VBA・GAS の修正／小さな自動化",
+        ] },
+        { kind: "list", label: "別途お見積りになるもの", variant: "muted", items: [
+          "新規ツール作成",
+          "複数人で使う仕組みの構築",
+          "予約管理・顧客管理などの業務システム化",
+          "GAS / VBA の本格実装",
+          "AI／API 連携",
+          "外部サービス連携",
+          "データ移行",
+          "運用検証や E2E テストが必要なもの",
+          "セキュリティ・権限設計が必要なもの",
+        ] },
+        { kind: "note", text: "線引きは「作る／作らない」ではありません。その場で確認しながら、月2時間の範囲で安全に直せるものは対応します。要件確認・設計・検証・運用設計が必要なものは、別途お見積りします。" },
       ],
-      note: "※大きな改善も対応可能ですが、まずは一部から段階的に進めることをおすすめしています。",
-      flow: ["対象範囲のすり合わせ", "現状の業務整理", "改善方針の設計", "段階的な実装", "運用への定着支援"],
     },
   ];
 
   const cases = [
     {
-      title: "受注・連絡業務",
+      title: "個別連絡・確認の作業",
       illustration: "assets/illustrations/04-icon-mail-person.png",
-      problem: "手作業の個別送信で、時間とミスが発生",
-      result: <>一括送信＋個別差し込みで、作業を<span className="marker">大幅削減</span></>,
+      problem: "1件ずつ手で送る連絡に、毎回 時間とミスが発生",
+      result: <>一括送信＋個別差し込みで、連絡に使う<span className="marker">時間を大幅に削減</span></>,
     },
     {
-      title: "計算・集計業務",
+      title: "計算・集計の作業",
       illustration: "assets/illustrations/05-icon-chart-calc.png",
-      problem: "外部ソフト依存で、コストと時間が増加",
-      result: <>内製化で、作業時間とコストを<span className="marker">削減</span></>,
+      problem: "外部ソフト頼みで、毎月のコストと手間が増加",
+      result: <>自社で回せる形にして、集計の<span className="marker">時間とコストを削減</span></>,
     },
     {
       title: "製造工程の管理",
       illustration: "assets/illustrations/06-icon-gears-checklist.png",
-      problem: "工程のばらつきと属人化が常態化",
-      result: <>仕組み化と履歴一元管理で、<span className="marker">再現性のある工程</span>に</>,
+      problem: "やり方が人によって違い、〇〇さん頼みが常態化",
+      result: <>記録の一元化で、誰がやっても同じになり<span className="marker">確認の手間を削減</span></>,
     },
     {
-      title: "情報管理・業務整理",
+      title: "情報探し・書類整理",
       illustration: "assets/illustrations/07-icon-folder-flow.png",
-      problem: "情報が分散し、確認に時間がかかる",
-      result: <>管理ツールと流れ整理で、<span className="marker">確認時間を削減</span></>,
+      problem: "情報が散らばり、探す・確認する時間がかかる",
+      result: <>置き場を決めて、<span className="marker">探す時間をほぼゼロに</span></>,
     },
   ];
 
@@ -134,18 +265,23 @@ function ServicePage() {
         <div className="container-narrow fade-up" style={{ textAlign: "center" }}>
           <div className="section-eyebrow">service</div>
           <h1 className="page-hero-title">
-            小さく始めて、<span className="underline-hand">無理なく続ける</span>
+            売上につながらない作業を、<span className="underline-hand">減らす</span>
           </h1>
           <p className="page-hero-lead">
-            5つのサービスを、御社の状況に合わせて組み合わせます。<br/>
-            まずは1つの業務から始め、必要に応じて領域・全体へ広げていきます。
+            手入力・転記・集計・領収書整理・日程調整……。<br/>
+            毎日 時間を奪っている作業を、まずは一緒に見直します。<br/>
+            小さく1つ減らすところから、現場整理、継続的な改善まで。
           </p>
         </div>
       </section>
 
-      {/* サービス一覧（改善ノート行スタイル） */}
+      {/* 4ステップの流れ（ジャンプナビ兼サービス一覧） */}
       <section className="service-jump-section">
         <div className="container-narrow fade-up">
+          <p style={{ textAlign: "center", fontSize: 14, color: "var(--ink-700)", margin: "0 0 20px" }}>
+            「何を減らせばいいか分からない」状態からで大丈夫です。<br className="mobile-only"/>
+            まず相談 → 小さく1つ減らす → 現場を見て整理 → 継続、の流れで進めます。
+          </p>
           <div className="service-five-grid">
             {details.map(d => (
               <a key={d.id} href={`#${d.id}`} className="service-five-row">
@@ -179,56 +315,55 @@ function ServicePage() {
                 </div>
                 <div style={{ background: "var(--yellow-200)", padding: "16px 20px", borderRadius: 10, marginTop: 20 }}>
                   <div style={{ fontSize: 13, color: "var(--navy-900)", fontWeight: 700, marginBottom: 4 }}>価格</div>
-                  <div style={{ fontSize: 18, fontWeight: 800, color: "var(--navy-900)" }}>{d.price}</div>
-                  <div style={{ fontSize: 12, color: "var(--ink-700)", marginTop: 4 }}>{d.duration}</div>
+                  <div style={{ fontSize: 22, fontWeight: 800, color: "var(--navy-900)" }}>{d.price}</div>
+                  <div style={{ fontSize: 12, color: "var(--ink-700)", marginTop: 6, lineHeight: 1.7 }}>{d.priceNote}</div>
                 </div>
               </div>
               <div className="service-detail-main">
-                <p className="service-description">
-                  {d.description}
-                </p>
-                <div style={{ marginBottom: 32 }}>
-                  <h3 style={{ fontSize: 15, color: "var(--navy-900)", margin: "0 0 12px", display: "flex", alignItems: "center", gap: 8 }}>
-                    <Icon.Doc size={18} /> {d.deliverablesLabel || "お渡しするもの"}
-                  </h3>
-                  <div style={{ background: "#fff", padding: 20, borderRadius: 10, border: "1px solid var(--line)" }}>
-                    {d.deliverables.map(x => (
-                      <div key={x} className="check-item"><span className="check-box"></span><span style={{ fontSize: 14 }}>{x}</span></div>
-                    ))}
-                  </div>
-                  {d.note && (
-                    <p style={{ fontSize: 13, color: "var(--ink-500)", lineHeight: 1.8, margin: "12px 0 0" }}>{d.note}</p>
-                  )}
-                </div>
-                <div>
-                  <h3 style={{ fontSize: 15, color: "var(--navy-900)", margin: "0 0 12px" }}>進め方</h3>
-                  <div className="service-flow">
-                    {d.flow.map((f, idx) => (
-                      <React.Fragment key={f}>
-                        <span style={{ padding: "8px 14px", background: "#fff", border: "1px solid var(--line)", borderRadius: 999, fontSize: 13, color: "var(--ink-900)" }}>
-                          <span style={{ color: "var(--navy-700)", marginRight: 6, fontWeight: 700 }}>{idx + 1}</span>{f}
-                        </span>
-                        {idx < d.flow.length - 1 && <span className="service-flow-arrow">→</span>}
-                      </React.Fragment>
-                    ))}
-                  </div>
-                </div>
+                {d.description.map((p, idx) => (
+                  <p key={idx} className="service-description" style={idx > 0 ? { marginTop: -8 } : undefined}>{p}</p>
+                ))}
+                {d.sections.map((s, idx) => <ServiceSection key={idx} section={s} />)}
               </div>
             </div>
           </div>
         </section>
       ))}
 
-      {/* 改善事例（一部） */}
-      <section className="section cases-section" style={{ padding: "80px 0", background: "var(--paper-2)" }}>
+      {/* 使う道具の方針 */}
+      <section className="section" style={{ padding: "64px 0 32px" }}>
+        <div className="container-narrow fade-up">
+          <div style={{ textAlign: "center", marginBottom: 24 }}>
+            <div className="section-eyebrow">our stance</div>
+            <h2 className="section-title" style={{ fontSize: 26 }}>
+              使う道具は、<span className="marker">会社ごと</span>に変わります。
+            </h2>
+          </div>
+          <div style={{ background: "#fff", border: "1px solid var(--line)", borderRadius: 12, padding: "28px 32px", maxWidth: 640, margin: "0 auto", lineHeight: 2, fontSize: 15.5, color: "var(--ink-900)" }}>
+            <p style={{ margin: "0 0 6px" }}>Excel で十分な場合は、Excel で。</p>
+            <p style={{ margin: "0 0 6px" }}>Google スプレッドシートが合う場合は、Google で。</p>
+            <p style={{ margin: "0 0 18px" }}>Microsoft 365 をお使いの場合は、その環境に合わせて。</p>
+            <p style={{ margin: 0, fontWeight: 700, color: "var(--navy-900)" }}>
+              新しいツールを入れることよりも、今ある作業を減らすことを優先します。
+            </p>
+          </div>
+          <p style={{ textAlign: "center", fontSize: 13.5, color: "var(--ink-500)", lineHeight: 1.9, margin: "28px auto 0", maxWidth: 600 }}>
+            複数部門にまたがる見直しや、会社全体の業務整理も対応可能です。<br className="mobile-only"/>
+            まずは一部の作業から、段階的に進めることをおすすめしています。
+          </p>
+        </div>
+      </section>
+
+      {/* 減らせた作業の例 */}
+      <section className="section cases-section" style={{ padding: "48px 0 80px", background: "var(--paper-2)" }}>
         <div className="container fade-up">
           <div style={{ textAlign: "center", marginBottom: 48 }}>
             <div className="section-eyebrow">cases</div>
             <h2 className="section-title" style={{ fontSize: 28 }}>
-              <span className="marker">改善事例</span>（一部）
+              <span className="marker">減らせた作業</span>の例（一部）
             </h2>
             <p style={{ fontSize: 15, color: "var(--ink-700)", lineHeight: 1.9, margin: "12px 0 0" }}>
-              こんな業務が、こう変わっています。
+              こんな作業に使う時間が、こう減っています。
             </p>
           </div>
           <div className="cases-grid">
@@ -244,7 +379,7 @@ function ServicePage() {
                     <path d="M11 4 q-1 12 0 24" />
                     <path d="M5 24 q4 4 6 8 q2 -4 6 -8" />
                   </svg>
-                  <span>改善</span>
+                  <span>削減</span>
                 </div>
                 <p className="case-card-result">{c.result}</p>
               </div>
@@ -260,11 +395,11 @@ function ServicePage() {
             <span className="marker">よくある</span>ご質問
           </h2>
           {[
-            { q: "どこから始めるのが良いですか？", a: "規模に関わらず、まずは無料相談で御社の状況を伺います。①小さな業務改善から始めるパターンも、③業務構造診断パックから入るパターンも自然です。状況に合わせて、無理のない始め方をご案内します。" },
-            { q: "①小さな業務改善と④継続改善サポートは何が違うのですか？", a: "①は「この業務を直してほしい」という1件単位の依頼です。④は、毎月の改善の優先順位を、外部の立場から見続ける顧問契約です。" },
-            { q: "ツールやシステムの提案も可能ですか？", a: "必要に応じて、ツールの選定から設定・開発まで対応します。ただし「ツールありき」では進めません。業務の流れ自体を整理したうえで、必要な仕組みだけを整えるのが基本姿勢です。AI を含めたツール導入も同じスタンスで取り入れます。" },
-            { q: "対応エリアはどこまでですか？", a: "無料相談やオンラインで進められるサービスは全国対応可能です。業務構造診断パックなど現場確認を含むものは、広島県内（広島・東広島・呉）を中心に現場訪問で対応しています。県外の場合は要相談（出張可・交通費別）です。" },
-            { q: "事例パートナー特典について教えてください。", a: "ご契約後の最初の「小さな業務改善」1件を半額でご提供する特典です。先着3社限定で、改善前と改善後の状態を、事例として公開させていただける企業様が対象です（社名公開を歓迎。ご希望により業種のみの公開でも可）。" },
+            { q: "どこから始めるのが良いですか？", a: "まずは無料の「①作業見直し相談」からで大丈夫です。何を減らせばいいか決まっていなくても、一緒に「どこに時間を取られているか」を確認します。そのうえで、②小さく1つ減らす・③現場を見て整理する・④継続して減らす、のどれに進むかをご案内します。" },
+            { q: "②小さな作業をひとつ減らすと④継続して減らすサポートは、何が違うのですか？", a: "②は「この作業を減らしてほしい」という1件単位の依頼です。④は、毎月一緒に「次に減らせる作業」を決めて進める顧問契約で、改善が後回しにならないように外部から伴走します。" },
+            { q: "③現場を見て整理すると、何がもらえるのですか？", a: "2〜3時間の現場確認です。実際の作業や情報の流れを見せていただき、「時間を取られている作業」「減らせそうな作業（3〜5個ほど）」「次に着手しやすい改善案」を整理してお伝えします。多くの場合、2〜3時間で どこから減らせそうかの見当はつきます。重い診断レポートを売るのではなく、次に減らす作業を決めるためのものです。" },
+            { q: "ツールやシステムは何を使うのですか？", a: "会社の環境に合わせます。Excel で十分なら Excel、スプレッドシートが合えば Google、Microsoft 365 をお使いならその環境で。新しいツールを入れることよりも、今ある作業を減らすことを優先します。AI・API・新規システムが必要な場合は、内容に応じて別途お見積りします。" },
+            { q: "対応エリアはどこまでですか？", a: "無料相談やオンラインで進められるサービスは全国対応可能です。③現場を見て整理するなど現場確認を含むものは、広島県内（広島・東広島・呉）を中心に現場訪問で対応しています。県外の場合は要相談（出張可・交通費別）です。" },
           ].map((f, i) => (
             <details key={i} className="card" style={{ marginBottom: 12, padding: 0 }}>
               <summary style={{ padding: "18px 24px", cursor: "pointer", fontWeight: 700, color: "var(--navy-900)", fontSize: 16, listStyle: "none", display: "flex", justifyContent: "space-between", alignItems: "center" }}>

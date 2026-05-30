@@ -28,7 +28,7 @@ function TopNav({ currentPage = "home" }) {
               {l.label}
             </a>
           ))}
-          <a href="#contact" className="btn btn-primary nav-cta">無料相談</a>
+          <a href="#contact" className="btn btn-primary nav-cta">作業を相談する</a>
         </div>
         <button
           type="button"
@@ -53,7 +53,7 @@ function TopNav({ currentPage = "home" }) {
             </a>
           ))}
           <a href="#contact" className="nav-drawer-cta" onClick={() => setOpen(false)}>
-            無料60分相談を申し込む →
+            困っている作業を相談する →
           </a>
         </div>
       </div>
@@ -71,18 +71,17 @@ function SiteFooter() {
               <img src="assets/Logo/BitVoyage_logo_white.png" alt="BitVoyage" className="footer-logo-image" />
             </div>
             <p style={{ fontSize: 13, opacity: 0.7, lineHeight: 1.8, margin: 0 }}>
-              忙しいのに進まない業務を整理し、<br/>
-              止まらず回る仕組みに整えます。
+              売上につながらない作業を減らし、<br/>
+              会社が前に進む余力をつくります。
             </p>
           </div>
           <div>
             <h4>サービス</h4>
             <ul>
-              <li><a href="service.html#small">小さな業務改善</a></li>
-              <li><a href="service.html#domain">業務領域の整理・自動化</a></li>
-              <li><a href="service.html#diagnose">業務構造診断パック</a></li>
-              <li><a href="service.html#advisor">継続改善サポート</a></li>
-              <li><a href="service.html#rebuild">業務全体の整理・再構築</a></li>
+              <li><a href="service.html#consult">作業見直し相談（無料）</a></li>
+              <li><a href="service.html#small">小さな作業をひとつ減らす</a></li>
+              <li><a href="service.html#onsite">現場を見て、減らせる仕事を整理する</a></li>
+              <li><a href="service.html#support">継続して減らすサポート</a></li>
             </ul>
           </div>
           <div>
@@ -104,7 +103,7 @@ function SiteFooter() {
         <div className="footer-bottom">
           <span>© 2026 株式会社BitVoyage</span>
           <span><a href="privacy.html">プライバシーポリシー</a></span>
-          <span>現場と一緒に、止まらない仕組みへ。</span>
+          <span>売上につながらない作業を、減らす。</span>
         </div>
       </div>
     </footer>

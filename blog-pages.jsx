@@ -3,7 +3,7 @@
 function BlogPage() {
   useRevealOnScroll();
   const [category, setCategory] = React.useState("すべて");
-  const categories = ["すべて", "業務改善", "DX", "可視化", "組織設計"];
+  const categories = ["すべて", "手作業を減らす", "止まる仕事", "属人化"];
   const posts = window.SAMPLE_POSTS;
   const filtered = category === "すべて" ? posts : posts.filter(p => p.category === category);
   const gridPosts = filtered.filter(p => p.slug !== posts[0].slug);
@@ -15,11 +15,11 @@ function BlogPage() {
         <div className="container fade-up" style={{ textAlign: "center" }}>
           <div className="section-eyebrow">blog</div>
           <h1 className="blog-hero-title">
-            業務の<span className="marker">「詰まり」</span>を<br className="mobile-only" />ほどくヒント
+            売上につながらない作業を、<br className="mobile-only" /><span className="marker">減らす</span>ヒント
           </h1>
           <p className="blog-hero-lead">
-            手作業・転記・属人化など、<br className="mobile-only" />忙しいのに進まない原因を整理し、<br/>
-            無駄を減らして回る状態にするための<br className="mobile-only" />考え方と実例をまとめています。
+            手入力・転記・整理・連絡など、<br className="mobile-only" />毎日 時間を奪っている作業を、<br/>
+            どう見つけて減らすか。<br className="mobile-only" />その考え方と実例をまとめています。
           </p>
         </div>
       </section>
@@ -269,7 +269,7 @@ function ArticleBody_BusinessClogIdentify() {
           いきなり仕組みを変えるのではなく、小さな改善から積み重ねていくスタイルです。
         </p>
         <p style={{ margin: 0 }}>
-          広島で、無理なく回り続ける状態を一緒につくります。
+          東広島・呉を中心に、売上につながらない作業を減らし、会社が前に進む余力を一緒につくります。
         </p>
       </div>
     </>

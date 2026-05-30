@@ -9,11 +9,12 @@ function CompanyPage() {
         <div className="container-narrow fade-up" style={{ textAlign: "center" }}>
           <div className="section-eyebrow">about us</div>
           <h1 className="company-hero-title">
-            業務の<span className="marker marker-thick">「詰まり」</span>をほどく。
+            売上につながらない作業を、<span className="marker marker-thick">減らす</span>。
           </h1>
           <p className="company-hero-lead">
-            ムダや詰まりを見つけ、小さく直しながら、<br/>
-            業務が自分で回り始める形にしていきます。
+            毎日 時間を奪っている手作業や、<br/>
+            特定の人しか分からない仕事を見つけて減らし、<br/>
+            会社が前に進むための余力をつくります。
           </p>
         </div>
       </section>
@@ -26,14 +27,14 @@ function CompanyPage() {
               Mission
             </div>
             <h2 className="company-mission-title">
-              現場が、<br className="mobile-only"/>
-              <span className="underline-hand">自分の足で動き続けられる</span>こと。
+              会社が、<br className="mobile-only"/>
+              <span className="underline-hand">前に進むための余力</span>をつくること。
             </h2>
             <p className="company-mission-lead">
-              業務改善は、入れて終わるものではありません。<br/>
-              日々の仕事に組み込まれて、はじめて続いていく。<br/><br/>
+              売上につながらない作業は、減らして終わりではありません。<br/>
+              空いた時間が本業に向いて、はじめて意味が出る。<br/><br/>
               だから BitVoyage は、<br/>
-              現場の手で動かせる形まで仕上げてお渡しします。
+              現場の人が無理なく続けられる形に整えます。
             </p>
           </div>
         </div>
@@ -89,7 +90,7 @@ function CompanyPage() {
                 </p>
                 <p className="representative-closing">
                   <span className="marker">まずは、お話を聞かせてください。</span><br/>
-                  御社の業務を、一緒に整えていきます。
+                  売上につながらない作業を、一緒に減らしていきます。
                 </p>
               </div>
             </div>
@@ -108,11 +109,10 @@ function CompanyPage() {
               ["活動拠点", "東広島市・呉市を中心に広島県内対応"],
               ["代表者", "北束 優花（きたづか ゆうか）"],
               ["事業内容", <div>
-                <div>・ 小さな業務改善（転記・通知・集計・確認作業の削減）</div>
-                <div>・ 業務領域の整理・自動化（受発注・顧客管理・日報など）</div>
-                <div>・ 業務構造診断パック（業務全体の可視化と優先順位整理）</div>
-                <div>・ 継続改善サポート（顧問契約による継続的な改善進行）</div>
-                <div>・ 業務全体の整理・再構築（複数部門にまたがる見直し）</div>
+                <div>・ 作業見直し相談（売上につながらない作業の確認・整理／無料）</div>
+                <div>・ 小さな作業をひとつ減らす（名刺・領収書整理、転記・集計・確認連絡の削減）</div>
+                <div>・ 現場を見て、減らせる仕事を整理する（現場確認＋優先順位の提案）</div>
+                <div>・ 継続して減らすサポート（顧問契約による継続的な改善）</div>
                 <div>・ 必要に応じた AI／ツール／システムの導入支援</div>
               </div>],
               ["お問い合わせ", <a href="mailto:contact@bitvoyage.co.jp" style={{ color: "var(--navy-800)", fontWeight: 600 }}>contact@bitvoyage.co.jp</a>],
@@ -135,9 +135,9 @@ function CompanyPage() {
           </div>
           <div className="value-grid">
             {[
-              { n: "01", t: "業務を見る", d: "現場や画面を見ながら、実際の流れに沿ってムダや詰まりを見つけます。" },
-              { n: "02", t: "小さく変える", d: "大きく作り替える前に、数時間〜数日で変えられる改善から進めます。" },
-              { n: "03", t: "続く形にする", d: "改善を入れて終わりにしない。現場の人が自分で動かしていけるところまで一緒にやります。" },
+              { n: "01", t: "作業を見る", d: "現場や画面を見ながら、売上につながらないのに時間を奪っている作業を見つけます。" },
+              { n: "02", t: "小さく減らす", d: "大きく作り替える前に、数時間〜数日で減らせる作業から手をつけます。" },
+              { n: "03", t: "続く形にする", d: "減らして終わりにしない。現場の人が自分で続けられるところまで一緒にやります。" },
             ].map(v => (
               <div key={v.n} className="card" style={{ background: "#fff" }}>
                 <div style={{ fontFamily: "var(--font-hand)", fontSize: 28, color: "var(--yellow-500)", fontWeight: 700, marginBottom: 8 }}>{v.n}</div>

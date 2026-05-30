@@ -4,22 +4,22 @@ window.SAMPLE_POSTS = [
   {
     slug: "manual-work-reduction",
     title: "手作業が減らない理由",
-    category: "業務改善",
+    category: "手作業を減らす",
     date: "2026.04.17",
     readMin: 4,
     image: "assets/images/manual-work-reduction-eyecatch.png",
     excerpt: "毎月続く手作業を、いつか減らしたいと思いつつ、半年・1年がそのままになっていないでしょうか。減らない手作業の多くは、そもそも「減らす対象」として見られていないところから始まっています。手作業が残り続ける会社で同時に起きている4つのことを整理しました。",
-    tags: ["業務改善", "手作業削減"],
+    tags: ["手作業を減らす", "手入力・転記"],
   },
   {
     slug: "business-clog-identify",
     title: "忙しいのに進まない会社の共通点",
-    category: "業務改善",
+    category: "止まる仕事",
     date: "2026.04.10",
     readMin: 4,
     image: "assets/images/business-clog-identify-eyecatch-v5.png",
     excerpt: "業務自体は回っているのに、月末の締めも請求書発行も、毎月ぎりぎりまでもつれ込む。原因は、人ではなく業務の流れの側にあります。進まない会社で同時に起きている4つの「詰まり」を整理しました。",
-    tags: ["業務改善", "業務フロー"],
+    tags: ["止まる仕事", "属人化"],
   },
 ];
 
