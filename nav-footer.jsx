@@ -80,7 +80,7 @@ function SiteFooter() {
             <ul>
               <li><a href="service.html#consult">作業見直し相談（無料）</a></li>
               <li><a href="service.html#small">小さな作業をひとつ減らす</a></li>
-              <li><a href="service.html#onsite">現場を見て、減らせる仕事を整理する</a></li>
+              <li><a href="service.html#onsite">現場を見て、減らせる作業を整理する</a></li>
               <li><a href="service.html#support">継続して減らすサポート</a></li>
             </ul>
           </div>

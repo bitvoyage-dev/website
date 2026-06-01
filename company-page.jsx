@@ -9,12 +9,12 @@ function CompanyPage() {
         <div className="container-narrow fade-up" style={{ textAlign: "center" }}>
           <div className="section-eyebrow">about us</div>
           <h1 className="company-hero-title">
-            売上につながらない作業を、<span className="marker marker-thick">減らす</span>。
+            現場が前に進むための<span className="marker marker-thick">余力</span>をつくる。
           </h1>
           <p className="company-hero-lead">
             毎日 時間を奪っている手作業や、<br/>
-            特定の人しか分からない仕事を見つけて減らし、<br/>
-            会社が前に進むための余力をつくります。
+            特定の人しか分からない仕事を減らし、<br/>
+            本業に使える時間を取り戻していきます。
           </p>
         </div>
       </section>
@@ -27,8 +27,8 @@ function CompanyPage() {
               Mission
             </div>
             <h2 className="company-mission-title">
-              会社が、<br className="mobile-only"/>
-              <span className="underline-hand">前に進むための余力</span>をつくること。
+              現場の手で、<br className="mobile-only"/>
+              <span className="underline-hand">続けられる形</span>に整える。
             </h2>
             <p className="company-mission-lead">
               売上につながらない作業は、減らして終わりではありません。<br/>
@@ -74,9 +74,8 @@ function CompanyPage() {
                 </p>
                 <p>
                   業務を人の頑張りだけで支えていると、いつか限界がきます。<br/>
-                  流れや仕組みで整えるほうが、現場にも無理がない。<br/>
-                  そう感じてきました。<br/>
-                  この感覚が、今の仕事の軸になっています。
+                  売上につながらない作業に、貴重な人件費を使い続けるのはもったいない。<br/>
+                  その思いが、今の仕事の軸になっています。
                 </p>
                 <p>
                   独立後、自動化や AI まわりの技術を広げるなかで、<br/>
@@ -89,7 +88,7 @@ function CompanyPage() {
                   そう思って BitVoyage を始めました。
                 </p>
                 <p className="representative-closing">
-                  <span className="marker">まずは、お話を聞かせてください。</span><br/>
+                  <span className="marker">まずは、今いちばん時間を取られている作業を聞かせてください。</span><br/>
                   売上につながらない作業を、一緒に減らしていきます。
                 </p>
               </div>
@@ -108,13 +107,7 @@ function CompanyPage() {
               ["所在地", "広島県広島市（登記住所）"],
               ["活動拠点", "東広島市・呉市を中心に広島県内対応"],
               ["代表者", "北束 優花（きたづか ゆうか）"],
-              ["事業内容", <div>
-                <div>・ 作業見直し相談（売上につながらない作業の確認・整理／無料）</div>
-                <div>・ 小さな作業をひとつ減らす（名刺・領収書整理、転記・集計・確認連絡の削減）</div>
-                <div>・ 現場を見て、減らせる仕事を整理する（現場確認＋優先順位の提案）</div>
-                <div>・ 継続して減らすサポート（顧問契約による継続的な改善）</div>
-                <div>・ 必要に応じた AI／ツール／システムの導入支援</div>
-              </div>],
+              ["事業内容", "中小企業向けに、売上につながらない作業を減らす支援。作業の相談から、削減・現場整理・継続サポートまで。"],
               ["お問い合わせ", <a href="mailto:contact@bitvoyage.co.jp" style={{ color: "var(--navy-800)", fontWeight: 600 }}>contact@bitvoyage.co.jp</a>],
             ].map(([k, v], i, arr) => (
               <div key={k} className="company-info-row" style={{ borderBottom: i < arr.length - 1 ? "1px solid var(--line)" : "none" }}>

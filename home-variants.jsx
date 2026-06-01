@@ -18,9 +18,8 @@ function HomeA() {
               作業を、<span className="underline-hand">減らす</span>。
             </span>
             <span className="home-hero-title-mobile">
-              売上に<br/>
-              つながらない作業を、<br/>
-              <span className="underline-hand">減らす</span>。
+              売上につながらない<br/>
+              作業を、<span className="underline-hand">減らす</span>。
             </span>
           </h1>
           <p style={{ fontSize: 17, fontWeight: 700, color: "var(--navy-800)", margin: "18px 0 0", lineHeight: 1.7 }}>
@@ -37,7 +36,7 @@ function HomeA() {
               <Icon.Clock /> <span>まずは困っている作業を相談する</span>
             </a>
             <a href="service.html" className="btn btn-outline">
-              減らせる仕事を見る <Icon.ArrowRight />
+              サービスを見る <Icon.ArrowRight />
             </a>
           </div>
         </div>
@@ -61,8 +60,8 @@ function HomeA() {
             <ul className="problem-list">
               {[
                 "同じ数字を、何度も手で入力・転記している",
-                "領収書や名刺の整理に、毎月時間を取られている",
-                "日程調整や個別連絡のやり取りが、地味に多い",
+                "見積・請求・領収書の処理に時間がかかっている",
+                "日程調整や個別連絡のやり取りが多い",
                 "社長や \"〇〇さん\" しか分からない仕事がある",
                 "その人が休むと、業務が止まってしまう",
               ].map((t, i) => (
@@ -93,34 +92,33 @@ function HomeA() {
           <div style={{ textAlign: "center", marginBottom: 36 }}>
             <div className="section-eyebrow">macro vs micro</div>
             <h2 style={{ fontSize: 28, color: "var(--navy-900)", margin: "0 0 14px", fontWeight: 800, lineHeight: 1.45 }}>
-              「<span className="marker">人が足りない</span>」の正体は、<br className="mobile-only"/>
-              売上につながらない作業の山。
+              人を増やす前に、<br className="mobile-only"/>
+              <span className="marker">減らせる作業</span>があります。
             </h2>
             <p style={{ fontSize: 15, color: "var(--ink-700)", lineHeight: 1.9, margin: 0 }}>
-              経営者から見えている問題と、<br className="mobile-only"/>
-              現場で実際に時間を奪っている作業には、ギャップがあります。
+              「人が足りない」「業務が多すぎる」と感じる背景には、<br className="mobile-only"/>
+              毎日少しずつ時間を奪っている作業が隠れていることがあります。
             </p>
           </div>
           <div className="gap-grid">
             <div className="gap-card gap-card-macro">
-              <div className="gap-card-label">経営者・部門長から<br/>見えている問題</div>
+              <div className="gap-card-label">最初に<br/>見えている問題</div>
               <ul className="gap-list">
                 <li>人手が足りない</li>
                 <li>業務が多すぎる</li>
-                <li>もっと人を採るべき？</li>
+                <li>毎日忙しいのに進まない</li>
                 <li>何とかしたいが手が回らない</li>
               </ul>
               <div className="gap-card-tag">大きな話になりがち</div>
             </div>
             <div className="gap-arrow"><Icon.ArrowRight size={28} /></div>
             <div className="gap-card gap-card-micro">
-              <div className="gap-card-label">実際に時間を奪っている<br/>"売上につながらない作業"</div>
+              <div className="gap-card-label">見直せるかもしれない<br/>部分</div>
               <ul className="gap-list">
-                <li>同じ数字をExcelに3回入力</li>
-                <li>FAX注文書を手で見積に転記</li>
-                <li>領収書・名刺の整理に毎月数時間</li>
-                <li>在庫表を毎朝 手で集計</li>
-                <li>"〇〇さん" が休むと止まる作業</li>
+                <li>同じ情報を何度も入力している</li>
+                <li>探す・聞く・確認する時間が多い</li>
+                <li>紙・Excel・メールの間を人がつないでいる</li>
+                <li>特定の人だけが分かる状態になっている</li>
               </ul>
               <div className="gap-card-tag gap-card-tag-accent">減らせるのはここ</div>
             </div>
@@ -134,8 +132,12 @@ function HomeA() {
           <div style={{ textAlign: "center", marginBottom: 32 }}>
             <div className="section-eyebrow">outcome</div>
             <h2 style={{ fontSize: 28, color: "var(--navy-900)", margin: "0 0 14px", fontWeight: 800 }}>
-              売上につながらない作業が減ると、<span className="marker">こう変わります</span>。
+              減らした分だけ、<span className="marker">現場に余力</span>が戻ります。
             </h2>
+            <p style={{ fontSize: 15, color: "var(--ink-700)", lineHeight: 1.9, margin: 0 }}>
+              手入力や確認作業が減ると、<br className="mobile-only"/>
+              人を増やさなくても、今いる人の時間を本来の仕事に回しやすくなります。
+            </p>
           </div>
           <div className="outcome-with-illustration">
             <div className="outcome-illustration" aria-hidden="true">
@@ -143,11 +145,11 @@ function HomeA() {
             </div>
             <div className="outcome-grid">
               {[
-                { t: "手入力・転記・集計の時間が減る", d: "毎日くり返していた手作業が、ぐっと少なくなる。" },
-                { t: "その人が休んでも、仕事が止まらない", d: "社長や〇〇さんしか分からない仕事を、引き継げる形に。" },
-                { t: "「確認」「探す」「聞く」が減る", d: "情報の置き場が決まり、聞きにいかなくても進む状態に。" },
-                { t: "領収書・名刺の整理に追われない", d: "毎月のこまごました整理作業から手が離れる。" },
-                { t: "本業に使える時間が増える", d: "売上につながる仕事に、人と時間を回せるようになる。" },
+                { t: "毎日の手作業に取られる時間が減る", d: "くり返していた入力・転記・集計が少なくなります。" },
+                { t: "確認や探し物で止まる時間が減る", d: "情報の置き場や流れが整い、聞きにいかなくても進みやすくなります。" },
+                { t: "特定の人に頼りきりの状態が減る", d: "社長や〇〇さんしか分からない仕事を、引き継げる形に近づけます。" },
+                { t: "急な休みでも仕事が止まりにくくなる", d: "やり方や情報が整理されることで、周囲が対応しやすくなります。" },
+                { t: "本業に使える時間が増える", d: "売上につながる仕事に、人と時間を回しやすくなります。" },
               ].map((o, i) => (
                 <div key={i} className="outcome-item">
                   <span className="outcome-check"><Icon.Check /></span>
@@ -175,7 +177,7 @@ function HomeA() {
               日々の対応に追われて、「見直した方がいい」と分かっている作業ほど、そのまま残ってしまう。
             </p>
             <p className="position-text" style={{ margin: 0 }}>
-              その後回しになった作業を、<span className="underline-hand">代わって</span>前に進めます。<br/>
+              後回しになっていた改善を、<span className="underline-hand">代わりに</span>前へ進めます。<br/>
               売上につながらない作業を一緒に見つけて減らし、<br/>
               会社が前に進むための余力をつくります。
             </p>
@@ -277,7 +279,7 @@ function CTARibbon({ minimal = false }) {
           <div className="cta-feature-row">
             <div className="cta-feature">ご提案メモが付く</div>
             <div className="cta-feature">オンライン全国対応</div>
-            <div className="cta-feature">出張も可（交通費別）</div>
+            <div className="cta-feature">広島市・東広島・呉は対面無料</div>
           </div>
 
           <div className="contact-box" style={{ marginTop: 28 }}>
