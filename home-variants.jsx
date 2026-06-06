@@ -199,10 +199,11 @@ function HomeA() {
 /* ===== 5階層サービス（改善ノート行スタイル） ===== */
 function ServiceSteps() {
   const steps = [
-    { n: "1", t: "まずは作業を見直す", sub: "毎月くり返している作業や、時間を取っている作業を一緒に確認します", price: "無料", href: "service.html#consult" },
+    { n: "1", t: "まずは作業を棚卸しする", sub: "毎月くり返している作業や、時間を取っている作業を一緒に確認します", price: "無料", href: "service.html#consult" },
     { n: "2", t: "ひとつ減らす", sub: "見つかった作業の中から、まずは小さく1つ減らします", price: "3万円〜", href: "service.html#small" },
     { n: "3", t: "現場を見て整理する", sub: "まずは2〜3時間の現場確認から。減らせる作業と優先順位を整理します", price: "5万円〜", href: "service.html#onsite" },
     { n: "4", t: "継続して減らす", sub: "毎月、改善が止まらないように進捗と次の一手を確認します", price: "月額 5万円〜", href: "service.html#support" },
+    { n: "5", t: "個別実装・仕組みづくり", sub: "整理の中で見えてきた改善を、必要に応じて形にします", price: "個別見積り", href: "service.html#implementation" },
   ];
   return (
     <section className="section" style={{ paddingTop: 60, paddingBottom: 80 }}>
@@ -212,9 +213,15 @@ function ServiceSteps() {
           <h2>
             まず相談から、<span className="marker">継続</span>まで。
           </h2>
+          <p style={{ fontSize: 18, color: "var(--navy-900)", fontWeight: 800, lineHeight: 1.85, letterSpacing: "0.02em", margin: "10px 0 4px" }}>
+            全体を見て、小さく作る。<br className="mobile-only"/>使いながら、つなげていく。
+          </p>
+          <p style={{ fontFamily: "var(--font-hand)", fontSize: 13, color: "var(--navy-700)", margin: "0 0 14px" }}>
+            — これが BitVoyage の進め方の核です —
+          </p>
           <p>
             「何を減らせばいいか分からない」状態からで大丈夫。<br className="mobile-only"/>
-            4つのステップで、無理なく進められます。
+            ご相談から、必要なところまで無理なく進められます。
           </p>
         </div>
         <div className="service-five-grid">
@@ -268,7 +275,7 @@ function CTARibbon({ minimal = false }) {
         <div style={{ background: "var(--yellow-500)", padding: "36px 40px", borderRadius: 16, textAlign: "center", boxShadow: "var(--shadow-md)", position: "relative" }}>
           <div style={{ position: "absolute", top: 10, left: 20, fontSize: 11, fontFamily: "var(--font-hand)", color: "var(--navy-900)", opacity: 0.7 }}>お気軽にどうぞ</div>
           <h2 className="cta-ribbon-title" style={{ margin: 0, fontWeight: 800, color: "var(--navy-900)", letterSpacing: "0.02em" }}>
-            作業見直し相談<br/>
+            作業の棚卸し相談<br/>
             （無料・60分）。
           </h2>
           <div style={{ margin: "16px auto 24px", width: 80, height: 2, background: "var(--navy-900)" }}></div>
@@ -291,7 +298,7 @@ function CTARibbon({ minimal = false }) {
               onClick={() => setOpen(v => !v)}
               style={{ background: "var(--navy-900)", color: "#fff" }}
             >
-              {open ? "カレンダーを閉じる" : "作業見直し相談を予約する（無料）"}
+              {open ? "カレンダーを閉じる" : "作業の棚卸し相談を予約する（無料）"}
             </button>
           </div>
         </div>
