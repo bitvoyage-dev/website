@@ -316,6 +316,34 @@ function CTARibbon({ minimal = false }) {
         <p className="contact-note">
           予約以外のお問い合わせは <a href="mailto:contact@bitvoyage.co.jp">contact@bitvoyage.co.jp</a> までお気軽にどうぞ。
         </p>
+
+        <div className="sns-follow">
+          <p className="sns-follow-lead">
+            Instagramを始めました。<br className="mobile-only"/>
+            ぜひ覗いてみてください。
+          </p>
+          <div className="sns-follow-actions">
+            <a
+              href="https://www.instagram.com/bitvoyage_hiroshima/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sns-follow-btn"
+            >
+              <Icon.Instagram size={20} />
+              <span>Instagramを見る　@bitvoyage_hiroshima</span>
+            </a>
+            <a
+              href="https://www.instagram.com/bitvoyage_hiroshima/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sns-follow-qr"
+              aria-label="Instagram QRコード"
+            >
+              <img src="assets/images/instagram-qr.png" alt="BitVoyage Instagram QRコード" />
+              <span>スマホでQRを読み取る</span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );

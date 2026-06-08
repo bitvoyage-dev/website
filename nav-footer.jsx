@@ -28,6 +28,15 @@ function TopNav({ currentPage = "home" }) {
               {l.label}
             </a>
           ))}
+          <a
+            href="https://www.instagram.com/bitvoyage_hiroshima/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-ig"
+            aria-label="Instagram @bitvoyage_hiroshima"
+          >
+            <Icon.Instagram size={22} />
+          </a>
           <a href="#contact" className="btn btn-primary nav-cta">作業を相談する</a>
         </div>
         <button
@@ -54,6 +63,16 @@ function TopNav({ currentPage = "home" }) {
           ))}
           <a href="#contact" className="nav-drawer-cta" onClick={() => setOpen(false)}>
             困っている作業を相談する →
+          </a>
+          <a
+            href="https://www.instagram.com/bitvoyage_hiroshima/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-drawer-ig"
+            onClick={() => setOpen(false)}
+          >
+            <Icon.Instagram size={20} />
+            <span>Instagram @bitvoyage_hiroshima</span>
           </a>
         </div>
       </div>
@@ -97,6 +116,17 @@ function SiteFooter() {
             <h4>お問い合わせ</h4>
             <ul>
               <li><a href="mailto:contact@bitvoyage.co.jp">contact@bitvoyage.co.jp</a></li>
+              <li>
+                <a
+                  href="https://www.instagram.com/bitvoyage_hiroshima/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-sns-link"
+                >
+                  <Icon.Instagram size={18} />
+                  <span>Instagram @bitvoyage_hiroshima</span>
+                </a>
+              </li>
               <li style={{ opacity: 0.7 }}>広島県広島市</li>
             </ul>
           </div>
