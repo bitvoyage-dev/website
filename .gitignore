@@ -26,3 +26,6 @@ assets/images/busy-but-not-progressing-thumbnail.png
 # Node 関連
 node_modules/
 *.log
+
+# アイキャッチ生成途中のAI候補（最終はt-*.pngとassets/images/に確定済み）
+eyecatch/figures/fig-*

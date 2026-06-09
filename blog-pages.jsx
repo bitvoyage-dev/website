@@ -3,7 +3,7 @@
 function BlogPage() {
   useRevealOnScroll();
   const [category, setCategory] = React.useState("すべて");
-  const categories = ["すべて", "手作業を減らす", "止まる仕事", "属人化"];
+  const categories = ["すべて", "進め方", "手作業を減らす", "止まる仕事", "属人化"];
   const posts = window.SAMPLE_POSTS;
   const filtered = category === "すべて" ? posts : posts.filter(p => p.category === category);
   const gridPosts = filtered.filter(p => p.slug !== posts[0].slug);
@@ -196,12 +196,248 @@ const QUOTE_P_STYLE = { margin: 0, fontSize: 16, color: "var(--navy-900)" };
 const LIST_BOX_STYLE = { background: "var(--paper-2)", borderRadius: 12, padding: 28, margin: "24px 0", border: "1px solid var(--line)" };
 const NOTE_BOX_STYLE = { marginTop: 56, paddingTop: 32, borderTop: "1px solid var(--line)", fontSize: 14, color: "var(--ink-700)", lineHeight: 1.9 };
 const NOTE_LEAD_STYLE = { margin: "0 0 12px", fontWeight: 700, color: "var(--navy-900)", fontSize: 15 };
+const ALINK_STYLE = { color: "var(--navy-800)", fontWeight: 600, textDecoration: "underline" };
 
 function ArticleBody({ slug }) {
+  if (slug === "customer-info-scattered") {
+    return <ArticleBody_CustomerInfoScattered />;
+  }
+  if (slug === "fax-order-entry") {
+    return <ArticleBody_FaxOrderEntry />;
+  }
+  if (slug === "duplicate-entry") {
+    return <ArticleBody_DuplicateEntry />;
+  }
+  if (slug === "where-to-start") {
+    return <ArticleBody_WhereToStart />;
+  }
   if (slug === "manual-work-reduction") {
     return <ArticleBody_ManualWorkReduction />;
   }
   return <ArticleBody_BusinessClogIdentify />;
+}
+
+function ArticleBody_CustomerInfoScattered() {
+  return (
+    <>
+      <p>お客様の連絡先はExcel、やりとりはLINE、名刺は引き出し、見積はメールの中。</p>
+      <p>一人のお客様の情報が、いくつもの場所に分かれていないでしょうか。</p>
+      <p>何かを確認するたびに、あちこちを開いて探しに行く。</p>
+
+      <h2 style={H2_STYLE}>「その都度探す」が、当たり前になっていないか</h2>
+      <p>情報がどこにあるか分かっていれば、探すのは一瞬。そう思いがちです。</p>
+      <p>でも毎回確かめているのは、最新がどれか、そして誰が持っているか。</p>
+      <p>探すこと自体より、「どこを見ればいいか」を考える時間が積み上がります。</p>
+
+      <h2 style={H2_STYLE}>散らばると、人によって"最新"が変わる</h2>
+      <p>同じお客様でも、担当者ごとに見ている場所が違うことがあります。</p>
+      <blockquote style={QUOTE_STYLE}>
+        <p style={QUOTE_P_STYLE}>「その番号、古いほうかもしれません」<br/>「LINEで聞いた住所、まだExcelに入れてなかった」</p>
+      </blockquote>
+      <p>どれが最新か決まっていないと、確認の電話やメールが一往復増えます。</p>
+      <p>そして、その人が休むと、情報のありかごと分からなくなります。</p>
+
+      <h2 style={H2_STYLE}>足りないのではなく、ばらばらなだけ</h2>
+      <p>落ち着いて見ると、<span className="marker">情報が無いのではなく、ばらばらに置かれている</span>だけのことが多いです。</p>
+      <p>必要なことは、もう社内のどこかにある。一か所にまとまっていないだけ。</p>
+      <p>集める場所を決めるだけで、探す手間の多くは消えます。</p>
+
+      <h2 style={H2_STYLE}>まず、どこに散らばっているかを書き出す</h2>
+      <p>すぐに顧客管理システムを入れる必要はありません。</p>
+      <p>先にやるのは、一人のお客様の情報が、いま何か所にあるかを書き出すことです。</p>
+      <div style={LIST_BOX_STYLE}>
+        <ul style={{ margin: 0, paddingLeft: 20 }}>
+          <li>連絡先・やりとり・名刺・見積は、それぞれどこにあるか</li>
+          <li>最新がどれか、すぐ分かるか</li>
+          <li>担当が休んだとき、他の人がたどり着けるか</li>
+        </ul>
+      </div>
+      <p>書き出すと、「探すのが面倒」は、「集めれば済む」に近づきます。</p>
+
+      <div style={NOTE_BOX_STYLE}>
+        <p style={NOTE_LEAD_STYLE}>
+          BitVoyage では、お客様の情報がどこに散らばっているかを、一緒に書き出すところから始めています。
+        </p>
+        <p style={{ margin: "0 0 12px" }}>
+          いきなり大きな仕組みを入れるのではなく、いま使っているExcelやLINEを活かして、集め方から整えます。
+        </p>
+        <p style={{ margin: 0 }}>
+          東広島・呉を中心に、売上につながらない作業を減らし、会社が前に進む余力を一緒につくります。
+        </p>
+      </div>
+    </>
+  );
+}
+
+function ArticleBody_FaxOrderEntry() {
+  return (
+    <>
+      <p>FAXで届いた注文書を見ながら、品番と数量を、受注システムに打ち込む。</p>
+      <p>電話で受けた注文を、メモしてから、あらためて入力する。</p>
+      <p>こうした入力を、毎日のように続けていないでしょうか。</p>
+
+      <h2 style={H2_STYLE}>「紙や電話で来るから」で、止まっていないか</h2>
+      <p>この入力は、たいてい仕方ないものとして扱われます。</p>
+      <p>「取引先がFAXで送ってくるんだから、こっちで打つしかない」。<br/>そう思っていると、見直す対象から外れたままになります。</p>
+      <p>でも、引っかかるのは、ただ打つことではありません。</p>
+
+      <h2 style={H2_STYLE}>打ち込みには、判断も混ざっている</h2>
+      <p>注文書の品名が、社内の品番とそのまま一致しないことがあります。</p>
+      <blockquote style={QUOTE_STYLE}>
+        <p style={QUOTE_P_STYLE}>「"4号缶"は、うちのどの商品か」<br/>「いつもの数量は、ケースか、バラか」</p>
+      </blockquote>
+      <p>読み替えながら打つので、単純作業のようでいて、手も頭も止まります。</p>
+      <p>そのうち、慣れた人でないと正確に打てない、という状態にもなります。</p>
+
+      <h2 style={H2_STYLE}>打ち込んでいるのは、新しい注文ではない</h2>
+      <p>一度、見方を変えてみます。</p>
+      <p>手を動かしているのは、<span className="marker">注文を社内が読める形に移す作業</span>です。</p>
+      <p>取引先が持っている注文の中身を、こちらの様式に置き換えているだけ。</p>
+      <p>受け取り方を変えれば、この移し替えの多くは要らなくなります。</p>
+
+      <h2 style={H2_STYLE}>まず、どこで手が止まるかを見てみる</h2>
+      <p>すぐに受発注のシステムを入れ替える必要はありません。</p>
+      <p>先に見るのは、注文が届いてから社内に登録されるまで、どこで手が止まっているかです。</p>
+      <div style={LIST_BOX_STYLE}>
+        <ul style={{ margin: 0, paddingLeft: 20 }}>
+          <li>注文は、どんな形で届いているか（FAX・電話・メール・取引先ごとの様式）</li>
+          <li>打ち込むとき、どこで読み替えや確認が要るか</li>
+          <li>それは、月に何件あるか</li>
+        </ul>
+      </div>
+      <p>そこが見えると、「仕方ない」で済ませていた入力に、変えられる余地が見つかります。</p>
+
+      <div style={NOTE_BOX_STYLE}>
+        <p style={NOTE_LEAD_STYLE}>
+          BitVoyage では、注文がどんな形で届いて、どこで手が止まっているかを、一緒に見るところから始めています。
+        </p>
+        <p style={{ margin: "0 0 12px" }}>
+          いきなり大きなシステムに替えるのではなく、いまの受け取り方のまま減らせる方法から探します。
+        </p>
+        <p style={{ margin: 0 }}>
+          東広島・呉を中心に、売上につながらない作業を減らし、会社が前に進む余力を一緒につくります。
+        </p>
+      </div>
+    </>
+  );
+}
+
+function ArticleBody_DuplicateEntry() {
+  return (
+    <>
+      <p>見積書に入力した金額を、納品書にもう一度入力する。請求書でも、また入力する。</p>
+      <p>こうした作業を、毎日のように繰り返していないでしょうか。</p>
+      <p>同じ取引先名、同じ品番、同じ数量。一度どこかに入れた情報を、別の書類でもう一度、手で打ち直す。</p>
+
+      <h2 style={H2_STYLE}>「そういうもの」になっていないか</h2>
+      <p>この手の入力は、たいてい問題として意識されません。</p>
+      <p>「書類が違うんだから、それぞれ入力するのは当たり前」。<br/>そう思っていると、見直す対象から外れたままになります。</p>
+      <p>でも、よく見ると、打ち込んでいるのは毎回ほとんど同じ情報です。</p>
+
+      <h2 style={H2_STYLE}>なぜ、同じ入力が残り続けるのか</h2>
+      <p>理由は、2つあります。</p>
+      <p>ひとつは、書類ごとに置き場所が分かれていること。見積はExcel、納品は別のソフト、請求はまた別。場所が違うと、「つなげる」という発想自体が出てきません。</p>
+      <p>もうひとつは、1回が数分で済むこと。一度きりなら、大した手間には見えない。</p>
+      <p>ただ、それが書類の数だけ、件数だけ、毎月くり返されます。足し合わせると、ばかにならない時間になります。</p>
+
+      <h2 style={H2_STYLE}>打ち直しているのは、「新しい情報」ではない</h2>
+      <p>2回目・3回目に入力している情報は、<span className="marker">すでにどこかに入っている情報</span>です。</p>
+      <p>新しく考えて入れているのではなく、すでにある数字を、別の書類へ手で移しているだけ。</p>
+      <p>一度入れたものを使い回せれば、打ち直しはゼロにできます。</p>
+
+      <h2 style={H2_STYLE}>まずは、数えてみるだけでいい</h2>
+      <p>先にやるのは、同じ情報を何回打ち直しているかを、数えてみることです。</p>
+      <div style={LIST_BOX_STYLE}>
+        <ul style={{ margin: 0, paddingLeft: 20 }}>
+          <li>一度入れた情報を、何種類の書類に再入力しているか</li>
+          <li>それは、月に何件あるか</li>
+          <li>1件あたり、何分かかっているか</li>
+        </ul>
+      </div>
+      <p>やってみると、「当たり前」が、減らせる作業に見えてきます。</p>
+
+      <div style={NOTE_BOX_STYLE}>
+        <p style={NOTE_LEAD_STYLE}>
+          BitVoyage では、こうした同じ入力がどこで重なっているかを、一緒に見つけるところから始めています。
+        </p>
+        <p style={{ margin: "0 0 12px" }}>
+          いきなり大きなシステムを入れるのではなく、いま使っているExcelのまま、小さく減らせる方法から探します。
+        </p>
+        <p style={{ margin: 0 }}>
+          東広島・呉を中心に、売上につながらない作業を減らし、会社が前に進む余力を一緒につくります。
+        </p>
+      </div>
+    </>
+  );
+}
+
+function ArticleBody_WhereToStart() {
+  return (
+    <>
+      <p>業務を見直したい。でも、どこから手をつければいいか分からない。</p>
+      <p>経営者・部門長の方で、こうした感覚を抱えたことはないでしょうか。</p>
+      <p>手入力も、転記も、確認作業も、気になるところはいくつもある。どれも大事に見えて、結局どれも後回しになる。</p>
+
+      <h2 style={H2_STYLE}>手をつける入口は、たいてい2つに割れる</h2>
+      <p>「何から」を決めようとすると、入口は2つに分かれがちです。</p>
+      <p>ひとつは、いっそ全部まとめて作り変えようとする入口。<br/>もうひとつは、いま一番困っている作業だけに手をつける入口。</p>
+      <p>ただ、この2つは、どちらもつまずきやすい。</p>
+      <p>全部まとめて作り変えようとすると、決めることが多すぎて、動き出す前で止まります。費用も時間も大きくなり、合わなかったときの作り直しも大きくなる。</p>
+      <p>かといって目の前の作業だけ直すと、その場は楽になっても、あとで他の作業とつながらず、似た仕組みがばらばらに増えます。</p>
+      <p>だから、その間をとります。まず流れを見て、そこから小さく始める。</p>
+
+      <h2 style={H2_STYLE}>まず流れを見て、小さく始める</h2>
+      <p>BitVoyage が手をつけるときの順番は、4つです。</p>
+
+      <h3 style={H3_STYLE}>1. まず、全体の流れをざっと見る</h3>
+      <p>受注から請求まで、仕事がどう流れているかを一度ざっと見ます。</p>
+      <p>たとえば、FAXで来た注文を見積に打ち込み、納品書に書き写し、請求でまた入力する。同じ数字を手で何度も移している箇所が、流れの中に見えてきます。</p>
+      <p>どこで手入力や転記、確認が増えているか。どこに作業が溜まりやすいか。<br/>細かく分析するのではなく、ざっくり地図を描く感覚です。</p>
+
+      <h3 style={H3_STYLE}>2. その中から、最初に減らす作業を1つ決める</h3>
+      <p>全部を一度に変えようとしない。負担が大きく、効果が出やすい作業を1つ選びます。</p>
+      <blockquote style={QUOTE_STYLE}>
+        <p style={QUOTE_P_STYLE}>「毎月いちばん時間を取られているのは、どれか」</p>
+      </blockquote>
+
+      <h3 style={H3_STYLE}>3. 小さく作って、使って、直す</h3>
+      <p>最初から完成形を目指しません。小さく作って、実際に使ってみる。</p>
+      <p>使うと、机の上では見えなかったズレが出ます。そこを直す。短く回すほど、ズレに早く気づけます。</p>
+
+      <h3 style={H3_STYLE}>4. 必要なものだけ、あとからつなげる</h3>
+      <p>小さく始めても、ばらばらにしない。</p>
+      <p>他の作業とつなげた方がいい部分だけ、あとからつなげていきます。</p>
+
+      <h2 style={H2_STYLE}>「大きく」でも「その場しのぎ」でもなく</h2>
+      <p>この順番の芯は、ひとつです。</p>
+      <p>大事なのは、<span className="marker">全体を見たうえで、小さく作る</span>こと。</p>
+      <p>大きく賭けない。その場しのぎにもしない。</p>
+
+      <h2 style={H2_STYLE}>最初の一歩は、作業選びではありません</h2>
+      <p>何から手をつけるかを、急いで1つに絞らなくて大丈夫です。</p>
+      <p>先にやるのは、流れをざっと見ること。</p>
+      <div style={LIST_BOX_STYLE}>
+        <ul style={{ margin: 0, paddingLeft: 20 }}>
+          <li>仕事は、どこからどこへ流れているか</li>
+          <li>どこで手入力・転記が増えているか</li>
+          <li>どこに作業が溜まりやすいか</li>
+        </ul>
+      </div>
+      <p>全体が見えると、「何から」が「ここから」に決まります。</p>
+
+      <div style={NOTE_BOX_STYLE}>
+        <p style={NOTE_LEAD_STYLE}>
+          BitVoyage では、まず業務の流れを見て、最初に減らす作業を一緒に決めるところから始めています。
+        </p>
+        <p style={{ margin: "0 0 12px" }}>
+          いきなり大きな仕組みを作るのではなく、小さく試して、使いながら直していくスタイルです。
+        </p>
+        <p style={{ margin: 0 }}>
+          東広島・呉を中心に、売上につながらない作業を減らし、会社が前に進む余力を一緒につくります。
+        </p>
+      </div>
+    </>
+  );
 }
 
 function ArticleBody_BusinessClogIdentify() {
