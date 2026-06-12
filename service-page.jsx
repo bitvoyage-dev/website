@@ -321,6 +321,9 @@ function ServicePage() {
               </a>
             ))}
           </div>
+          <p style={{ textAlign: "center", fontSize: 12, color: "var(--ink-500)", margin: "14px 0 0" }}>
+            ※ 表示価格はすべて税別です。
+          </p>
         </div>
       </section>
 
@@ -342,7 +345,10 @@ function ServicePage() {
                 </div>
                 <div style={{ background: "var(--yellow-200)", padding: "16px 20px", borderRadius: 10, marginTop: 20 }}>
                   <div style={{ fontSize: 13, color: "var(--navy-900)", fontWeight: 700, marginBottom: 4 }}>価格</div>
-                  <div style={{ fontSize: 22, fontWeight: 800, color: "var(--navy-900)" }}>{d.price}</div>
+                  <div style={{ fontSize: 22, fontWeight: 800, color: "var(--navy-900)" }}>
+                    {d.price}
+                    {d.price !== "無料" && <span style={{ fontSize: 13, fontWeight: 600, color: "var(--ink-700)", marginLeft: 6 }}>（税別）</span>}
+                  </div>
                   <div style={{ fontSize: 12, color: "var(--ink-700)", marginTop: 6, lineHeight: 1.7 }}>{d.priceNote}</div>
                 </div>
               </div>
