@@ -98,10 +98,10 @@ function SiteFooter() {
             <h4>サービス</h4>
             <ul>
               <li><a href="service.html#consult">作業の棚卸し相談（無料）</a></li>
-              <li><a href="service.html#small">小さな作業をひとつ減らす</a></li>
-              <li><a href="service.html#onsite">現場を見て、減らせる作業を整理する</a></li>
+              <li><a href="service.html#small">小さな作業改善</a></li>
+              <li><a href="service.html#onsite">業務まわりの小さな仕組み化</a></li>
               <li><a href="service.html#support">継続して減らすサポート</a></li>
-              <li><a href="service.html#implementation">個別実装・仕組みづくり</a></li>
+              <li><a href="service.html#implementation">業務全体の整理・再構築</a></li>
             </ul>
           </div>
           <div>

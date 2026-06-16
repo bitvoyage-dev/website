@@ -199,11 +199,11 @@ function HomeA() {
 /* ===== 5階層サービス（改善ノート行スタイル） ===== */
 function ServiceSteps() {
   const steps = [
-    { n: "1", t: "まずは作業を棚卸しする", sub: "毎月くり返している作業や、時間を取っている作業を一緒に確認します", price: "無料", href: "service.html#consult" },
-    { n: "2", t: "ひとつ減らす", sub: "見つかった作業の中から、まずは小さく1つ減らします", price: "3万円〜", href: "service.html#small" },
-    { n: "3", t: "現場を見て整理する", sub: "まずは2〜3時間の現場確認から。減らせる作業と優先順位を整理します", price: "5万円〜", href: "service.html#onsite" },
-    { n: "4", t: "継続して減らす", sub: "毎月、改善が止まらないように進捗と次の一手を確認します", price: "月額 5万円〜", href: "service.html#support" },
-    { n: "5", t: "個別実装・仕組みづくり", sub: "整理の中で見えてきた改善を、必要に応じて形にします", price: "個別見積り", href: "service.html#implementation" },
+    { n: "1", t: "作業の棚卸し相談", sub: "減らせる作業があるか、まず一緒に確認します", price: "無料", href: "service.html#consult" },
+    { n: "2", t: "小さな作業改善", sub: "転記・集計・CSV作成など、範囲が明確な作業をひとつ整えます", price: "3万円〜8万円", href: "service.html#small" },
+    { n: "3", t: "業務まわりの小さな仕組み化", sub: "紙・Excel・CSVをつなげ、毎月の確認や転記を減らします", price: "8万円〜30万円", href: "service.html#onsite" },
+    { n: "4", t: "継続して減らすサポート", sub: "改善を後回しにしないための、外部パートナー", price: "月額 5万円〜", href: "service.html#support" },
+    { n: "5", t: "業務全体の整理・再構築", sub: "複数業務にまたがる仕組みや、現場業務の改善を設計します", price: "30万円〜／個別見積り", href: "service.html#implementation" },
   ];
   return (
     <section className="section" style={{ paddingTop: 60, paddingBottom: 80 }}>
@@ -236,6 +236,9 @@ function ServiceSteps() {
             </a>
           ))}
         </div>
+        <p style={{ textAlign: "center", fontSize: 12, color: "var(--ink-500)", margin: "14px 0 0" }}>
+          ※ 表示価格はすべて税別です。
+        </p>
         <div style={{ textAlign: "center", marginTop: 32 }}>
           <a href="service.html" className="btn btn-outline">
             サービス詳細を見る <Icon.ArrowRight />
