@@ -133,7 +133,11 @@ function SiteFooter() {
         </div>
         <div className="footer-bottom">
           <span>© 2026 株式会社BitVoyage</span>
-          <span><a href="privacy.html">プライバシーポリシー</a></span>
+          <span>
+            <a href="privacy.html">プライバシーポリシー</a>
+            <span style={{ margin: "0 10px", opacity: 0.4 }}>/</span>
+            <a href="tokushoho.html">特定商取引法に基づく表記</a>
+          </span>
           <span>売上につながらない作業を、減らす。</span>
         </div>
       </div>
