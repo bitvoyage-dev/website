@@ -363,24 +363,61 @@ function ServicePage() {
         </section>
       ))}
 
-      {/* 使う道具の方針 */}
+      {/* BitVoyageの標準的な進め方 */}
       <section className="section" style={{ padding: "64px 0 32px" }}>
-        <div className="container-narrow fade-up">
+        <div className="container fade-up">
           <div style={{ textAlign: "center", marginBottom: 24 }}>
-            <div className="section-eyebrow">our stance</div>
+            <div className="section-eyebrow">our approach</div>
             <h2 className="section-title" style={{ fontSize: 26 }}>
-              使う道具は、<span className="marker">会社ごと</span>に変わります。
+              まずは、<span className="marker">小さく始められる仕組み</span>から。
             </h2>
           </div>
-          <div style={{ background: "#fff", border: "1px solid var(--line)", borderRadius: 12, padding: "28px 32px", maxWidth: 640, margin: "0 auto", lineHeight: 2, fontSize: 15.5, color: "var(--ink-900)" }}>
-            <p style={{ margin: "0 0 6px" }}>Excel で十分な場合は、Excel で。</p>
-            <p style={{ margin: "0 0 6px" }}>Google スプレッドシートが合う場合は、Google で。</p>
-            <p style={{ margin: "0 0 18px" }}>Microsoft 365 をお使いの場合は、その環境に合わせて。</p>
-            <p style={{ margin: 0, fontWeight: 700, color: "var(--navy-900)" }}>
-              新しいツールを入れることよりも、今ある作業を減らすことを優先します。
+
+          <div style={{ maxWidth: 680, margin: "0 auto 36px", lineHeight: 2, fontSize: 15.5, color: "var(--ink-900)" }}>
+            <p style={{ margin: "0 0 16px" }}>
+              BitVoyage では、中小企業の業務改善で、いきなり大がかりな専用システムを作るのではなく、今の業務に近い形で小さく始められる方法から検討します。
+            </p>
+            <p style={{ margin: "0 0 16px" }}>
+              たとえば Google Workspace（スプレッドシート・Gmail・Drive・フォーム・カレンダーなど）を組み合わせると、低コストで業務の自動化・見える化・通知・入力管理を実現できるケースが多くあります。専用の Web アプリや外部システムを最初から作ると、開発費・保守費・管理コストが大きくなりやすいためです。
+            </p>
+            <p style={{ margin: 0 }}>
+              まずは現場で扱いやすく、変更しやすい仕組みから整え、必要に応じて段階的に広げていきます。将来的に限界が来た場合は、Web アプリや他システムとの連携も検討します。
             </p>
           </div>
-          <p style={{ textAlign: "center", fontSize: 13.5, color: "var(--ink-500)", lineHeight: 1.9, margin: "28px auto 0", maxWidth: 600 }}>
+
+          <div style={{ maxWidth: 420, margin: "0 auto 40px" }}>
+            <img
+              src="assets/illustrations/service-approach-flow.png"
+              alt="散らかった書類が、整理されて流れるようになる様子"
+              style={{ width: "100%", height: "auto", display: "block" }}
+            />
+          </div>
+
+          <h3 style={{ textAlign: "center", fontSize: 17, color: "var(--navy-900)", fontWeight: 800, margin: "0 0 22px" }}>
+            業務に合わせて、道具を使い分けます
+          </h3>
+          <div className="value-grid" style={{ marginBottom: 32 }}>
+            {[
+              { tag: "手元の作業に", tool: "Excel", desc: "既存業務の確認や、一時的な整理、個人で完結するローカルな作業の改善に向いています。" },
+              { tag: "共有・自動化に", tool: "Google スプレッドシート + 自動化", desc: "複数人での共有、確認、通知、集計が必要な業務に向いています。Google Apps Script などを活用し、毎月くり返す作業を減らします。" },
+              { tag: "本格運用に", tool: "Web アプリ・システム連携", desc: "複雑な権限管理、外部公開、大量データ、基幹業務化など、共有スプレッドシートでは難しくなった段階で検討します。" },
+            ].map(r => (
+              <div key={r.tool} className="card" style={{ background: "#fff" }}>
+                <div style={{ fontFamily: "var(--font-hand)", fontSize: 15, color: "var(--navy-700)", fontWeight: 700, marginBottom: 6 }}>{r.tag}</div>
+                <h4 style={{ fontSize: 17, color: "var(--navy-900)", margin: "0 0 10px", fontWeight: 800, lineHeight: 1.5 }}>{r.tool}</h4>
+                <p style={{ fontSize: 14, color: "var(--ink-700)", lineHeight: 1.9, margin: 0 }}>{r.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ borderLeft: "4px solid var(--yellow-500)", background: "var(--yellow-100)", padding: "20px 24px", borderRadius: "0 10px 10px 0", maxWidth: 720, margin: "0 auto 32px", lineHeight: 1.95, fontSize: 15, color: "var(--navy-900)" }}>
+            ただし、すべてを Google Workspace で解決するわけではありません。現在お使いの Excel、Microsoft 365、既存システム、会計ソフト、予約システムなども確認したうえで、費用対効果と運用しやすさを見ながら、無理なく続けられる方法を提案します。
+          </div>
+
+          <p style={{ textAlign: "center", fontWeight: 700, color: "var(--navy-900)", fontSize: 15.5, lineHeight: 1.9, margin: "0 auto", maxWidth: 640 }}>
+            新しいツールを入れることよりも、今ある作業を減らすことを優先します。
+          </p>
+          <p style={{ textAlign: "center", fontSize: 13.5, color: "var(--ink-500)", lineHeight: 1.9, margin: "20px auto 0", maxWidth: 600 }}>
             複数部門にまたがる見直しや、会社全体の業務整理も対応可能です。<br className="mobile-only"/>
             まずは一部の作業から、段階的に進めることをおすすめしています。
           </p>
