@@ -5,6 +5,7 @@ function TopNav({ currentPage = "home" }) {
   const links = [
     { id: "home", label: "ホーム", href: "index.html" },
     { id: "service", label: "サービス", href: "service.html" },
+    { id: "improvements", label: "改善例", href: "improvements.html" },
     { id: "company", label: "会社概要", href: "company.html" },
     { id: "blog", label: "ブログ", href: "blog.html" },
   ];
@@ -99,9 +100,11 @@ function SiteFooter() {
             <ul>
               <li><a href="service.html#consult">作業の棚卸し相談（無料）</a></li>
               <li><a href="service.html#small">小さな作業改善</a></li>
-              <li><a href="service.html#onsite">業務まわりの小さな仕組み化</a></li>
-              <li><a href="service.html#support">継続して減らすサポート</a></li>
-              <li><a href="service.html#implementation">業務全体の整理・再構築</a></li>
+              <li><a href="service.html#standard">標準的な業務改善</a></li>
+              <li><a href="service.html#workflow">業務まわりの仕組み化</a></li>
+              <li><a href="service.html#custom">業務に合わせた個別構築</a></li>
+              <li><a href="service.html#support">継続サポート</a></li>
+              <li><a href="improvements.html">改善例</a></li>
             </ul>
           </div>
           <div>

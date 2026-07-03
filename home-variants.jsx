@@ -14,22 +14,23 @@ function HomeA() {
           </div>
           <h1 className="home-hero-title">
             <span className="home-hero-title-desktop">
-              売上につながらない<br/>
-              作業を、<span className="underline-hand">減らす</span>。
+              確認に追われる毎日から、<br/>
+              見れば分かる<span className="underline-hand">安心</span>へ。
             </span>
             <span className="home-hero-title-mobile">
-              売上につながらない<br/>
-              作業を、<span className="underline-hand">減らす</span>。
+              確認に追われる毎日から、<br/>
+              見れば分かる<span className="underline-hand">安心</span>へ。
             </span>
           </h1>
           <p style={{ fontSize: 17, fontWeight: 700, color: "var(--navy-800)", margin: "18px 0 0", lineHeight: 1.7 }}>
-            忙しい現場に代わって、改善を前に進めます。
+            売上につながらない事務作業を、現場に合う形で減らします。
           </p>
           <p className="home-hero-lead">
-            東広島・呉を中心に、忙しくて改善まで<br className="mobile-only" />
-            手が回らない中小企業の業務を整理します。<br/>
-            手入力・転記・集計・確認連絡など、<br className="mobile-only" />
-            毎日時間を奪っている作業をひとつずつ減らします。
+            同じ数字の入力、入金や支払いの確認、書類探し。<br/>
+            毎日少しずつ神経を使う作業を、<br className="mobile-only" />
+            「見れば分かる」形に整えます。<br/>
+            BitVoyageは、東広島・呉エリアの中小企業と一緒に、<br className="mobile-only" />
+            現場に合わせた業務改善を進める会社です。
           </p>
           <div className="home-hero-actions">
             <a href="#contact" className="btn btn-primary">
@@ -59,11 +60,11 @@ function HomeA() {
             </div>
             <ul className="problem-list">
               {[
-                "同じ数字を、何度も手で入力・転記している",
-                "見積・請求・領収書の処理に時間がかかっている",
-                "日程調整や個別連絡のやり取りが多い",
-                "社長や \"〇〇さん\" しか分からない仕事がある",
-                "その人が休むと、業務が止まってしまう",
+                "同じ数字を何度も入力し、間違っていないか何度も見直している",
+                "請求・入金・支払いの確認に、毎月神経を使っている",
+                "社長や特定の事務担当者しか分からない作業がある",
+                "「これで合っているかな」という不安を抱えたまま進めている",
+                "人を増やす前に、今ある作業を減らせないか考えている",
               ].map((t, i) => (
                 <li key={i} className="problem-item">
                   <span className="problem-checkbox" aria-hidden="true"></span>
@@ -74,13 +75,13 @@ function HomeA() {
           </div>
           {/* 損失コスト */}
           <div className="loss-cost-box">
-            <div className="loss-cost-eyebrow">放っておくと</div>
+            <div className="loss-cost-eyebrow">積み重なると</div>
             <p className="loss-cost-text">
               1日 <strong>2時間</strong> の手作業 →
               年間 <strong className="loss-cost-highlight">約500時間</strong>。
             </p>
             <p className="loss-cost-note">
-              売上を生まない作業ほど、毎日の積み重ねで大きく時間を奪っていきます。
+              その時間を売上につながる仕事に使えたら、と思うともったいないですよね。
             </p>
           </div>
         </div>
@@ -132,11 +133,12 @@ function HomeA() {
           <div style={{ textAlign: "center", marginBottom: 32 }}>
             <div className="section-eyebrow">outcome</div>
             <h2 style={{ fontSize: 28, color: "var(--navy-900)", margin: "0 0 14px", fontWeight: 800 }}>
-              減らした分だけ、<span className="marker">現場に余力</span>が戻ります。
+              <span className="marker">「見れば分かる」</span>ようになると、<br className="mobile-only"/>
+              こう変わります。
             </h2>
             <p style={{ fontSize: 15, color: "var(--ink-700)", lineHeight: 1.9, margin: 0 }}>
               手入力や確認作業が減ると、<br className="mobile-only"/>
-              人を増やさなくても、今いる人の時間を本来の仕事に回しやすくなります。
+              「ちゃんと見たかな」と気を張る時間が減ります。その分、今いる人の手が本来の仕事に回ります。
             </p>
           </div>
           <div className="outcome-with-illustration">
@@ -177,7 +179,7 @@ function HomeA() {
               日々の対応に追われて、「見直した方がいい」と分かっている作業ほど、そのまま残ってしまう。
             </p>
             <p className="position-text" style={{ margin: 0 }}>
-              後回しになっていた改善を、<span className="underline-hand">代わりに</span>前へ進めます。<br/>
+              現場の流れを一緒に整理し、<span className="underline-hand">後回し</span>になっていた改善を前へ進めます。<br/>
               売上につながらない作業を一緒に見つけて減らし、<br/>
               会社が前に進むための余力をつくります。
             </p>
@@ -185,8 +187,45 @@ function HomeA() {
         </div>
       </section>
 
+      {/* 改善例への導線 */}
+      <section className="section" style={{ padding: "8px 0 56px" }}>
+        <div className="container-narrow fade-up">
+          <div className="home-kaizen-cta">
+            <div className="section-eyebrow">examples</div>
+            <h2 className="home-kaizen-cta-title">
+              具体的に、どんな作業を<br className="mobile-only" />
+              <span className="marker">減らせる</span>のか
+            </h2>
+            <p className="home-kaizen-cta-text">
+              入金確認、振込データ作成、領収書整理、問い合わせ管理、名刺フォロー、進捗確認。<br/>
+              日々の小さな手間を、現場に合う形で減らします。
+            </p>
+            <a href="improvements.html" className="btn btn-primary">
+              改善例を見る <Icon.ArrowRight />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* サービスの流れ（4ステップ） */}
       <ServiceSteps />
+
+      {/* 代表の顔 */}
+      <section className="section" style={{ padding: "8px 0 40px" }}>
+        <div className="container-narrow fade-up">
+          <div className="home-rep-strip">
+            <img className="home-rep-photo" src="assets/picture/1X8A4633.JPG" alt="株式会社BitVoyage 代表 北束 優花" />
+            <div className="home-rep-body">
+              <div className="home-rep-name">代表・北束 優花<span>（きたづか ゆうか）</span></div>
+              <p className="home-rep-text">
+                前職は半導体メーカーの生産技術職で、業務改善に携わっていました。<br/>
+                現在は、人の判断を仕組みに乗せて、業務がスムーズに回る形を構築しています。
+              </p>
+              <a href="company.html" className="home-rep-link">代表の紹介を見る →</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* CTA リボン */}
       <CTARibbon />
@@ -196,14 +235,24 @@ function HomeA() {
   );
 }
 
-/* ===== 5階層サービス（改善ノート行スタイル） ===== */
+/* ===== 単発メニュー5段階 ＋ 継続サポート別枠 ===== */
 function ServiceSteps() {
   const steps = [
-    { n: "1", t: "作業の棚卸し相談", sub: "減らせる作業があるか、まず一緒に確認します", price: "無料", href: "service.html#consult" },
-    { n: "2", t: "小さな作業改善", sub: "転記・集計・CSV作成など、範囲が明確な作業をひとつ整えます", price: "3万円〜8万円", href: "service.html#small" },
-    { n: "3", t: "業務まわりの小さな仕組み化", sub: "紙・Excel・CSVをつなげ、毎月の確認や転記を減らします", price: "8万円〜30万円", href: "service.html#onsite" },
-    { n: "4", t: "継続して減らすサポート", sub: "改善を後回しにしないための、外部パートナー", price: "月額 5万円〜", href: "service.html#support" },
-    { n: "5", t: "業務全体の整理・再構築", sub: "複数業務にまたがる仕組みや、現場業務の改善を設計します", price: "30万円〜／個別見積り", href: "service.html#implementation" },
+    { n: "1", t: "作業の棚卸し相談", feeling: "「何から手をつければ」が、「ここから減らせそう」に変わります。", sub: "どこから減らせるかを整理し、漠然とした忙しさを見える形にします", price: "無料", href: "service.html#consult" },
+    { n: "2", t: "小さな作業改善", feeling: "地味に面倒な作業が、ひとつ片づきます。", sub: "毎回の入力・確認を少し軽くし、日々の負担を減らします", price: "3万円〜", href: "service.html#small" },
+    { n: "3", t: "標準的な業務改善", feeling: "毎月気を張っていた転記や集計が、「見て確認するだけ」になります。", sub: "くり返し作業を整え、確認に追われる時間を減らします", price: "5万円〜", href: "service.html#standard" },
+    { n: "4", t: "業務まわりの仕組み化", feeling: "「対応漏れてないかな」「あの書類どこだっけ」が、ほとんどなくなります。", sub: "複数の作業をつなげ、対応漏れや探し物の不安を減らします", price: "10万円〜30万円程度", href: "service.html#workflow" },
+    { n: "5", t: "業務に合わせた個別構築", feeling: "休む人がいても業務が止まらない。そこまで整えます。", sub: "人に頼りきりの業務を、任せやすく続けられる形に整えます", price: "30万円〜／個別見積り", href: "service.html#custom" },
+  ];
+  const continuous = [
+    {
+      t: "継続改善サポート",
+      price: "月額5万円〜",
+      feeling: "改善が「いつかやろう」で止まらなくなります。",
+      body: "毎月の相談に加えて、軽微な修正・小さな改善・設定変更などを一定時間内で対応します。",
+      note: "実装量が大きい場合や、新しい仕組みを作る場合は、別途お見積もりします。",
+      items: ["月1回の相談", "改善内容の整理", "軽微な修正", "小さな設定変更", "既存の仕組みの見直し", "追加実装の相談"],
+    },
   ];
   return (
     <section className="section" style={{ paddingTop: 60, paddingBottom: 80 }}>
@@ -230,6 +279,7 @@ function ServiceSteps() {
               <div className="service-five-tab">{s.n}</div>
               <div className="service-five-content">
                 <h3 className="service-five-title">{s.t}</h3>
+                {s.feeling && <p className="service-five-feeling">{s.feeling}</p>}
                 <p className="service-five-sub">{s.sub}</p>
               </div>
               <div className="service-five-price">{s.price}</div>
@@ -237,9 +287,44 @@ function ServiceSteps() {
           ))}
         </div>
         <p style={{ textAlign: "center", fontSize: 12, color: "var(--ink-500)", margin: "14px 0 0" }}>
-          ※ 表示価格はすべて税別です。
+          ※ 上記は単発メニューです。表示価格はすべて税別・目安です。
         </p>
-        <div style={{ textAlign: "center", marginTop: 32 }}>
+
+        {/* 継続サポート別枠 */}
+        <div className="service-cont-block">
+          <div className="service-cont-head">
+            <div className="section-eyebrow">monthly support</div>
+            <h3 className="service-cont-title">継続して整えたい場合</h3>
+            <p className="service-cont-lead">
+              一度作って終わりではなく、使いながら見直したい場合や、<br className="mobile-only"/>
+              改善を後回しにしたくない場合に、月額で継続サポートします。
+            </p>
+          </div>
+          <div className="service-cont-grid">
+            {continuous.map(c => (
+              <div key={c.t} className="service-cont-card">
+                <div className="service-cont-card-head">
+                  <h4 className="service-cont-card-title">{c.t}</h4>
+                  <div className="service-cont-card-price">
+                    {c.price}<span className="service-cont-card-tax">（税別）</span>
+                  </div>
+                </div>
+                {c.feeling && <p className="service-cont-card-feeling">{c.feeling}</p>}
+                <p className="service-cont-card-body">{c.body}</p>
+                <div className="service-cont-card-items">
+                  {c.items.map(it => (
+                    <span key={it} className="service-cont-item">
+                      <span className="service-cont-item-dot" aria-hidden="true"></span>{it}
+                    </span>
+                  ))}
+                </div>
+                <p className="service-cont-card-note">{c.note}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div style={{ textAlign: "center", marginTop: 36 }}>
           <a href="service.html" className="btn btn-outline">
             サービス詳細を見る <Icon.ArrowRight />
           </a>
@@ -287,10 +372,15 @@ function CTARibbon({ minimal = false }) {
             どこから減らせそうかが見えてきます。
           </p>
           <div className="cta-feature-row">
-            <div className="cta-feature">ご提案メモが付く</div>
+            <div className="cta-feature">整理メモ付き</div>
             <div className="cta-feature">オンライン全国対応</div>
             <div className="cta-feature">広島市・東広島・呉は対面無料</div>
           </div>
+
+          <p style={{ margin: "18px 0 0", fontSize: 13.5, color: "var(--navy-900)", fontWeight: 600, lineHeight: 1.8 }}>
+            その場で契約をおすすめすることはありません。<br className="mobile-only"/>
+            整理メモをお渡しして、改善できそうなことがあれば、あらためてご提案します。
+          </p>
 
           <div className="contact-box" style={{ marginTop: 28 }}>
             <button
