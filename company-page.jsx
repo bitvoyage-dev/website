@@ -109,6 +109,7 @@ function CompanyPage() {
               ["活動拠点", "東広島市・呉市を中心に広島県内対応"],
               ["代表者", "北束 優花（きたづか ゆうか）"],
               ["事業内容", "中小企業向けに、売上につながらない作業を減らす支援。作業の相談から、削減・現場整理・継続サポートまで。"],
+              ["インボイス登録番号", "T4240001063357（適格請求書発行事業者）"],
               ["お問い合わせ", <a href="mailto:contact@bitvoyage.co.jp" style={{ color: "var(--navy-800)", fontWeight: 600 }}>contact@bitvoyage.co.jp</a>],
             ].map(([k, v], i, arr) => (
               <div key={k} className="company-info-row" style={{ borderBottom: i < arr.length - 1 ? "1px solid var(--line)" : "none" }}>
