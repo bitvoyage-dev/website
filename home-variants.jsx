@@ -14,12 +14,12 @@ function HomeA() {
           </div>
           <h1 className="home-hero-title">
             <span className="home-hero-title-desktop">
-              「あの人しか分からない仕事」、<br/>
+              「あの人しか分からない」仕事、<br/>
               社内にありませんか？
             </span>
             <span className="home-hero-title-mobile">
               「あの人しか<br/>
-              分からない仕事」、<br/>
+              分からない」仕事、<br/>
               社内にありませんか？
             </span>
           </h1>
