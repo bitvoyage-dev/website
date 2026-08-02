@@ -125,7 +125,7 @@ function CompanyPage() {
       </section>
 
       {/* 大切にしていること */}
-      <section className="section" style={{ padding: "40px 0 80px", background: "var(--paper-2)" }}>
+      <section className="section section-plain" style={{ padding: "40px 0 80px" }}>
         <div className="container fade-up">
           <div style={{ textAlign: "center", marginBottom: 48 }}>
             <div className="section-eyebrow">our values</div>

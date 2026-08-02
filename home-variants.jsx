@@ -44,7 +44,7 @@ function HomeA() {
       </section>
 
       {/* こんな状態、ありませんか？ */}
-      <section className="section" style={{ paddingTop: 40, paddingBottom: 24 }}>
+      <section className="section section-plain" style={{ paddingTop: 52, paddingBottom: 44 }}>
         <div className="container-narrow fade-up">
           <div style={{ textAlign: "center", marginBottom: 32 }}>
             <h2 className="problem-heading" style={{ fontSize: 28, color: "var(--navy-900)", margin: "0 0 12px", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: 12 }}>
@@ -128,7 +128,7 @@ function HomeA() {
       </section>
 
       {/* 詰まりが取れると、こう変わる（結果ベース） */}
-      <section className="section" style={{ padding: "48px 0", background: "var(--paper-2)" }}>
+      <section className="section section-plain" style={{ padding: "48px 0" }}>
         <div className="container-narrow fade-up">
           <div style={{ textAlign: "center", marginBottom: 32 }}>
             <div className="section-eyebrow">outcome</div>
@@ -251,9 +251,9 @@ function ServiceSteps() {
       t: "伴走顧問",
       price: "月15万円〜",
       feeling: "「あとで考えよう」が、毎月ちゃんと前に進みます。",
-      body: "毎月の打ち合わせで現場の状況を確認し、次にどこへ手をつけるかを決め続ける役割です。標準は月4回（1回2〜3時間）、月2回なら月10万円〜。",
-      note: "実装は含みません。判断する役と作る役を分けたほうが、どこまでやるかの線が引けるためです。",
-      items: ["現場の状況の確認", "詰まっている作業の洗い出し", "手をつける順番の整理", "前月に進んだことの振り返り", "次に何をするかの決定"],
+      body: "毎月の打ち合わせで現場の状況を確認し、次にどこへ手をつけるかを決め続ける役割です。標準は月4回（1回2〜3時間）。オンラインでも、ご訪問でも対応します。",
+      note: "その場でできる手直しは対応しますが、続けるとどこかで仕組みごと作り直す話になります。そこは「手作業をなくす仕組みづくり」として別にお見積りします。",
+      items: ["現場の状況の確認", "詰まっている作業の洗い出し", "手をつける順番の整理", "その場でできる範囲の手直し", "仕組みごと作り直すタイミングの見きわめ", "次に何をするかの決定"],
     },
     {
       t: "保守サポート",

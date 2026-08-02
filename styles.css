@@ -1619,6 +1619,12 @@ html, body {
   display: block;
 }
 
+/* --- 背景の交互切り替え ---------------------------------- */
+/* .page.bg-grid の方眼を隠して無地にする塊。方眼の塊と交互に並べる */
+.section-plain {
+  background: var(--paper-2);
+}
+
 /* --- 水彩挿し絵 (assets/illustrations/watercolor/) -------- */
 /* 白背景の上: クリーム地ごと額装風 (.wc-illust) / クリーム・方眼背景の上: 透過版 (.wc-illust-cut) */
 .wc-illust {
