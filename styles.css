@@ -236,7 +236,7 @@ html, body {
 
 /* ---- セクション ---- */
 .section {
-  padding: 96px 0;
+  padding: 72px 0;
 }
 .section-title {
   font-size: 34px;
@@ -548,7 +548,7 @@ html, body {
 }
 
 .service-detail-illustration {
-  margin: 24px 0;
+  margin: 16px 0;
   height: 130px;
   display: flex;
   align-items: center;
@@ -1619,6 +1619,37 @@ html, body {
   display: block;
 }
 
+/* --- 水彩挿し絵 (assets/illustrations/watercolor/) -------- */
+/* 白背景の上: クリーム地ごと額装風 (.wc-illust) / クリーム・方眼背景の上: 透過版 (.wc-illust-cut) */
+.wc-illust {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid rgba(43, 46, 74, 0.08);
+}
+.wc-illust-cut {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.position-illustration {
+  max-width: 400px;
+  margin: 0 auto 20px;
+}
+.approach-illustration {
+  max-width: 480px;
+  margin: 0 auto 24px;
+}
+.faq-illustration {
+  max-width: 320px;
+  margin: 0 auto 24px;
+}
+.mission-illustration {
+  max-width: 440px;
+  margin: 16px auto 20px;
+}
+
 /* ギャップセクション「現場側」カード上のもつれ雲 */
 .gap-card-illustration {
   height: 88px;
@@ -2173,7 +2204,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 14px 0 16px;
+  margin: 10px 0 12px;
 }
 .case-card-illustration img {
   max-width: 100%;

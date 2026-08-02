@@ -31,6 +31,9 @@ function CompanyPage() {
               現場の手で、<br className="mobile-only"/>
               <span className="underline-hand">続けられる形</span>に整える。
             </h2>
+            <div className="mission-illustration" aria-hidden="true">
+              <img className="wc-illust-cut" src="assets/illustrations/watercolor/mission-workplace.webp" alt="" />
+            </div>
             <p className="company-mission-lead">
               売上につながらない作業は、減らして終わりではありません。<br/>
               空いた時間が本業に向いて、はじめて意味が出る。<br/><br/>

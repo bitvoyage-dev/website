@@ -56,7 +56,7 @@ function HomeA() {
           </div>
           <div className="problem-with-illustration">
             <div className="problem-illustration" aria-hidden="true">
-              <img src="assets/illustrations/01-person-thinking.png" alt="" />
+              <img className="wc-illust-cut" src="assets/illustrations/watercolor/problem-desk.webp" alt="" />
             </div>
             <ul className="problem-list">
               {[
@@ -128,7 +128,7 @@ function HomeA() {
       </section>
 
       {/* 詰まりが取れると、こう変わる（結果ベース） */}
-      <section className="section" style={{ padding: "60px 0", background: "var(--paper-2)" }}>
+      <section className="section" style={{ padding: "48px 0", background: "var(--paper-2)" }}>
         <div className="container-narrow fade-up">
           <div style={{ textAlign: "center", marginBottom: 32 }}>
             <div className="section-eyebrow">outcome</div>
@@ -143,7 +143,7 @@ function HomeA() {
           </div>
           <div className="outcome-with-illustration">
             <div className="outcome-illustration" aria-hidden="true">
-              <img src="assets/illustrations/03-person-forward.png" alt="" />
+              <img className="wc-illust-cut" src="assets/illustrations/watercolor/outcome-coffee.webp" alt="" />
             </div>
             <div className="outcome-grid">
               {[
@@ -167,13 +167,16 @@ function HomeA() {
       </section>
 
       {/* ツール屋ではない（ポジショニング） */}
-      <section className="section" style={{ padding: "60px 0" }}>
+      <section className="section" style={{ padding: "48px 0" }}>
         <div className="container-narrow fade-up">
           <div className="position-block">
             <div className="position-eyebrow">our role</div>
             <h2 className="position-title">
               BitVoyage の考え方
             </h2>
+            <div className="position-illustration" aria-hidden="true">
+              <img className="wc-illust-cut" src="assets/illustrations/watercolor/position-together.webp" alt="" />
+            </div>
             <p style={{ fontSize: 16, fontWeight: 500, color: "var(--ink-700)", lineHeight: 1.95, margin: "0 0 22px" }}>
               忙しい現場では、改善したくても後回しになりがちです。<br/>
               日々の対応に追われて、「見直した方がいい」と分かっている作業ほど、そのまま残ってしまう。
@@ -355,12 +358,12 @@ function CTARibbon({ minimal = false }) {
   }, [open]);
 
   return (
-    <section id="contact" className="section" style={{ padding: minimal ? "60px 0" : "40px 0 60px" }}>
+    <section id="contact" className="section" style={{ padding: minimal ? "48px 0" : "28px 0 44px" }}>
       <div className="container-narrow">
         <p style={{ textAlign: "center", fontSize: 16, color: "var(--ink-700)", marginBottom: 24 }}>
           まずは、今いちばん時間を取られている作業をお聞かせください。
         </p>
-        <div style={{ background: "var(--yellow-500)", padding: "36px 40px", borderRadius: 16, textAlign: "center", boxShadow: "var(--shadow-md)", position: "relative" }}>
+        <div style={{ background: "var(--yellow-500) url('assets/illustrations/watercolor/cta-wash.webp') center/cover", padding: "36px 40px", borderRadius: 16, textAlign: "center", boxShadow: "var(--shadow-md)", position: "relative" }}>
           <div style={{ position: "absolute", top: 10, left: 20, fontSize: 11, fontFamily: "var(--font-hand)", color: "var(--navy-900)", opacity: 0.7 }}>お気軽にどうぞ</div>
           <h2 className="cta-ribbon-title" style={{ margin: 0, fontWeight: 800, color: "var(--navy-900)", letterSpacing: "0.02em" }}>
             作業の棚卸し相談<br/>

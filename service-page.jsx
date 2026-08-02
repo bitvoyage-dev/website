@@ -93,7 +93,7 @@ function ServicePage() {
       feeling: "「何から手をつければ」が、「ここから減らせそう」に変わります。",
       price: "無料",
       priceNote: "オンライン／対面どちらも可（対面は広島市・東広島市・呉市内は無料、それ以外の地域は交通費のみ）。何を頼めばいいか決まっていなくても大丈夫です。",
-      illustration: "assets/illustrations/01-person-thinking.png",
+      illustration: "assets/illustrations/watercolor/consult-hearing.webp",
       description: [
         "毎月くり返している手作業や、売上につながらないのに時間を取っている作業を伺います。",
         "無料相談は、作業そのものを改善する場ではなく、「どこに時間を取られているか」「何から減らせそうか」を確認し、次に進む方向を決めるための相談です。",
@@ -125,7 +125,7 @@ function ServicePage() {
       feeling: "地味に面倒な作業が、ひとつ片づきます。",
       price: "3万円〜",
       priceNote: "入力表・管理表・チェックリスト・簡単な一覧化・簡単な集計表など、範囲が明確な小さな改善の目安です。固定料金ではなく、内容を確認のうえ事前にお見積りします。",
-      illustration: "assets/illustrations/service-01-small-improvement.png",
+      illustration: "assets/illustrations/watercolor/menu-small.webp",
       description: [
         "入力表、管理表、チェックリスト、簡単な一覧化、簡単な集計表など、範囲が明確な小さな改善をひとつ整えるメニューです。",
         "既存のExcel・紙・スプレッドシートなどをもとに、入力しやすい表や、確認しやすい一覧を作ります。",
@@ -164,7 +164,7 @@ function ServicePage() {
       feeling: "毎月気を張っていた転記や集計が、「見て確認するだけ」になります。",
       price: "5万円〜",
       priceNote: "くり返し発生する転記・集計・CSV作成・確認作業などを減らす、標準的な改善の目安です。内容を確認のうえ事前にお見積りします。",
-      illustration: "assets/illustrations/05-icon-chart-calc.png",
+      illustration: "assets/illustrations/watercolor/menu-standard.webp",
       description: [
         "毎月くり返している転記、集計、CSV作成、確認作業などを、現場に合う形で減らす標準的な改善です。",
         "簡単な自動処理や通知、複数シートをまたぐ集計など、3万円〜の小さな改善より少し広い範囲に対応します。",
@@ -200,7 +200,7 @@ function ServicePage() {
       feeling: "「対応漏れてないかな」「あの書類どこだっけ」が、ほとんどなくなります。",
       price: "10万円〜30万円程度",
       priceNote: "複数の作業や道具を組み合わせる、業務まわりの仕組み化の目安です。内容を確認のうえ、事前にお見積りします。",
-      illustration: "assets/illustrations/08-icon-search-doc.png",
+      illustration: "assets/illustrations/watercolor/menu-shikumi.webp",
       description: [
         "問い合わせ管理、領収書管理、通知、予定連携などを組み合わせ、毎月の確認・転記・集計を減らす仕組みを作ります。",
         "単発の表作成より広く、入出金やお金まわりの確認、受発注・在庫管理、顧客・案件の整理、日報集計など、毎月の流れそのものを楽にする改善です。",
@@ -239,7 +239,7 @@ function ServicePage() {
       feeling: "休む人がいても業務が止まらない。そこまで整えます。",
       price: "30万円〜／個別見積り",
       priceNote: "内容・利用人数・扱うデータ・運用方法を確認したうえで、個別にお見積りします。",
-      illustration: "assets/illustrations/10-icon-implementation.png",
+      illustration: "assets/illustrations/watercolor/menu-kobetsu.webp",
       description: [
         "複数の業務が関係する作業や、帳票読取、照合、複数人での運用、外部システム連携を含む仕組み化です。",
         "現状の流れを確認し、誰が・いつ・どの情報を使うのかを整理したうえで、業務に合わせた仕組みを設計します。",
@@ -267,7 +267,7 @@ function ServicePage() {
       feeling: "改善が「いつかやろう」で止まらなくなります。",
       price: "月額5万円〜",
       priceNote: "毎月の相談＋軽微な修正・小さな改善・設定変更を一定時間内で対応。実装量が大きい場合や新しい仕組みづくりは別途お見積り。",
-      illustration: "assets/illustrations/09-icon-support.png",
+      illustration: "assets/illustrations/watercolor/menu-support.webp",
       description: [
         "毎月の相談に加えて、軽微な修正・小さな改善・設定変更などを一定時間内で対応します。",
         "Excel・スプレッドシートの整理、項目追加、関数修正、チェックリスト作成、運用ルールの文章化など、月内で対応できる範囲の軽微作業を含みます。",
@@ -299,25 +299,25 @@ function ServicePage() {
   const cases = [
     {
       title: "個別連絡・確認作業",
-      illustration: "assets/illustrations/04-icon-mail-person.png",
+      illustration: "assets/illustrations/watercolor/case-renraku.webp",
       problem: "1件ずつ手で送る連絡に、時間とミスの不安があった",
       result: <>一括送信＋個別差し込みで、連絡に使う<span className="marker">時間を削減</span></>,
     },
     {
       title: "分析・計算作業",
-      illustration: "assets/illustrations/05-icon-chart-calc.png",
+      illustration: "assets/illustrations/watercolor/case-bunseki.webp",
       problem: "専門的な分析に、外部ソフトの費用と手間がかかっていた",
       result: <>分析処理を内製化し、作業時間と<span className="marker">外部コストを削減</span></>,
     },
     {
       title: "手順・記録の整理",
-      illustration: "assets/illustrations/06-icon-gears-checklist.png",
+      illustration: "assets/illustrations/watercolor/case-tejun.webp",
       problem: "人によって作業の進め方が違い、結果にばらつきが出やすい状態だった",
       result: <>作業手順と記録の残し方をそろえ、<span className="marker">再現性のある形</span>に整理</>,
     },
     {
       title: "情報の確認・検索",
-      illustration: "assets/illustrations/07-icon-folder-flow.png",
+      illustration: "assets/illustrations/watercolor/case-kensaku.webp",
       problem: "必要な情報を探すたび、資料や過去情報の確認に時間がかかっていた",
       result: <>必要な情報にたどり着きやすい形にし、<span className="marker">探す・確認する時間を削減</span></>,
     },
@@ -406,13 +406,17 @@ function ServicePage() {
       ))}
 
       {/* BitVoyageの標準的な進め方 */}
-      <section className="section" style={{ padding: "64px 0 32px" }}>
+      <section className="section" style={{ padding: "44px 0 24px" }}>
         <div className="container fade-up">
           <div style={{ textAlign: "center", marginBottom: 24 }}>
             <div className="section-eyebrow">our approach</div>
             <h2 className="section-title" style={{ fontSize: 26 }}>
               まずは、<span className="marker">小さく始められる仕組み</span>から。
             </h2>
+          </div>
+
+          <div className="approach-illustration" aria-hidden="true">
+            <img className="wc-illust-cut" src="assets/illustrations/watercolor/approach-screen.webp" alt="" />
           </div>
 
           <div style={{ maxWidth: 680, margin: "0 auto 36px", lineHeight: 2, fontSize: 15.5, color: "var(--ink-900)" }}>
@@ -429,7 +433,7 @@ function ServicePage() {
 
           <div style={{ maxWidth: 420, margin: "0 auto 40px" }}>
             <img
-              src="assets/illustrations/service-approach-flow.png"
+              src="assets/illustrations/watercolor/approach-flow.webp"
               alt="散らかった書類が、整理されて流れるようになる様子"
               style={{ width: "100%", height: "auto", display: "block" }}
             />
@@ -467,7 +471,7 @@ function ServicePage() {
       </section>
 
       {/* 減らせた作業の例 */}
-      <section className="section cases-section" style={{ padding: "48px 0 80px", background: "var(--paper-2)" }}>
+      <section className="section cases-section" style={{ padding: "40px 0 60px", background: "var(--paper-2)" }}>
         <div className="container fade-up">
           <div style={{ textAlign: "center", marginBottom: 48 }}>
             <div className="section-eyebrow">cases</div>
@@ -510,11 +514,14 @@ function ServicePage() {
       </section>
 
       {/* よくあるご質問 */}
-      <section className="section" style={{ padding: "80px 0" }}>
+      <section className="section" style={{ padding: "56px 0" }}>
         <div className="container-narrow fade-up">
           <h2 className="section-title" style={{ fontSize: 28, textAlign: "center", marginBottom: 32 }}>
             <span className="marker">よくある</span>ご質問
           </h2>
+          <div className="faq-illustration" aria-hidden="true">
+            <img className="wc-illust-cut" src="assets/illustrations/watercolor/faq-wondering.webp" alt="" />
+          </div>
           {[
             { q: "どこから始めるのが良いですか？", a: "まずは無料の「作業の棚卸し相談」からで大丈夫です。何を減らせばいいか決まっていなくても、どこに時間を取られているかを一緒に確認します。そのうえで、小さな作業改善（3万円〜）、標準的な業務改善（5万円〜）、業務まわりの仕組み化（10万円〜）、業務に合わせた個別構築（30万円〜）のどれに進むか、または月額の継続サポートにするかをご案内します。" },
             { q: "「3万円〜」で、どこまで対応してもらえますか？", a: "3万円〜の小さな作業改善は、範囲が明確な入力表・管理表・チェックリスト・簡単な一覧化・簡単な集計表などを想定しています。通知、外部サービス連携、自動処理、複数人での運用設計、権限管理、OCR・AI処理、複数シートにまたがる管理などが必要な場合は、5万円〜の標準的な業務改善、または内容に応じて個別見積りとなります。何でも3万円で対応するわけではなく、範囲を明確にしてお見積りします。" },

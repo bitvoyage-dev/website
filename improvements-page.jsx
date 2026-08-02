@@ -54,7 +54,7 @@ function ImprovementsPage() {
       cards: [
         {
           title: "入金確認・売上表作成をラクにする仕組み",
-          icon: "assets/illustrations/kaizen/icon-nyukin.png",
+          icon: "assets/illustrations/watercolor/icon-nyukin.webp",
           problem: "銀行明細を見ながら入金を手作業で確認し、売上表に転記。確認漏れや転記ミスが起きやすい。",
           can: "銀行の明細データから入金状況を一覧化し、売上表の作成を補助。入金済み・未入金の確認をしやすくします。",
           reduce: "銀行明細の確認、売上表への転記、入金チェック、未入金確認",
@@ -63,7 +63,7 @@ function ImprovementsPage() {
         },
         {
           title: "見積書・請求書などの定型書類を、台帳から作る仕組み",
-          icon: "assets/illustrations/kaizen/icon-teikei.png",
+          icon: "assets/illustrations/watercolor/icon-teikei.webp",
           problem: "見積書や請求書を前回ファイルのコピーで作成。打ち替え漏れや古い情報の消し忘れに気を使う。",
           can: "台帳に入力した値を、決まった書式の書類に差し込んで出力。よく使う書類から小さく始められます。",
           reduce: "前回ファイル探し、コピー＆打ち替え、打ち替え漏れの確認、書式の手直し",
@@ -73,7 +73,7 @@ function ImprovementsPage() {
         },
         {
           title: "振込データ作成をラクにする仕組み",
-          icon: "assets/illustrations/kaizen/icon-furikomi.png",
+          icon: "assets/illustrations/watercolor/icon-furikomi.webp",
           problem: "支払先ごとに金額や口座を確認しながらネットバンキングへ手入力。件数が増えると入力ミスが不安。",
           can: "支払先や金額を一覧で整理し、銀行に取り込める振込用データの作成を補助します。",
           reduce: "振込先の確認、金額入力、口座情報の転記、支払一覧の整理",
@@ -82,7 +82,7 @@ function ImprovementsPage() {
         },
         {
           title: "会計ソフトへの「二重入力」をなくす仕組み",
-          icon: "assets/illustrations/kaizen/icon-nijyu.png",
+          icon: "assets/illustrations/watercolor/icon-nijyu.webp",
           problem: "スプレッドシートに入力した数字を、あらためて会計ソフトにも入力。二度打ちの手間で月次把握も遅れがち。",
           can: "入力済みデータを会計ソフトの取込形式（CSVなど）に整え、二重入力を削減。月次の確認もしやすくします。",
           reduce: "会計ソフトへの再入力、転記ミスの確認、月次集計、現金と領収書の突き合わせ",
@@ -92,7 +92,7 @@ function ImprovementsPage() {
         },
         {
           title: "領収書・支出記録を整理する仕組み",
-          icon: "assets/illustrations/kaizen/icon-ryoshu.png",
+          icon: "assets/illustrations/watercolor/icon-ryoshu.webp",
           problem: "領収書の写真・PDF・カード明細・現金記録がバラバラで後から確認しづらく、税理士へ渡す前の整理に時間がかかる。",
           can: "フォルダに入れた領収書を一覧化し、日付・支払先・金額・用途を記録。確認済み・未確認も管理できます。",
           reduce: "領収書探し、支出メモ、税理士提出前の確認、経費の用途整理",
@@ -108,7 +108,7 @@ function ImprovementsPage() {
       cards: [
         {
           title: "名刺交換後のフォローを忘れない仕組み",
-          icon: "assets/illustrations/kaizen/icon-meishi.png",
+          icon: "assets/illustrations/watercolor/icon-meishi.webp",
           problem: "名刺交換しても、誰とどこで会い何を話したか思い出しにくく、フォロー連絡のタイミングも逃しやすい。",
           can: "名刺情報・出会った場所・会話メモ・次回アクションを記録し、必要なタイミングで確認できるようにします。",
           reduce: "名刺探し、会話内容の思い出し、フォロー漏れ、紹介先の整理",
@@ -118,7 +118,7 @@ function ImprovementsPage() {
         },
         {
           title: "問い合わせ対応を見落とさない仕組み",
-          icon: "assets/illustrations/kaizen/icon-toiawase.png",
+          icon: "assets/illustrations/watercolor/icon-toiawase.webp",
           problem: "電話・メール・LINE・フォームと入口が複数で対応状況が見えにくく、誰が対応・次に何をが曖昧になりやすい。",
           can: "問い合わせを一覧化し、対応状況・担当・次回対応を管理。通知も組み合わせ、見落としを防ぎます。",
           reduce: "問い合わせ確認、対応漏れ確認、担当者への共有、対応履歴の確認",
@@ -127,7 +127,7 @@ function ImprovementsPage() {
         },
         {
           title: "メールを起点に、案件情報を台帳に残す仕組み",
-          icon: "assets/illustrations/kaizen/icon-mail.png",
+          icon: "assets/illustrations/watercolor/icon-mail.webp",
           problem: "見積依頼や注文メールが複数アドレスに分散し、図面や添付も埋もれる。過去案件探しに時間がかかり、対応は記憶頼みになりがち。",
           can: "メールを転送（BCC）するだけで案件として台帳に登録し、添付・進捗・過去の見積を蓄積。難しいものだけ「要確認」として人が確認します。",
           reduce: "過去見積・過去案件探し、メール確認、案件の手入力、進捗の記憶、添付の探し物",
@@ -144,7 +144,7 @@ function ImprovementsPage() {
       cards: [
         {
           title: "重要メールだけ通知する仕組み",
-          icon: "assets/illustrations/kaizen/icon-tsuchi.png",
+          icon: "assets/illustrations/watercolor/icon-tsuchi.webp",
           problem: "メールが多く全部の確認に時間がかかる。重要なものだけ早く気づきたいが、受信箱に張り付くのは負担。",
           can: "条件に合うメールだけを抽出し、チャットなどに通知。必要に応じて返信案や対応メモも残せます。",
           reduce: "メール確認、重要メールの見落とし、対応判断、社内共有",
@@ -160,7 +160,7 @@ function ImprovementsPage() {
       cards: [
         {
           title: "紙の書類やPDFを一覧化する仕組み",
-          icon: "assets/illustrations/kaizen/icon-kami.png",
+          icon: "assets/illustrations/watercolor/icon-kami.webp",
           problem: "請求書・伝票・申込書・作業記録が紙やPDFで届き、内容確認や一覧化に時間がかかる。",
           can: "書類の内容を読み取り、確認用の一覧を作成。確認済み・未確認の管理や通知も組み合わせられます。",
           reduce: "書類確認、転記、一覧作成、確認漏れ、担当者への共有",
@@ -169,7 +169,7 @@ function ImprovementsPage() {
         },
         {
           title: "案件・工程・書類・期限をまとめて管理する仕組み",
-          icon: "assets/illustrations/kaizen/icon-dashboard.png",
+          icon: "assets/illustrations/watercolor/icon-dashboard.webp",
           problem: "案件や工程の進み具合・必要書類・期限が、紙・Excel・口頭・記憶に分かれている。今どこまで進んでいるか、書類は揃っているか、期限は大丈夫かを都度 人に聞いて確認し、期限超過や書類不備が損失につながりやすい。",
           can: "案件ごとの状態・担当・次の対応・期限に加え、工程の履歴・必要書類・期限アラートをひとつの台帳にまとめます。簡易ダッシュボードや通知（Google Chatなど）も組み合わせ、誰が見ても状況が分かる形に設計します。",
           reduce: "進捗の口頭確認、書類の揃い確認、期限の見張り、状況の聞き回り、対応漏れ確認",
@@ -186,7 +186,7 @@ function ImprovementsPage() {
       cards: [
         {
           title: "外出・領収書・営業活動をまとめて記録する仕組み",
-          icon: "assets/illustrations/kaizen/icon-gaishutsu.png",
+          icon: "assets/illustrations/watercolor/icon-gaishutsu.webp",
           problem: "外出予定・移動距離・駐車場代・懇親会費・領収書・面談相手の記録がバラバラで、後から確認しづらい。営業活動の振り返りや税理士への説明にも手間がかかる。",
           can: "カレンダーの予定をもとに、移動・駐車場代・懇親会費・領収書をイベント単位で記録。「誰と、どこで、何のために会ったか」を後から確認できる形で残します。",
           reduce: "走行距離メモ、駐車場代の確認、懇親会記録、領収書整理、営業活動の振り返り",
