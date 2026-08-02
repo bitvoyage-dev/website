@@ -99,11 +99,11 @@ function SiteFooter() {
             <h4>サービス</h4>
             <ul>
               <li><a href="service.html#consult">作業の棚卸し相談（無料）</a></li>
-              <li><a href="service.html#small">小さな作業改善</a></li>
-              <li><a href="service.html#standard">標準的な業務改善</a></li>
-              <li><a href="service.html#workflow">業務まわりの仕組み化</a></li>
+              <li><a href="service.html#core">手作業をなくす仕組みづくり</a></li>
               <li><a href="service.html#custom">業務に合わせた個別構築</a></li>
-              <li><a href="service.html#support">継続サポート</a></li>
+              <li><a href="service.html#advisor">伴走顧問</a></li>
+              <li><a href="service.html#maintain">保守サポート</a></li>
+              <li><a href="service.html#addon">追加実装</a></li>
               <li><a href="improvements.html">改善例</a></li>
             </ul>
           </div>

@@ -31,14 +31,6 @@ function KaizenCard({ card }) {
       </div>
 
       {card.note && <p className="kaizen-card-note">{card.note}</p>}
-
-      <div className="kaizen-price">
-        <span className="kaizen-price-label">参考価格</span>
-        <span className="kaizen-price-value">
-          {card.price}
-          <span className="kaizen-price-tax">（税別）</span>
-        </span>
-      </div>
     </article>
   );
 }
@@ -263,11 +255,15 @@ function ImprovementsPage() {
         <div className="container-narrow fade-up">
           <div className="kaizen-price-note-box">
             <p style={{ margin: 0 }}>
-              価格は内容や範囲によって変わります。<br className="mobile-only" />
-              小さく始めて、必要に応じて広げることもできます。
+              ここに挙げた作業は、ひとつだけ整えることもできます。<br className="mobile-only" />
+              ただ、手で打ち直す工程が残ったままだと、負担があまり変わらないこともあります。
+            </p>
+            <p style={{ margin: "10px 0 0" }}>
+              なので最初に「最終的にこうなったら楽になる」という形を一緒に決めて、<br className="mobile-only" />
+              そこへ段階的に進めます。<strong>全体で20万円〜50万円</strong>が中心です。
             </p>
             <p style={{ margin: "8px 0 0", fontSize: 13, color: "var(--ink-500)" }}>
-              ※ 表示価格はすべて税別の参考価格です。まずは無料の作業の棚卸し相談で、内容に合わせてお見積りします。
+              ※ 税別・目安です。段階に分けて進められるので、はじめから全額を決める必要はありません。まずは無料の作業の棚卸し相談で、内容に合わせてお見積りします。
             </p>
           </div>
           <div style={{ textAlign: "center", marginTop: 28 }}>
