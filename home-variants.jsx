@@ -14,23 +14,25 @@ function HomeA() {
           </div>
           <h1 className="home-hero-title">
             <span className="home-hero-title-desktop">
-              確認に追われる毎日から、<br/>
-              見れば分かる<span className="underline-hand">安心</span>へ。
+              「あの人しか分からない仕事」、<br/>
+              社内にありませんか？
             </span>
             <span className="home-hero-title-mobile">
-              確認に追われる毎日から、<br/>
-              見れば分かる<span className="underline-hand">安心</span>へ。
+              「あの人しか<br/>
+              分からない仕事」、<br/>
+              社内にありませんか？
             </span>
           </h1>
-          <p style={{ fontSize: 17, fontWeight: 700, color: "var(--navy-800)", margin: "18px 0 0", lineHeight: 1.7 }}>
-            売上につながらない事務作業を、現場に合う形で減らします。
+          <p className="home-hero-answer">
+            誰かが休んでも、<span className="underline-hand">回りつづける</span>会社へ。
           </p>
           <p className="home-hero-lead">
-            同じ数字の入力、入金や支払いの確認、書類探し。<br/>
-            毎日少しずつ神経を使う作業を、<br className="mobile-only" />
-            「見れば分かる」形に整えます。<br/>
-            BitVoyageは、東広島・呉エリアの中小企業と一緒に、<br className="mobile-only" />
-            現場に合わせた業務改善を進める会社です。
+            特定の人に頼っている仕事や判断を、<br className="mobile-only" />
+            仕組みに置き換えます。<br/>
+            同じ数字の入力、入金や支払いの確認、<br className="mobile-only" />
+            書類探し。<br/>
+            毎日少しずつ時間を奪う作業を減らして、<br className="mobile-only" />
+            会社が前に進むための余力をつくります。
           </p>
           <div className="home-hero-actions">
             <a href="#contact" className="btn btn-primary">
