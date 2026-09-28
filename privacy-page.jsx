@@ -32,6 +32,7 @@ function PrivacyPage() {
             <li>メールアドレス</li>
             <li>電話番号</li>
             <li>所在地</li>
+            <li>名刺画像および名刺に記載された情報</li>
             <li>お問い合わせ内容</li>
             <li>ご希望日時</li>
             <li>打ち合わせ・ヒアリングの内容</li>
@@ -47,6 +48,7 @@ function PrivacyPage() {
             <li>ヒアリング、業務整理、課題分析等の実施</li>
             <li>見積書、契約書、請求書等の作成および送付</li>
             <li>当社サービスの提供、運用、保守</li>
+            <li>名刺情報のデータ化および連絡先情報の整理・管理</li>
             <li>サービス提供後のご連絡、確認、サポート</li>
             <li>当社サービスに関するご案内</li>
             <li>サービス品質の改善および業務改善提案の検討</li>
@@ -61,6 +63,8 @@ function PrivacyPage() {
           <p>当社は、業務遂行上必要な範囲で、以下を含む外部サービスを利用する場合があります。</p>
           <ul>
             <li>Google Workspace</li>
+            <li>Google Cloud Vertex AI（AI処理）</li>
+            <li>kintone（業務情報・顧客情報の管理）</li>
             <li>Gmail</li>
             <li>Google Meet</li>
             <li>Google Calendar</li>
@@ -98,7 +102,7 @@ function PrivacyPage() {
           <p>変更後のプライバシーポリシーは、本ページに掲載した時点で効力を生じるものとします。</p>
 
           <p style={{ marginTop: 48, fontSize: 14, color: "var(--ink-500)" }}>
-            制定日：2026年3月4日<br/>最終改定日：2026年7月19日<br/>株式会社BitVoyage
+            制定日：2026年3月4日<br/>最終改定日：2026年9月28日<br/>株式会社BitVoyage
           </p>
         </div>
       </article>
