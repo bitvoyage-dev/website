@@ -4,6 +4,7 @@
 function KaizenCard({ card }) {
   return (
     <article className="kaizen-card fade-up">
+      <p className="kaizen-example-label">活用イメージ</p>
       <div className="kaizen-card-head">
         {card.icon && <img className="kaizen-card-icon" src={card.icon} alt="" />}
         <h3 className="kaizen-card-title">{card.title}</h3>
@@ -30,6 +31,18 @@ function KaizenCard({ card }) {
         <p className="kaizen-reduce-text">{card.reduce}</p>
       </div>
 
+      {card.knowledge && (
+        <div className="kaizen-knowledge">
+          <div className="kaizen-field">
+            <span className="kaizen-field-label">会社に残るもの</span>
+            <p className="kaizen-field-text">{card.knowledge}</p>
+          </div>
+          <div className="kaizen-field">
+            <span className="kaizen-field-label">次の仕事で使えること</span>
+            <p className="kaizen-field-text">{card.reuse}</p>
+          </div>
+        </div>
+      )}
       {card.note && <p className="kaizen-card-note">{card.note}</p>}
     </article>
   );
@@ -44,6 +57,16 @@ function ImprovementsPage() {
       eyebrow: "back office",
       label: "経理・事務まわり",
       cards: [
+        {
+          title: "基幹システム・会計ソフトをつなぎ、案件と仕訳を連動させる仕組み",
+          icon: "assets/illustrations/watercolor/icon-nijyu.webp",
+          problem: "案件・受注・売上の情報がシステムごとに分かれ、同じ内容を何度も登録。会計仕訳への転記や、どの案件の数字かを突き合わせる確認にも手間がかかる。",
+          can: "CSVやAPIを使って、基幹システム・営業管理・会計ソフトの間で必要な情報を連携。案件や売上のデータをもとに、別システムへの案件登録や会計仕訳の作成・登録をつなぎます。",
+          reduce: "システムごとの再入力、案件の登録し直し、仕訳への転記、案件と売上・会計データの突き合わせ",
+          outcomeEmotion: "一度登録した情報が、次の仕事へ。営業・業務・経理の間を、人が転記してつなぐ手間を減らします。",
+          price: "8万円〜",
+          note: "連携できる項目・方法・更新頻度は、各システムのCSV入出力やAPIの仕様を確認して設計します。仕訳ルールはご担当者・税理士さんと確認し、例外や最終確認を人が扱える形に整えます。",
+        },
         {
           title: "入金確認・売上表作成をラクにする仕組み",
           icon: "assets/illustrations/watercolor/icon-nyukin.webp",
@@ -72,16 +95,7 @@ function ImprovementsPage() {
           outcomeEmotion: "手入力の緊張感を減らし、支払い前の確認を落ち着いて。",
           price: "6万円",
         },
-        {
-          title: "会計ソフトへの「二重入力」をなくす仕組み",
-          icon: "assets/illustrations/watercolor/icon-nijyu.webp",
-          problem: "スプレッドシートに入力した数字を、あらためて会計ソフトにも入力。二度打ちの手間で月次把握も遅れがち。",
-          can: "入力済みデータを会計ソフトの取込形式（CSVなど）に整え、二重入力を削減。月次の確認もしやすくします。",
-          reduce: "会計ソフトへの再入力、転記ミスの確認、月次集計、現金と領収書の突き合わせ",
-          outcomeEmotion: "同じ数字を二度打たなくてよくなり、月の数字も早めに見えてきます。",
-          price: "8万円〜",
-          note: "会計ソフト側の取込形式や、税理士さんの運用にあわせて確定します。税務判断そのものは対象外で、最終確認はご担当者・税理士さんが行う前提です。",
-        },
+
         {
           title: "領収書・支出記録を整理する仕組み",
           icon: "assets/illustrations/watercolor/icon-ryoshu.webp",
@@ -119,6 +133,8 @@ function ImprovementsPage() {
         },
         {
           title: "メールを起点に、案件情報を台帳に残す仕組み",
+          knowledge: "案件ごとのメール・図面・見積もりに、変更の理由や対応時の注意点を紐づけて残します。",
+          reuse: "似た依頼が来たとき、前回の条件や判断の根拠を参照できます。担当が変わっても、過去のやり取りを一から探す手間を減らせます。",
           icon: "assets/illustrations/watercolor/icon-mail.webp",
           problem: "見積依頼や注文メールが複数アドレスに分散し、図面や添付も埋もれる。過去案件探しに時間がかかり、対応は記憶頼みになりがち。",
           can: "メールを転送（BCC）するだけで案件として台帳に登録し、添付・進捗・過去の見積を蓄積。難しいものだけ「要確認」として人が確認します。",
@@ -161,9 +177,11 @@ function ImprovementsPage() {
         },
         {
           title: "案件・工程・書類・期限をまとめて管理する仕組み",
+          knowledge: "工程ごとの対応履歴と、予定を変更した理由・つまずいた点・引き継ぎの注意点を残します。",
+          reuse: "次の担当者が経緯を見て続きを進めやすくなります。次回の似た案件でも、確認が必要な工程や準備する書類を見通せます。",
           icon: "assets/illustrations/watercolor/icon-dashboard.webp",
           problem: "案件や工程の進み具合・必要書類・期限が、紙・Excel・口頭・記憶に分かれている。今どこまで進んでいるか、書類は揃っているか、期限は大丈夫かを都度 人に聞いて確認し、期限超過や書類不備が損失につながりやすい。",
-          can: "案件ごとの状態・担当・次の対応・期限に加え、工程の履歴・必要書類・期限アラートをひとつの台帳にまとめます。簡易ダッシュボードや通知（Google Chatなど）も組み合わせ、誰が見ても状況が分かる形に設計します。",
+          can: "案件ごとの状態・担当・次の対応・期限に加え、工程の履歴・必要書類・期限アラートをひとつの台帳にまとめます。状況を一覧で確認する画面や通知も組み合わせ、誰が見ても状況が分かる形に設計します。",
           reduce: "進捗の口頭確認、書類の揃い確認、期限の見張り、状況の聞き回り、対応漏れ確認",
           outcomeEmotion: "『今どこまで？』『書類そろってる？』と聞き回らなくても、一覧で分かるようになります。",
           price: "30万円〜",
@@ -173,18 +191,20 @@ function ImprovementsPage() {
     },
     {
       id: "self",
-      eyebrow: "our own case",
-      label: "自社改善事例",
+      eyebrow: "activity records",
+      label: "営業活動の記録",
       cards: [
         {
           title: "外出・領収書・営業活動をまとめて記録する仕組み",
+          knowledge: "誰と、どこで、何のために会ったか。会話の要点や次の約束を、外出予定・支出・領収書と一緒に残します。",
+          reuse: "次の訪問前に前回の話や約束を確認でき、担当が変わっても話の続きをつなげやすくなります。支出の目的も、記憶に頼らず振り返れます。",
           icon: "assets/illustrations/watercolor/icon-gaishutsu.webp",
           problem: "外出予定・移動距離・駐車場代・懇親会費・領収書・面談相手の記録がバラバラで、後から確認しづらい。営業活動の振り返りや税理士への説明にも手間がかかる。",
           can: "カレンダーの予定をもとに、移動・駐車場代・懇親会費・領収書をイベント単位で記録。「誰と、どこで、何のために会ったか」を後から確認できる形で残します。",
           reduce: "走行距離メモ、駐車場代の確認、懇親会記録、領収書整理、営業活動の振り返り",
           outcomeEmotion: "『あの支出、何だったっけ』と思い出す手間がなくなります。",
           price: "15万円〜",
-          note: "BitVoyage自身の業務でも、外出や領収書の記録を減らすために、このような仕組みを活用しています。",
+          note: "会話メモや次の約束は、入力しやすい形を一緒に検討します。予定や領収書から分からない情報は、人が補う前提です。",
         },
       ],
     },
@@ -202,13 +222,13 @@ function ImprovementsPage() {
             作業を<span className="underline-hand">減らせます</span>。
           </h1>
           <p className="page-hero-lead">
-            「業務改善」と言われても、最初はイメージしづらいものです。<br />
-            BitVoyageでは、日々の事務作業や確認作業の中から、<br className="mobile-only" />
-            小さく減らせる手間を見つけ、現場に合う形で仕組みにします。
+            転記・確認・書類探しの手間を減らし、<br />
+            経験や判断の根拠は、次の仕事で使える形に。<br />
+            身近な仕事がどう変わるか、具体例でご紹介します。
           </p>
           <p className="kaizen-hero-note">
-            ここでは、これまでに作ったもの・自社で使っているもの・<br className="mobile-only" />
-            構築可能な改善例を紹介します。
+            掲載内容は導入実績ではなく、活用イメージです。<br className="mobile-only" />
+            実際の対応範囲は、業務の流れを確認してご提案します。
           </p>
         </div>
       </section>

@@ -91,8 +91,8 @@ function SiteFooter() {
               <img src="assets/Logo/BitVoyage_logo_white.png" alt="BitVoyage" className="footer-logo-image" />
             </div>
             <p style={{ fontSize: 13, opacity: 0.7, lineHeight: 1.8, margin: 0 }}>
-              売上につながらない作業を減らし、<br/>
-              会社が前に進む余力をつくります。
+              AIとITで、毎日の手間を減らす。<br/>
+              経験を残し、会社の力に変えていきます。
             </p>
           </div>
           <div>
@@ -101,7 +101,7 @@ function SiteFooter() {
               <li><a href="service.html#consult">作業の棚卸し相談（無料）</a></li>
               <li><a href="service.html#core">手作業をなくす仕組みづくり</a></li>
               <li><a href="service.html#custom">業務に合わせた個別構築</a></li>
-              <li><a href="service.html#advisor">伴走顧問</a></li>
+              <li><a href="service.html#advisor">伴走サポート</a></li>
               <li><a href="service.html#maintain">保守サポート</a></li>
               <li><a href="service.html#addon">追加実装</a></li>
               <li><a href="improvements.html">改善例</a></li>
@@ -141,7 +141,7 @@ function SiteFooter() {
             <span style={{ margin: "0 10px", opacity: 0.4 }}>/</span>
             <a href="tokushoho.html">特定商取引法に基づく表記</a>
           </span>
-          <span>売上につながらない作業を、減らす。</span>
+          <span>AIとITで、毎日の手間を減らす。</span>
         </div>
       </div>
     </footer>
@@ -160,7 +160,7 @@ function useRevealOnScroll() {
           io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0, rootMargin: "0px 0px -40px 0px" });
     els.forEach(el => io.observe(el));
     return () => io.disconnect();
   }, []);

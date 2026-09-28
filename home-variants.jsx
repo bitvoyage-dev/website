@@ -1,243 +1,165 @@
-// home-variants.jsx — トップページ（HomeA）
+// トップページ — 名刺とつながる、時間と知見の二つの価値。
+const HOME_ART = "assets/illustrations/watercolor/";
+const HOME_CARD_ART = HOME_ART + "namecard-20260919/";
 
-/* ===== トップページ（HomeA） ===== */
 function HomeA() {
   useRevealOnScroll();
   return (
-    <div className="page bg-grid">
+    <div className="page bg-grid home-renewal">
       <TopNav currentPage="home" />
-      {/* ヒーロー：中央寄せ、コピー一本勝負 */}
-      <section className="home-hero">
-        <div className="container-narrow fade-up draw-line-trigger" style={{ textAlign: "center" }}>
-          <div style={{ fontFamily: "var(--font-hand)", color: "var(--navy-700)", fontSize: 14, marginBottom: 16, letterSpacing: "0.1em" }}>
-            — 東広島・呉の中小企業へ —
-          </div>
-          <h1 className="home-hero-title">
-            <span className="home-hero-title-desktop">
-              「あの人しか分からない」仕事、<br/>
-              社内にありませんか？
-            </span>
-            <span className="home-hero-title-mobile">
-              「あの人しか<br/>
-              分からない」仕事、<br/>
-              社内にありませんか？
-            </span>
-          </h1>
-          <p className="home-hero-answer">
-            誰かが休んでも、<span className="underline-hand">回りつづける</span>会社へ。
-          </p>
-          <p className="home-hero-lead">
-            特定の人に頼っている仕事や判断を、<br className="mobile-only" />
-            仕組みに置き換えます。<br/>
-            同じ数字の入力、入金や支払いの確認、<br className="mobile-only" />
-            書類探し。<br/>
-            毎日少しずつ時間を奪う作業を減らして、<br className="mobile-only" />
-            会社が前に進むための余力をつくります。
-          </p>
-          <div className="home-hero-actions">
-            <a href="#contact" className="btn btn-primary">
-              <Icon.Clock /> <span>まずは困っている作業を相談する</span>
-            </a>
-            <a href="service.html" className="btn btn-outline">
-              サービスを見る <Icon.ArrowRight />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* こんな状態、ありませんか？ */}
-      <section className="section section-plain" style={{ paddingTop: 52, paddingBottom: 44 }}>
-        <div className="container-narrow fade-up">
-          <div style={{ textAlign: "center", marginBottom: 32 }}>
-            <h2 className="problem-heading" style={{ fontSize: 28, color: "var(--navy-900)", margin: "0 0 12px", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: 12 }}>
-              <span style={{ display: "inline-block", width: 24, height: 24, border: "2px solid var(--navy-800)", borderRadius: 4, position: "relative" }}>
-                <span style={{ position: "absolute", left: 5, top: -2, width: 8, height: 15, borderRight: "3px solid var(--navy-800)", borderBottom: "3px solid var(--navy-800)", transform: "rotate(42deg)" }}></span>
-              </span>
-              <span>こんな<span className="marker">作業</span>に、時間を取られていませんか？</span>
-            </h2>
-          </div>
-          <div className="problem-with-illustration">
-            <div className="problem-illustration" aria-hidden="true">
-              <img className="wc-illust-cut" src="assets/illustrations/watercolor/problem-desk.webp" alt="" />
+      <main>
+        <section className="home-hero renewal-hero">
+          <div className="container fade-up">
+            <p className="renewal-eyebrow">IT担当がいない会社の、業務システム構築・運用支援</p>
+            <h1 className="renewal-title"><span>AIとITで、</span><br/>毎日の手間を<span className="renewal-underline">減らす。</span></h1>
+            <p className="renewal-answer">手間は減らす。<br className="mobile-only"/>経験は、会社の力に変える。</p>
+            <p className="renewal-lead">現場の仕事を一緒に整理し、会社に合うシステムをつくります。<br/>本業に使える時間と、誰かに任せられる仕事を増やしていきます。</p>
+            <div className="home-hero-actions">
+              <a href="#contact" className="btn btn-primary">うちの仕事も変えられる？を相談する <Icon.ArrowRight /></a>
+              <a href="#benefits" className="btn btn-outline">導入すると、どう変わる？ <span aria-hidden="true">↓</span></a>
             </div>
-            <ul className="problem-list">
+            <p className="renewal-small">相談無料・オンライン全国対応 ／ 広島市・東広島・呉は対面も</p>
+            <div className="renewal-illustrations" aria-label="お手伝いできること">
               {[
-                "同じ数字を何度も入力し、間違っていないか何度も見直している",
-                "請求・入金・支払いの確認に、毎月神経を使っている",
-                "社長や特定の事務担当者しか分からない作業がある",
-                "「これで合っているかな」という不安を抱えたまま進めている",
-                "人を増やす前に、今ある作業を減らせないか考えている",
-              ].map((t, i) => (
-                <li key={i} className="problem-item">
-                  <span className="problem-checkbox" aria-hidden="true"></span>
-                  <span className="problem-text">{t}</span>
-                </li>
-              ))}
-            </ul>
+                ["transfer2.webp", "転記・集計の手間を減らす"],
+                ["search1.webp", "探す時間を減らす"],
+                ["progress2.webp", "進捗を見えるように"],
+                ["ai2.webp", "AIを活かせる土台づくり"],
+              ].map(([img, title], i) => <div className="renewal-illustration" key={img} style={{"--item-index": i}}><img src={HOME_CARD_ART + img} alt="" width="120" height="110"/><span>{title}</span></div>)}
+            </div>
           </div>
-          {/* 損失コスト */}
-          <div className="loss-cost-box">
-            <div className="loss-cost-eyebrow">積み重なると</div>
-            <p className="loss-cost-text">
-              1日 <strong>2時間</strong> の手作業 →
-              年間 <strong className="loss-cost-highlight">約500時間</strong>。
-            </p>
-            <p className="loss-cost-note">
-              その時間を売上につながる仕事に使えたら、と思うともったいないですよね。
-            </p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* 経営者 vs 現場ギャップ */}
-      <section className="section gap-section">
-        <div className="container fade-up">
-          <div style={{ textAlign: "center", marginBottom: 36 }}>
-            <div className="section-eyebrow">macro vs micro</div>
-            <h2 style={{ fontSize: 28, color: "var(--navy-900)", margin: "0 0 14px", fontWeight: 800, lineHeight: 1.45 }}>
-              人を増やす前に、<br className="mobile-only"/>
-              <span className="marker">減らせる作業</span>があります。
-            </h2>
-            <p style={{ fontSize: 15, color: "var(--ink-700)", lineHeight: 1.9, margin: 0 }}>
-              「人が足りない」「業務が多すぎる」と感じる背景には、<br className="mobile-only"/>
-              毎日少しずつ時間を奪っている作業が隠れていることがあります。
-            </p>
-          </div>
-          <div className="gap-grid">
-            <div className="gap-card gap-card-macro">
-              <div className="gap-card-label">最初に<br/>見えている問題</div>
-              <ul className="gap-list">
-                <li>人手が足りない</li>
-                <li>業務が多すぎる</li>
-                <li>毎日忙しいのに進まない</li>
-                <li>何とかしたいが手が回らない</li>
-              </ul>
-              <div className="gap-card-tag">大きな話になりがち</div>
+        <section id="benefits" className="section section-plain renewal-section">
+          <div className="container">
+            <div className="renewal-heading fade-up"><div className="section-eyebrow">two changes</div><h2>仕組みにすると、<br className="mobile-only"/><span className="underline-hand">二つの価値</span>が残ります。</h2><p>目の前の仕事がラクになること。<br className="mobile-only"/>そして、次の仕事が進めやすくなること。</p></div>
+            <div className="renewal-benefits">
+              <article className="renewal-benefit fade-up">
+                <div className="renewal-benefit-top"><span className="renewal-number">01</span><span>作業の効率化</span></div>
+                <img src={HOME_ART + "outcome-coffee.webp"} alt="" loading="lazy" className="wc-illust-cut" width="180" height="140"/>
+                <h3>毎日の作業が減り、<br/>本業に使える時間が増える。</h3>
+                <p>同じ情報の入力、書類探し、毎月の集計。繰り返す作業を仕組みに任せて、人は確認やお客さまへの対応に集中できるように。</p>
+                <div className="renewal-benefit-example">確かめること <strong>作業時間・確認回数・手戻りの変化</strong></div>
+              </article>
+              <article className="renewal-benefit fade-up">
+                <div className="renewal-benefit-top"><span className="renewal-number">02</span><span>知見の蓄積</span></div>
+                <img src={HOME_ART + "case-tejun.webp"} alt="" loading="lazy" className="wc-illust-cut" width="180" height="140"/>
+                <h3>一人の経験が残り、<br/>みんなが使える財産になる。</h3>
+                <p>「なぜこの見積もりにしたか」「どう対応して解決したか」。頭の中にあった判断の根拠や工夫を、日々の仕事と一緒に記録。次の担当者が参考にできます。</p>
+                <div className="renewal-benefit-example">確かめること <strong>過去の対応を探せる・任せられる仕事が増える</strong></div>
+              </article>
             </div>
-            <div className="gap-arrow"><Icon.ArrowRight size={28} /></div>
-            <div className="gap-card gap-card-micro">
-              <div className="gap-card-label">見直せるかもしれない<br/>部分</div>
-              <ul className="gap-list">
-                <li>同じ情報を何度も入力している</li>
-                <li>探す・聞く・確認する時間が多い</li>
-                <li>紙・Excel・メールの間を人がつないでいる</li>
-                <li>特定の人だけが分かる状態になっている</li>
-              </ul>
-              <div className="gap-card-tag gap-card-tag-accent">減らせるのはここ</div>
-            </div>
+            <div className="renewal-capacity fade-up"><span className="renewal-connector" aria-hidden="true">↓</span><h3>今いる人で、<span className="underline-hand">引き受けられる仕事</span>を増やす。</h3><p>手作業が減り、判断の根拠を共有できれば、仕事が一人に集中しにくくなります。<br/>社長やベテランの手を空けながら、会社全体で対応できる範囲を広げていきます。</p></div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* 詰まりが取れると、こう変わる（結果ベース） */}
-      <section className="section section-plain" style={{ padding: "48px 0" }}>
-        <div className="container-narrow fade-up">
-          <div style={{ textAlign: "center", marginBottom: 32 }}>
-            <div className="section-eyebrow">outcome</div>
-            <h2 style={{ fontSize: 28, color: "var(--navy-900)", margin: "0 0 14px", fontWeight: 800 }}>
-              <span className="marker">「見れば分かる」</span>ようになると、<br className="mobile-only"/>
-              こう変わります。
-            </h2>
-            <p style={{ fontSize: 15, color: "var(--ink-700)", lineHeight: 1.9, margin: 0 }}>
-              手入力や確認作業が減ると、<br className="mobile-only"/>
-              「ちゃんと見たかな」と気を張る時間が減ります。その分、今いる人の手が本来の仕事に回ります。
-            </p>
+        <HomeWorkExamples />
+        <HomeTimeEstimate />
+
+        <section className="section renewal-section renewal-knowledge">
+          <div className="container-narrow fade-up">
+            <div className="renewal-heading"><div className="section-eyebrow">experience becomes an asset</div><h2>その場で終わっていた経験を、<br/><span className="underline-hand">次の仕事の出発点</span>に。</h2><p>見積もりの根拠も、トラブルを解決した工夫も。<br/>仕事をするたび、会社の中に使える知見が増えていく仕組みへ。</p></div>
+            <ol className="renewal-knowledge-flow">
+              <li><span>01 ／ 残す</span><h3>仕事と一緒に記録する</h3><p>案件・図面・対応履歴に、判断した理由や注意点も紐づけます。</p></li>
+              <li><span>02 ／ 使う</span><h3>次の人が見つけられる</h3><p>似た案件の進め方が分かり、毎回ゼロから考える手間を減らします。</p></li>
+              <li><span>03 ／ 活かす</span><h3>AIにも活かせる土台へ</h3><p>整理した情報をもとに、検索や文案作成を支援。大切な判断は人が確認します。</p></li>
+            </ol>
+            <p className="renewal-knowledge-note">記録する作業ばかり増えないよう、普段の仕事の流れに組み込みます。</p>
           </div>
-          <div className="outcome-with-illustration">
-            <div className="outcome-illustration" aria-hidden="true">
-              <img className="wc-illust-cut" src="assets/illustrations/watercolor/outcome-coffee.webp" alt="" />
-            </div>
-            <div className="outcome-grid">
+        </section>
+
+        <section className="section section-plain renewal-section">
+          <div className="container fade-up">
+            <div className="renewal-heading"><div className="section-eyebrow">small steps, big change</div><h2>「費用に見合うのか」を、<br/><span className="underline-hand">一緒に確かめながら。</span></h2><p>どの作業が、どう変われば意味があるか。<br/>導入前に確かめるポイントを決め、一つの業務から始めます。</p></div>
+            <ol id="process" className="renewal-process">
               {[
-                { t: "毎日の手作業に取られる時間が減る", d: "くり返していた入力・転記・集計が少なくなります。" },
-                { t: "確認や探し物で止まる時間が減る", d: "情報の置き場や流れが整い、聞きにいかなくても進みやすくなります。" },
-                { t: "特定の人に頼りきりの状態が減る", d: "社長や〇〇さんしか分からない仕事を、引き継げる形に近づけます。" },
-                { t: "急な休みでも仕事が止まりにくくなる", d: "やり方や情報が整理されることで、周囲が対応しやすくなります。" },
-                { t: "本業に使える時間が増える", d: "売上につながる仕事に、人と時間を回しやすくなります。" },
-              ].map((o, i) => (
-                <div key={i} className="outcome-item">
-                  <span className="outcome-check"><Icon.Check /></span>
-                  <div>
-                    <div className="outcome-title">{o.t}</div>
-                    <div className="outcome-desc">{o.d}</div>
+                ["業務整理", "今の手間を見える形に", "かかっている時間、件数、誰に確認しているかを整理。減らす作業と、残したい知見を一緒に見つけます。"],
+                ["システム構築", "一つの業務で試す", "今の道具も活かしながら、小さくつくって現場で確認。使いやすさと費用のバランスを見て進めます。"],
+                ["運用・改善", "変化を確かめ、育てる", "導入前後の作業時間や引き継ぎやすさを確認。使って分かったことを反映し、必要な範囲へ広げます。"],
+              ].map(([label,title,desc],i)=><li key={label}>
+                  <div className="renewal-process-label">
+                    <span className="renewal-process-number">0{i+1}</span>
+                    <span className="renewal-process-name">{label}</span>
+                    <svg className="renewal-process-sketch" viewBox="0 0 320 86" preserveAspectRatio="none" aria-hidden="true">
+                      <path d={[
+                        "M14 12 Q83 5 161 10 T307 9 Q313 37 306 72 Q237 80 153 74 T11 77 Q5 43 14 12 M20 15 Q132 10 220 14",
+                        "M12 9 Q91 13 171 7 T305 13 Q311 43 308 75 Q226 70 154 77 T9 72 Q14 41 12 9 M19 77 Q117 80 197 75",
+                        "M15 11 Q109 5 191 11 T308 8 Q304 35 310 73 Q225 80 144 74 T12 77 Q7 41 15 11 M17 8 Q100 4 163 8"
+                      ][i]} />
+                    </svg>
                   </div>
-                </div>
-              ))}
+                  {i < 2 && <svg className="renewal-process-arrow" viewBox="0 0 60 28" aria-hidden="true"><path d="M3 17 Q23 5 51 13 M43 5 Q48 9 53 13 L43 21"/></svg>}
+                  <h3>{title}</h3><p>{desc}</p>
+                </li>)}
+            </ol>
+            <div className="renewal-center"><a href="service.html" className="btn btn-outline">支援内容・料金の目安を見る <Icon.ArrowRight /></a></div>
+          </div>
+        </section>
+
+        <section className="section renewal-partner">
+          <div className="container-narrow fade-up">
+            <div className="renewal-heading"><div className="section-eyebrow">your IT partner</div><h2>中小企業の、<br className="mobile-only"/>ずっと頼れる<span className="underline-hand">外部ITパートナー</span>に。</h2><p>現場の仕事を一緒に整理し、つくって、使いながら整える。<br/>今の仕事をラクにしながら、未来の可能性も広げていきます。</p></div>
+            <div className="position-block" style={{ marginBottom: 32 }}>
+              <h3 className="position-title">社内にITに詳しい人がいなくても、<br/>一緒に仕事を進めます。</h3>
+              <p className="position-text">日々の事務や、慣れないシステムの操作を、担当の方と一緒に。<br/>実際の仕事を進めながら、今ある道具やAIを活かせるところを見つけます。<br/>紙や手書きが中心の会社も、今のやり方から始められます。</p>
+              <a href="service.html#advisor" className="btn btn-outline">一緒に手を動かす「伴走サポート」を見る <Icon.ArrowRight /></a>
+            </div>
+            <div className="home-rep-strip">
+              <img className="home-rep-photo" src="assets/picture/1X8A4633.JPG" alt="株式会社BitVoyage 代表 北束 優花" loading="lazy"/>
+              <div className="home-rep-body"><div className="home-rep-name">代表・北束 優花<span>（きたづか ゆうか）</span></div><p className="home-rep-text">前職は半導体メーカーの生産技術職で、業務改善に携わっていました。<br/>現場の流れと人の判断を大切に、無理なく使い続けられる仕組みをつくります。</p><a href="company.html" className="home-rep-link">代表の紹介を見る →</a></div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ツール屋ではない（ポジショニング） */}
-      <section className="section" style={{ padding: "48px 0" }}>
-        <div className="container-narrow fade-up">
-          <div className="position-block">
-            <div className="position-eyebrow">our role</div>
-            <h2 className="position-title">
-              BitVoyage の考え方
-            </h2>
-            <div className="position-illustration" aria-hidden="true">
-              <img className="wc-illust-cut" src="assets/illustrations/watercolor/position-together.webp" alt="" />
-            </div>
-            <p style={{ fontSize: 16, fontWeight: 500, color: "var(--ink-700)", lineHeight: 1.95, margin: "0 0 22px" }}>
-              忙しい現場では、改善したくても後回しになりがちです。<br/>
-              日々の対応に追われて、「見直した方がいい」と分かっている作業ほど、そのまま残ってしまう。
-            </p>
-            <p className="position-text" style={{ margin: 0 }}>
-              現場の流れを一緒に整理し、<span className="underline-hand">後回し</span>になっていた改善を前へ進めます。<br/>
-              売上につながらない作業を一緒に見つけて減らし、<br/>
-              会社が前に進むための余力をつくります。
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 改善例への導線 */}
-      <section className="section" style={{ padding: "8px 0 56px" }}>
-        <div className="container-narrow fade-up">
-          <div className="home-kaizen-cta">
-            <div className="section-eyebrow">examples</div>
-            <h2 className="home-kaizen-cta-title">
-              具体的に、どんな作業を<br className="mobile-only" />
-              <span className="marker">減らせる</span>のか
-            </h2>
-            <p className="home-kaizen-cta-text">
-              入金確認、振込データ作成、領収書整理、問い合わせ管理、名刺フォロー、進捗確認。<br/>
-              日々の小さな手間を、現場に合う形で減らします。
-            </p>
-            <a href="improvements.html" className="btn btn-primary">
-              改善例を見る <Icon.ArrowRight />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* サービスの流れ（4ステップ） */}
-      <ServiceSteps />
-
-      {/* 代表の顔 */}
-      <section className="section" style={{ padding: "8px 0 40px" }}>
-        <div className="container-narrow fade-up">
-          <div className="home-rep-strip">
-            <img className="home-rep-photo" src="assets/picture/1X8A4633.JPG" alt="株式会社BitVoyage 代表 北束 優花" />
-            <div className="home-rep-body">
-              <div className="home-rep-name">代表・北束 優花<span>（きたづか ゆうか）</span></div>
-              <p className="home-rep-text">
-                前職は半導体メーカーの生産技術職で、業務改善に携わっていました。<br/>
-                現在は、人の判断を仕組みに乗せて、業務がスムーズに回る形を構築しています。
-              </p>
-              <a href="company.html" className="home-rep-link">代表の紹介を見る →</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA リボン */}
-      <CTARibbon />
-
+        </section>
+        <CTARibbon />
+      </main>
       <SiteFooter />
     </div>
   );
+}
+
+function HomeWorkExamples() {
+  const examples = [
+    {title:"見積もり・請求", image:"transfer2.webp", before:"前のファイルを探して、同じ情報を何度も入力。", after:"案件の情報から書類をつくり、人は内容の確認へ。", asset:"見積もりの条件や変更理由も残り、次の案件で参考にできる。"},
+    {title:"案件・図面探し", image:"search1.webp", before:"「あの案件、どうしたっけ？」と分かる人を探す。", after:"案件・図面・やり取りをまとめて、必要な情報にたどり着ける。", asset:"似た案件の注意点が分かり、担当が変わっても進めやすくなる。"},
+    {title:"進捗・引き継ぎ", image:"progress2.webp", before:"社長や担当者に聞かないと、今の状況が分からない。", after:"誰が・何を・どこまで進めているか、同じ画面で確認。", asset:"対応の経緯が残り、ほかの人も続きを引き受けやすくなる。"},
+  ];
+  const [selected, setSelected] = React.useState(0);
+  const current = examples[selected];
+  return <section id="examples" className="section renewal-section">
+    <div className="container-narrow fade-up">
+      <div className="renewal-heading"><div className="section-eyebrow">from everyday work</div><h2>たとえば、いつもの仕事が<br/><span className="underline-hand">こう変わります。</span></h2><p>自社に近い仕事を選んでみてください。</p></div>
+      <div className="renewal-example-buttons" role="group" aria-label="仕事の例を選ぶ">{examples.map((example,i)=><button key={example.title} type="button" aria-pressed={selected===i} aria-controls="work-example" onClick={()=>setSelected(i)}>{example.title}</button>)}</div>
+      <div id="work-example" className="renewal-example" aria-live="polite" aria-atomic="true">
+        <div className="renewal-example-image"><img src={HOME_CARD_ART + current.image} alt="" width="170" height="170" loading="lazy"/><h3>{current.title}</h3></div>
+        <div key={selected} className="renewal-example-body"><div className="renewal-before"><span>今まで</span><p>{current.before}</p></div><div className="renewal-after"><span>仕組みにすると</span><p>{current.after}</p></div><div className="renewal-asset"><strong>さらに、会社に残るもの</strong><p>{current.asset}</p></div></div>
+      </div>
+      <div className="renewal-example-footer"><p className="renewal-small">※ 想定される活用例です。実際の対応範囲は業務を確認してご提案します。</p><a href="improvements.html">ほかの改善例も見る →</a></div>
+    </div>
+  </section>;
+}
+
+function HomeTimeEstimate() {
+  const [minutes, setMinutes] = React.useState(30);
+  const [people, setPeople] = React.useState(3);
+  const [days, setDays] = React.useState(20);
+  const monthly = minutes * people * days / 60;
+  const format = value => new Intl.NumberFormat("ja-JP", {maximumFractionDigits:1}).format(value);
+  return <section className="section renewal-section renewal-estimate">
+    <div className="container-narrow fade-up">
+      <div className="renewal-heading"><div className="section-eyebrow">make the change visible</div><h2>1日少しの手間も、<br/><span className="underline-hand">会社全体では大きな時間。</span></h2><p>もし、毎日の作業をこれだけ減らせたら。<br/>自社の人数や稼働日数に変えて、時間の目安を確かめられます。</p></div>
+      <div className="renewal-calculator">
+        <div className="renewal-inputs">
+          <label htmlFor="saved-minutes">1人が1日に減らせたとしたら <span><strong>{minutes}</strong> 分</span></label>
+          <input id="saved-minutes" type="range" min="0" max="120" step="5" value={minutes} onChange={e=>setMinutes(Number(e.target.value))} aria-valuetext={minutes + "分"}/>
+          <div className="renewal-range-ends" aria-hidden="true"><span>0分</span><span>120分</span></div>
+          <div className="renewal-selects"><label htmlFor="estimate-people">対象の人数<select id="estimate-people" value={people} onChange={e=>setPeople(Number(e.target.value))}>{[1,2,3,5,10,20,30,50].map(n=><option key={n} value={n}>{n}人</option>)}</select></label><label htmlFor="estimate-days">月の稼働日数<select id="estimate-days" value={days} onChange={e=>setDays(Number(e.target.value))}>{[5,10,15,20,22,25,30].map(n=><option key={n} value={n}>{n}日</option>)}</select></label></div>
+        </div>
+        <div className="renewal-result" role="status" aria-live="polite" aria-atomic="true"><span>本業に回せる時間の目安</span><p>月 <strong>{format(monthly)}</strong> 時間</p><div>1年なら <b>{format(monthly*12)}時間</b></div><small>{minutes}分 × {people}人 × {days}日 ÷ 60</small></div>
+      </div>
+      <p className="renewal-estimate-note">※ 入力条件による単純試算で、導入実績や削減の保証ではありません。年間は同じ条件で12か月として計算。空いた時間が、そのまま現金の支出削減になるわけではありません。</p>
+      <p className="renewal-estimate-closing">その時間を、お客さまへの提案や、次の仕事の準備に。<br/>まずは実際の作業を見て、どれくらい減らせそうかを一緒に確かめます。</p>
+    </div>
+  </section>;
 }
 
 /* ===== 単発メニュー ＋ 月額メニュー別枠 ===== */
@@ -250,12 +172,12 @@ function ServiceSteps() {
   ];
   const continuous = [
     {
-      t: "伴走顧問",
+      t: "伴走サポート",
       price: "月15万円〜",
-      feeling: "「あとで考えよう」が、毎月ちゃんと前に進みます。",
-      body: "毎月の打ち合わせで現場の状況を確認し、次にどこへ手をつけるかを決め続ける役割です。標準は月4回（1回2〜3時間）。オンラインでも、ご訪問でも対応します。",
-      note: "続けるとどこかで仕組みごと作り直す話になります。そこは別にお見積りしますが、流れの整理と設計は毎月の中で済んでいるので、実装ぶんだけの費用になります。",
-      items: ["現場の状況の確認", "詰まっている作業の洗い出し", "手をつける順番の整理", "その場でできる範囲の手直し", "仕組みごと作り直すタイミングの見きわめ", "次に何をするかの決定"],
+      feeling: "日々の事務を、一緒に手を動かしながら、もっと進めやすく。",
+      body: "実際の事務作業を一緒に進めながら、慣れない操作や、今あるシステム・AIの活用をサポートします。標準は月4回（1回2〜3時間）。ご訪問・オンラインに対応します。",
+      note: "支援時間内の共同作業・操作のサポート・軽微な手直しを含みます。新しいシステムの構築や連携開発などの実装は別途お見積りです。",
+      items: ["事務作業を一緒に進める", "慣れない操作のサポート", "今あるシステムの活用", "AIに任せられる作業の試行", "その場でできる軽微な手直し", "業務の流れや残す情報の整理"],
     },
     {
       t: "保守サポート",
@@ -263,7 +185,7 @@ function ServiceSteps() {
       feeling: "「急に動かなくなったらどうしよう」が、なくなります。",
       body: "お作りした仕組みが、これからも問題なく使い続けられるようにお預かりします。動かなくなってから慌てるのではなく、気づいた時点で直せる状態にしておきます。",
       note: "新しい機能を足す場合は「追加実装」として別途お見積りします。",
-      items: ["不具合が出たときの対応", "Google側の仕様変更への追随", "項目名や表示まわりの細かい直し", "使い方の質問へのお答え", "動作の定期確認"],
+      items: ["不具合が出たときの対応", "利用ツール・連携先の仕様変更への対応", "項目名や表示まわりの細かい直し", "使い方の質問へのお答え", "動作の定期確認"],
     },
   ];
   return (
@@ -370,7 +292,7 @@ function CTARibbon({ minimal = false }) {
     <section id="contact" className="section" style={{ padding: minimal ? "48px 0" : "28px 0 44px" }}>
       <div className="container-narrow">
         <p style={{ textAlign: "center", fontSize: 16, color: "var(--ink-700)", marginBottom: 24 }}>
-          まずは、今いちばん時間を取られている作業をお聞かせください。
+          「うちの仕事も変えられる？」から、お聞かせください。
         </p>
         <div style={{ background: "var(--yellow-500) url('assets/illustrations/watercolor/cta-wash.webp') center/cover", padding: "36px 40px", borderRadius: 16, textAlign: "center", boxShadow: "var(--shadow-md)", position: "relative" }}>
           <div style={{ position: "absolute", top: 10, left: 20, fontSize: 11, fontFamily: "var(--font-hand)", color: "var(--navy-900)", opacity: 0.7 }}>お気軽にどうぞ</div>
@@ -381,7 +303,7 @@ function CTARibbon({ minimal = false }) {
           <div style={{ margin: "16px auto 24px", width: 80, height: 2, background: "var(--navy-900)" }}></div>
           <p style={{ margin: 0, fontSize: 16, color: "var(--navy-900)", fontWeight: 600, lineHeight: 1.85 }}>
             今の作業を一緒に整理すると、<br className="mobile-only"/>
-            どこから減らせそうかが見えてきます。
+            減らせる手間と、残しておきたい知見が見えてきます。
           </p>
           <div className="cta-feature-row">
             <div className="cta-feature">整理メモ付き</div>
